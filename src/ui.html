@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-to-UI</title>
+  <style>
+    :root {
+      --bg-primary: #1a1a2e;
+      --bg-secondary: #16213e;
+      --bg-tertiary: #0f3460;
+      --accent: #e94560;
+      --accent-hover: #ff6b6b;
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0a0;
+      --border: #2a2a4a;
+      --success: #00d26a;
+      --warning: #ffc107;
+      --error: #ff4757;
+      --purple: #8b5cf6;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font);
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .header p {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .tab {
+      flex: 1;
+      padding: 10px 12px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-secondary);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab:hover {
+      background: rgba(233, 69, 96, 0.1);
+      border-color: var(--accent);
+    }
+
+    .tab.active {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+      color: white;
+      border-color: transparent;
+    }
+
+    .panel {
+      display: none;
+    }
+
+    .panel.active {
+      display: block;
+    }
+
+    .input-group {
+      margin-bottom: 16px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .textarea-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      transition: border-color 0.2s ease;
+    }
+
+    .textarea-wrapper:focus-within {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+    }
+
+    textarea {
+      width: 100%;
+      height: 280px;
+      padding: 16px;
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+      font-family: 'SF Mono', 'Fira Code', 'Monaco', monospace;
+      font-size: 12px;
+      line-height: 1.6;
+      resize: none;
+      outline: none;
+    }
+
+    textarea.prompt-input {
+      height: 120px;
+      font-family: var(--font);
+      font-size: 14px;
+    }
+
+    textarea::placeholder {
+      color: var(--text-secondary);
+      opacity: 0.6;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn-secondary {
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(233, 69, 96, 0.1);
+      border-color: var(--accent);
+    }
+
+    .btn-purple {
+      background: linear-gradient(135deg, var(--purple) 0%, #a78bfa 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    }
+
+    .btn-purple:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none !important;
+    }
+
+    .status {
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .status.show {
+      display: flex;
+    }
+
+    .status.success {
+      background: rgba(0, 210, 106, 0.15);
+      border: 1px solid var(--success);
+      color: var(--success);
+    }
+
+    .status.error {
+      background: rgba(255, 71, 87, 0.15);
+      border: 1px solid var(--error);
+      color: var(--error);
+    }
+
+    .status.loading {
+      background: rgba(255, 193, 7, 0.15);
+      border: 1px solid var(--warning);
+      color: var(--warning);
+    }
+
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid transparent;
+      border-top-color: currentColor;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .examples {
+      margin-top: 16px;
+    }
+
+    .examples-header {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .example-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      padding: 8px 14px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .chip:hover {
+      background: rgba(233, 69, 96, 0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .chip.selected {
+      background: rgba(139, 92, 246, 0.2);
+      border-color: var(--purple);
+      color: var(--purple);
+    }
+
+    .footer {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-secondary);
+      opacity: 0.6;
+    }
+
+    /* Schema Reference Panel */
+    .schema-ref {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .schema-ref h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    .prop-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+
+    .prop-table th,
+    .prop-table td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .prop-table th {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .prop-table td:first-child {
+      color: var(--success);
+      font-family: monospace;
+    }
+
+    /* Prompt Generator Panel */
+    .prompt-section {
+      margin-bottom: 20px;
+    }
+
+    .prompt-section-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .prompt-section-title span {
+      background: var(--purple);
+      color: white;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .prompt-preview {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      max-height: 200px;
+      overflow-y: auto;
+      font-family: 'SF Mono', 'Fira Code', 'Monaco', monospace;
+      font-size: 11px;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .prompt-preview .highlight {
+      color: var(--purple);
+      font-weight: 600;
+    }
+
+    .copy-success {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--success);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      z-index: 1000;
+      animation: fadeInOut 2s ease forwards;
+    }
+
+    @keyframes fadeInOut {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+      }
+
+      15% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      85% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+      }
+    }
+
+    .style-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .style-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .style-option:hover {
+      border-color: var(--purple);
+      background: rgba(139, 92, 246, 0.1);
+    }
+
+    .style-option.selected {
+      border-color: var(--purple);
+      background: rgba(139, 92, 246, 0.2);
+      color: var(--purple);
+    }
+
+    .style-option input {
+      display: none;
+    }
+
+    .style-option .radio {
+      width: 16px;
+      height: 16px;
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .style-option.selected .radio {
+      border-color: var(--purple);
+    }
+
+    .style-option.selected .radio::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--purple);
+      border-radius: 50%;
+    }
+
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>✨ AI-to-UI</h1>
+      <p>Transform AI-generated JSON into native Figma designs</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab" data-panel="prompt">🤖 Prompt</button>
+      <button class="tab active" data-panel="builder">⚡ Builder</button>
+      <button class="tab" data-panel="schema">📐 Schema</button>
+    </div>
+
+    <!-- PROMPT GENERATOR PANEL -->
+    <div id="prompt" class="panel">
+      <div class="prompt-section">
+        <div class="prompt-section-title">
+          <span>1</span>
+          Describe what you want to design
+        </div>
+        <div class="textarea-wrapper">
+          <textarea id="designDescription" class="prompt-input"
+            placeholder="E.g., A modern pricing card with three tiers (Basic, Pro, Enterprise), each showing price, features list, and a CTA button. Use a dark theme with purple accents."></textarea>
+        </div>
+      </div>
+
+      <div class="prompt-section">
+        <div class="prompt-section-title">
+          <span>2</span>
+          Choose a style preset
+        </div>
+        <div class="style-options">
+          <label class="style-option selected" data-style="modern-dark">
+            <input type="radio" name="style" value="modern-dark" checked>
+            <span class="radio"></span>
+            🌙 Modern Dark
+          </label>
+          <label class="style-option" data-style="clean-light">
+            <input type="radio" name="style" value="clean-light">
+            <span class="radio"></span>
+            ☀️ Clean Light
+          </label>
+          <label class="style-option" data-style="vibrant">
+            <input type="radio" name="style" value="vibrant">
+            <span class="radio"></span>
+            🎨 Vibrant
+          </label>
+          <label class="style-option" data-style="minimal">
+            <input type="radio" name="style" value="minimal">
+            <span class="radio"></span>
+            ✨ Minimal
+          </label>
+        </div>
+      </div>
+
+      <div class="prompt-section">
+        <div class="prompt-section-title">
+          <span>3</span>
+          Quick component hints (optional)
+        </div>
+        <div class="example-chips" id="componentChips">
+          <span class="chip" data-component="navigation">Navigation</span>
+          <span class="chip" data-component="hero">Hero Section</span>
+          <span class="chip" data-component="cards">Cards</span>
+          <span class="chip" data-component="form">Form</span>
+          <span class="chip" data-component="pricing">Pricing</span>
+          <span class="chip" data-component="footer">Footer</span>
+          <span class="chip" data-component="modal">Modal</span>
+          <span class="chip" data-component="dashboard">Dashboard</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-purple" id="copyPromptBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          Copy Prompt to Clipboard
+        </button>
+      </div>
+
+      <div id="promptStatus" class="status"></div>
+
+      <div class="prompt-section">
+        <div class="examples-header">Preview (what will be copied)</div>
+        <div class="prompt-preview" id="promptPreview">
+          <span class="highlight">Your prompt will appear here...</span>
+
+          Describe your design above and it will be combined with the full schema context for any AI to understand.
+        </div>
+      </div>
+    </div>
+
+    <!-- BUILDER PANEL -->
+    <div id="builder" class="panel active">
+      <div class="input-group">
+        <label>Paste Your Design JSON</label>
+        <div class="textarea-wrapper">
+          <textarea id="jsonInput" placeholder='Paste AI-generated JSON here...
+
+Example:
+{
+  "type": "FRAME",
+  "name": "Card",
+  "layoutMode": "VERTICAL",
+  "padding": { "top": 24, "right": 24, "bottom": 24, "left": 24 },
+  "itemSpacing": 16,
+  "cornerRadius": 12,
+  "fills": [{ "type": "SOLID", "color": "#FFFFFF" }],
+  "children": [...]
+}'></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-secondary" id="formatBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 7h16M4 12h10M4 17h16" />
+          </svg>
+          Format
+        </button>
+        <button class="btn btn-primary" id="buildBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
+          Build Design
+        </button>
+      </div>
+
+      <div id="status" class="status">
+        <span class="spinner"></span>
+        <span class="message"></span>
+      </div>
+
+      <div class="examples">
+        <div class="examples-header">Quick Examples</div>
+        <div class="example-chips">
+          <span class="chip" data-example="button">Button</span>
+          <span class="chip" data-example="card">Card</span>
+          <span class="chip" data-example="navbar">Navbar</span>
+          <span class="chip" data-example="hero">Hero Section</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCHEMA REFERENCE PANEL -->
+    <div id="schema" class="panel">
+      <div class="schema-ref">
+        <h3>📐 Node Types</h3>
+        <table class="prop-table">
+          <tr>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>FRAME</td>
+            <td>Container with Auto Layout support</td>
+          </tr>
+          <tr>
+            <td>TEXT</td>
+            <td>Text layer with font properties</td>
+          </tr>
+          <tr>
+            <td>IMAGE</td>
+            <td>Image fill (supports keywords or URLs)</td>
+          </tr>
+          <tr>
+            <td>RECTANGLE</td>
+            <td>Shape with fills, strokes, effects</td>
+          </tr>
+        </table>
+
+        <h3 style="margin-top: 20px;">⚙️ Layout Properties</h3>
+        <table class="prop-table">
+          <tr>
+            <th>Property</th>
+            <th>Values</th>
+          </tr>
+          <tr>
+            <td>layoutMode</td>
+            <td>"HORIZONTAL" | "VERTICAL"</td>
+          </tr>
+          <tr>
+            <td>primaryAxisAlignItems</td>
+            <td>"MIN" | "MAX" | "CENTER" | "SPACE_BETWEEN"</td>
+          </tr>
+          <tr>
+            <td>counterAxisAlignItems</td>
+            <td>"MIN" | "MAX" | "CENTER"</td>
+          </tr>
+          <tr>
+            <td>itemSpacing</td>
+            <td>number (px)</td>
+          </tr>
+          <tr>
+            <td>padding</td>
+            <td>{ top, right, bottom, left }</td>
+          </tr>
+          <tr>
+            <td>width</td>
+            <td>"fill" | "hug" | number</td>
+          </tr>
+          <tr>
+            <td>height</td>
+            <td>"fill" | "hug" | number</td>
+          </tr>
+        </table>
+
+        <h3 style="margin-top: 20px;">🎨 Styling Properties</h3>
+        <table class="prop-table">
+          <tr>
+            <th>Property</th>
+            <th>Values</th>
+          </tr>
+          <tr>
+            <td>fills</td>
+            <td>[{ type: "SOLID", color: "#HEX" }]</td>
+          </tr>
+          <tr>
+            <td>strokes</td>
+            <td>[{ type: "SOLID", color: "#HEX" }]</td>
+          </tr>
+          <tr>
+            <td>strokeWeight</td>
+            <td>number</td>
+          </tr>
+          <tr>
+            <td>cornerRadius</td>
+            <td>number</td>
+          </tr>
+          <tr>
+            <td>effects</td>
+            <td>[{ type: "DROP_SHADOW", ... }]</td>
+          </tr>
+        </table>
+
+        <h3 style="margin-top: 20px;">✏️ Text Properties</h3>
+        <table class="prop-table">
+          <tr>
+            <th>Property</th>
+            <th>Values</th>
+          </tr>
+          <tr>
+            <td>characters</td>
+            <td>string (text content)</td>
+          </tr>
+          <tr>
+            <td>fontSize</td>
+            <td>number</td>
+          </tr>
+          <tr>
+            <td>fontWeight</td>
+            <td>"Regular" | "Medium" | "Bold"</td>
+          </tr>
+          <tr>
+            <td>textColor</td>
+            <td>"#HEX"</td>
+          </tr>
+        </table>
+
+        <h3 style="margin-top: 20px;">🖼️ Image Keywords</h3>
+        <table class="prop-table">
+          <tr>
+            <th>Keyword</th>
+            <th>Result</th>
+          </tr>
+          <tr>
+            <td>avatar</td>
+            <td>Portrait/face images</td>
+          </tr>
+          <tr>
+            <td>hero</td>
+            <td>Landscape/nature scenes</td>
+          </tr>
+          <tr>
+            <td>product</td>
+            <td>Product photography</td>
+          </tr>
+          <tr>
+            <td>team</td>
+            <td>Team/people photos</td>
+          </tr>
+          <tr>
+            <td>tech</td>
+            <td>Technology themed</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      Made for AI-powered design workflows
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // PROMPT GENERATOR - THE FULL CONTEXT PROMPT
+    // =========================================================================
+    const SCHEMA_CONTEXT = `You are an Expert UI/UX Designer and Figma Engineer. You write Figma-Native JSON that will be parsed by a Figma plugin.
+
+CRITICAL RULES:
+1. Respond ONLY with valid JSON. No explanations, no markdown code blocks.
+2. Always use layoutMode ("HORIZONTAL" or "VERTICAL") on every FRAME.
+3. Never use absolute positioning. Everything uses Auto Layout.
+4. Use professional spacing (8, 16, 24, 32, 48, 64px).
+5. Apply subtle shadows, rounded corners (8-24px), and modern typography.
+
+JSON SCHEMA:
+{
+  "type": "FRAME" | "TEXT" | "IMAGE" | "RECTANGLE",
+  "name": "string (layer name)",
+  "layoutMode": "HORIZONTAL" | "VERTICAL",
+  "primaryAxisAlignItems": "MIN" | "MAX" | "CENTER" | "SPACE_BETWEEN",
+  "counterAxisAlignItems": "MIN" | "MAX" | "CENTER",
+  "itemSpacing": number,
+  "padding": { "top": number, "right": number, "bottom": number, "left": number },
+  "fills": [{ "type": "SOLID", "color": "#RRGGBB" }],
+  "strokes": [{ "type": "SOLID", "color": "#RRGGBB" }],
+  "strokeWeight": number,
+  "cornerRadius": number,
+  "effects": [{ "type": "DROP_SHADOW", "color": "#RRGGBBAA", "offset": { "x": 0, "y": 4 }, "radius": 12, "visible": true }],
+  "width": "fill" | "hug" | number,
+  "height": "fill" | "hug" | number,
+  "characters": "string (only for TEXT)",
+  "fontSize": number,
+  "fontWeight": "Regular" | "Medium" | "Bold",
+  "textColor": "#RRGGBB",
+  "src": "keyword or URL (only for IMAGE, keywords: avatar, hero, product, team, nature, tech)",
+  "children": [ ...recursive nodes... ]
+}`;
+
+    const STYLE_PRESETS = {
+      'modern-dark': `
+COLOR PALETTE (Modern Dark):
+- Background: #0F172A
+- Surface: #1E293B
+- Primary: #6366F1
+- Text: #FFFFFF
+- Text Secondary: #94A3B8
+- Border: #334155`,
+      'clean-light': `
+COLOR PALETTE (Clean Light):
+- Background: #FFFFFF
+- Surface: #F8FAFC
+- Primary: #2563EB
+- Text: #1F2937
+- Text Secondary: #6B7280
+- Border: #E5E7EB`,
+      'vibrant': `
+COLOR PALETTE (Vibrant):
+- Background: #18181B
+- Surface: #27272A
+- Primary: #EC4899
+- Secondary: #8B5CF6
+- Tertiary: #06B6D4
+- Text: #FAFAFA`,
+      'minimal': `
+COLOR PALETTE (Minimal):
+- Background: #FAFAFA
+- Surface: #FFFFFF
+- Primary: #171717
+- Text: #171717
+- Text Secondary: #737373
+- Border: #E5E5E5`
+    };
+
+    // Track selected components
+    let selectedComponents = [];
+    let selectedStyle = 'modern-dark';
+
+    // Generate the full prompt
+    function generateFullPrompt() {
+      const description = document.getElementById('designDescription').value.trim();
+      const styleContext = STYLE_PRESETS[selectedStyle];
+      const componentsHint = selectedComponents.length > 0 
+        ? `\nInclude these components: ${selectedComponents.join(', ')}`
+        : '';
+      
+      if (!description) {
+        return `${SCHEMA_CONTEXT}
+${styleContext}
+
+TASK: [Describe what you want to design here]${componentsHint}
+
+Remember: Output ONLY valid JSON, starting with { and ending with }`;
+      }
+
+      return `${SCHEMA_CONTEXT}
+${styleContext}
+
+TASK: ${description}${componentsHint}
+
+Remember: Output ONLY valid JSON, starting with { and ending with }`;
+    }
+
+    // Update preview
+    function updatePromptPreview() {
+      const preview = document.getElementById('promptPreview');
+      const fullPrompt = generateFullPrompt();
+      
+      // Truncate for preview
+      const maxLength = 800;
+      let displayText = fullPrompt;
+      if (fullPrompt.length > maxLength) {
+        displayText = fullPrompt.substring(0, maxLength) + '\n\n... (truncated for preview, full prompt will be copied)';
+      }
+      
+      preview.textContent = displayText;
+    }
+
+    // Copy prompt to clipboard
+    async function copyPromptToClipboard() {
+      const fullPrompt = generateFullPrompt();
+      
+      try {
+        await navigator.clipboard.writeText(fullPrompt);
+        
+        // Show success notification
+        const notification = document.createElement('div');
+        notification.className = 'copy-success';
+        notification.textContent = '✓ Prompt copied! Paste it into your AI';
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.remove();
+        }, 2000);
+      } catch (err) {
+        // Fallback for older browsers
+        const textarea = document.createElement('textarea');
+        textarea.value = fullPrompt;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        
+        showPromptStatus('Prompt copied to clipboard!', 'success');
+      }
+    }
+
+    // Show status in prompt panel
+    function showPromptStatus(message, type) {
+      const status = document.getElementById('promptStatus');
+      status.className = 'status show ' + type;
+      status.innerHTML = `<span class="message">${message}</span>`;
+      
+      setTimeout(() => {
+        status.classList.remove('show');
+      }, 3000);
+    }
+
+    // =========================================================================
+    // EXAMPLE TEMPLATES FOR BUILDER
+    // =========================================================================
+    const examples = {
+      button: {
+        type: "FRAME",
+        name: "Primary Button",
+        layoutMode: "HORIZONTAL",
+        primaryAxisAlignItems: "CENTER",
+        counterAxisAlignItems: "CENTER",
+        padding: { top: 12, right: 24, bottom: 12, left: 24 },
+        cornerRadius: 8,
+        fills: [{ type: "SOLID", color: "#6366F1" }],
+        effects: [{ type: "DROP_SHADOW", color: "#6366F140", offset: { x: 0, y: 4 }, radius: 12, visible: true }],
+        children: [
+          {
+            type: "TEXT",
+            name: "Button Label",
+            characters: "Get Started",
+            fontSize: 16,
+            fontWeight: "Medium",
+            textColor: "#FFFFFF"
+          }
+        ]
+      },
+      card: {
+        type: "FRAME",
+        name: "Card",
+        layoutMode: "VERTICAL",
+        padding: { top: 24, right: 24, bottom: 24, left: 24 },
+        itemSpacing: 16,
+        width: 320,
+        cornerRadius: 16,
+        fills: [{ type: "SOLID", color: "#FFFFFF" }],
+        effects: [{ type: "DROP_SHADOW", color: "#00000015", offset: { x: 0, y: 8 }, radius: 24, visible: true }],
+        children: [
+          {
+            type: "IMAGE",
+            name: "Card Image",
+            src: "nature",
+            width: "fill",
+            height: 180,
+            cornerRadius: 12
+          },
+          {
+            type: "TEXT",
+            name: "Card Title",
+            characters: "Beautiful Landscape",
+            fontSize: 20,
+            fontWeight: "Bold",
+            textColor: "#1F2937"
+          },
+          {
+            type: "TEXT",
+            name: "Card Description",
+            characters: "Explore the wonders of nature with stunning photography and immersive experiences.",
+            fontSize: 14,
+            fontWeight: "Regular",
+            textColor: "#6B7280"
+          }
+        ]
+      },
+      navbar: {
+        type: "FRAME",
+        name: "Navbar",
+        layoutMode: "HORIZONTAL",
+        primaryAxisAlignItems: "SPACE_BETWEEN",
+        counterAxisAlignItems: "CENTER",
+        padding: { top: 16, right: 32, bottom: 16, left: 32 },
+        width: "fill",
+        fills: [{ type: "SOLID", color: "#FFFFFF" }],
+        effects: [{ type: "DROP_SHADOW", color: "#00000010", offset: { x: 0, y: 2 }, radius: 8, visible: true }],
+        children: [
+          {
+            type: "TEXT",
+            name: "Logo",
+            characters: "Acme Inc.",
+            fontSize: 20,
+            fontWeight: "Bold",
+            textColor: "#1F2937"
+          },
+          {
+            type: "FRAME",
+            name: "Nav Links",
+            layoutMode: "HORIZONTAL",
+            itemSpacing: 32,
+            children: [
+              { type: "TEXT", name: "Link", characters: "Products", fontSize: 14, fontWeight: "Medium", textColor: "#6B7280" },
+              { type: "TEXT", name: "Link", characters: "Features", fontSize: 14, fontWeight: "Medium", textColor: "#6B7280" },
+              { type: "TEXT", name: "Link", characters: "Pricing", fontSize: 14, fontWeight: "Medium", textColor: "#6B7280" }
+            ]
+          },
+          {
+            type: "FRAME",
+            name: "CTA Button",
+            layoutMode: "HORIZONTAL",
+            padding: { top: 10, right: 20, bottom: 10, left: 20 },
+            cornerRadius: 8,
+            fills: [{ type: "SOLID", color: "#1F2937" }],
+            children: [
+              { type: "TEXT", name: "Button Text", characters: "Sign Up", fontSize: 14, fontWeight: "Medium", textColor: "#FFFFFF" }
+            ]
+          }
+        ]
+      },
+      hero: {
+        type: "FRAME",
+        name: "Hero Section",
+        layoutMode: "VERTICAL",
+        primaryAxisAlignItems: "CENTER",
+        counterAxisAlignItems: "CENTER",
+        padding: { top: 80, right: 64, bottom: 80, left: 64 },
+        itemSpacing: 32,
+        width: "fill",
+        fills: [{ type: "SOLID", color: "#0F172A" }],
+        children: [
+          {
+            type: "TEXT",
+            name: "Headline",
+            characters: "Build products faster",
+            fontSize: 56,
+            fontWeight: "Bold",
+            textColor: "#FFFFFF"
+          },
+          {
+            type: "TEXT",
+            name: "Subheadline",
+            characters: "The modern toolset for teams who want to ship great products without the complexity.",
+            fontSize: 20,
+            fontWeight: "Regular",
+            textColor: "#94A3B8"
+          },
+          {
+            type: "FRAME",
+            name: "CTA Group",
+            layoutMode: "HORIZONTAL",
+            itemSpacing: 16,
+            children: [
+              {
+                type: "FRAME",
+                name: "Primary CTA",
+                layoutMode: "HORIZONTAL",
+                padding: { top: 16, right: 32, bottom: 16, left: 32 },
+                cornerRadius: 12,
+                fills: [{ type: "SOLID", color: "#6366F1" }],
+                children: [
+                  { type: "TEXT", name: "CTA Text", characters: "Start Free Trial", fontSize: 16, fontWeight: "Medium", textColor: "#FFFFFF" }
+                ]
+              },
+              {
+                type: "FRAME",
+                name: "Secondary CTA",
+                layoutMode: "HORIZONTAL",
+                padding: { top: 16, right: 32, bottom: 16, left: 32 },
+                cornerRadius: 12,
+                strokes: [{ type: "SOLID", color: "#6366F1" }],
+                strokeWeight: 2,
+                children: [
+                  { type: "TEXT", name: "CTA Text", characters: "Watch Demo", fontSize: 16, fontWeight: "Medium", textColor: "#6366F1" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    };
+
+    // =========================================================================
+    // EVENT LISTENERS
+    // =========================================================================
+
+    // Tab switching
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.panel).classList.add('active');
+      });
+    });
+
+    // Style preset selection
+    document.querySelectorAll('.style-option').forEach(option => {
+      option.addEventListener('click', () => {
+        document.querySelectorAll('.style-option').forEach(o => o.classList.remove('selected'));
+        option.classList.add('selected');
+        selectedStyle = option.dataset.style;
+        updatePromptPreview();
+      });
+    });
+
+    // Component chips (for prompt generator)
+    document.querySelectorAll('#componentChips .chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        chip.classList.toggle('selected');
+        const component = chip.dataset.component;
+        if (chip.classList.contains('selected')) {
+          if (!selectedComponents.includes(component)) {
+            selectedComponents.push(component);
+          }
+        } else {
+          selectedComponents = selectedComponents.filter(c => c !== component);
+        }
+        updatePromptPreview();
+      });
+    });
+
+    // Description input
+    document.getElementById('designDescription').addEventListener('input', updatePromptPreview);
+
+    // Copy prompt button
+    document.getElementById('copyPromptBtn').addEventListener('click', copyPromptToClipboard);
+
+    // Example chips (for builder)
+    document.querySelectorAll('.examples .chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const example = examples[chip.dataset.example];
+        if (example) {
+          document.getElementById('jsonInput').value = JSON.stringify(example, null, 2);
+        }
+      });
+    });
+
+    // Format button
+    document.getElementById('formatBtn').addEventListener('click', () => {
+      const input = document.getElementById('jsonInput');
+      try {
+        const parsed = JSON.parse(input.value);
+        input.value = JSON.stringify(parsed, null, 2);
+        showStatus('Formatted successfully!', 'success');
+      } catch (e) {
+        showStatus('Invalid JSON: ' + e.message, 'error');
+      }
+    });
+
+    // Build button
+    document.getElementById('buildBtn').addEventListener('click', () => {
+      const input = document.getElementById('jsonInput').value.trim();
+      
+      if (!input) {
+        showStatus('Please paste your design JSON first.', 'error');
+        return;
+      }
+
+      try {
+        const json = JSON.parse(input);
+        showStatus('Building design...', 'loading');
+        parent.postMessage({ pluginMessage: { type: 'build', data: json } }, '*');
+      } catch (e) {
+        showStatus('Invalid JSON: ' + e.message, 'error');
+      }
+    });
+
+    // Status display for builder
+    function showStatus(message, type) {
+      const status = document.getElementById('status');
+      status.className = 'status show ' + type;
+      status.querySelector('.message').textContent = message;
+      status.querySelector('.spinner').style.display = type === 'loading' ? 'block' : 'none';
+      
+      if (type !== 'loading') {
+        setTimeout(() => {
+          status.classList.remove('show');
+        }, 4000);
+      }
+    }
+
+    // Listen for messages from plugin
+    window.onmessage = (event) => {
+      const msg = event.data.pluginMessage;
+      if (msg.type === 'success') {
+        showStatus(msg.message, 'success');
+      } else if (msg.type === 'error') {
+        showStatus(msg.message, 'error');
+      }
+    };
+
+    // Initialize preview
+    updatePromptPreview();
+  </script>
+</body>
+
+</html>
