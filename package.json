@@ -5,7 +5,7 @@
     "main": "dist/code.js",
     "scripts": {
         "build": "npm run build:ui && npm run build:code",
-        "build:ui": "cp src/ui.html dist/ui.html",
+        "build:ui": "node -e \"require('fs').copyFileSync('src/ui.html', 'dist/ui.html')\"",
         "build:code": "esbuild src/code.ts --bundle --outfile=dist/code.js --target=es2017",
         "watch": "npm run build:ui && esbuild src/code.ts --bundle --outfile=dist/code.js --target=es2017 --watch",
         "dev": "npm run watch"

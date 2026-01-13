@@ -428,6 +428,43 @@
       animation: fadeInOut 2s ease forwards;
     }
 
+    .font-options {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .font-option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 8px;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 11px;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    .font-option:hover {
+      border-color: var(--accent);
+      background: rgba(233, 69, 96, 0.1);
+    }
+
+    .font-option.selected {
+      border-color: var(--accent);
+      background: rgba(233, 69, 96, 0.2);
+      color: var(--accent);
+    }
+
+    .font-option input {
+      display: none;
+    }
+
     @keyframes fadeInOut {
       0% {
         opacity: 0;
@@ -540,6 +577,7 @@
     <div class="tabs">
       <button class="tab" data-panel="prompt">🤖 Prompt</button>
       <button class="tab active" data-panel="builder">⚡ Builder</button>
+      <button class="tab" data-panel="export">📤 Export</button>
       <button class="tab" data-panel="schema">📐 Schema</button>
     </div>
 
@@ -588,6 +626,47 @@
       <div class="prompt-section">
         <div class="prompt-section-title">
           <span>3</span>
+          Choose a font family
+        </div>
+        <div class="font-options" id="fontOptions">
+          <label class="font-option selected" data-font="Inter">
+            <input type="radio" name="font" value="Inter" checked>
+            Inter
+          </label>
+          <label class="font-option" data-font="Poppins">
+            <input type="radio" name="font" value="Poppins">
+            Poppins
+          </label>
+          <label class="font-option" data-font="Roboto">
+            <input type="radio" name="font" value="Roboto">
+            Roboto
+          </label>
+          <label class="font-option" data-font="Open Sans">
+            <input type="radio" name="font" value="Open Sans">
+            Open Sans
+          </label>
+          <label class="font-option" data-font="Montserrat">
+            <input type="radio" name="font" value="Montserrat">
+            Montserrat
+          </label>
+          <label class="font-option" data-font="Lato">
+            <input type="radio" name="font" value="Lato">
+            Lato
+          </label>
+          <label class="font-option" data-font="Nunito">
+            <input type="radio" name="font" value="Nunito">
+            Nunito
+          </label>
+          <label class="font-option" data-font="DM Sans">
+            <input type="radio" name="font" value="DM Sans">
+            DM Sans
+          </label>
+        </div>
+      </div>
+
+      <div class="prompt-section">
+        <div class="prompt-section-title">
+          <span>4</span>
           Quick component hints (optional)
         </div>
         <div class="example-chips" id="componentChips">
@@ -675,7 +754,72 @@ Example:
         </div>
       </div>
     </div>
+    <!-- EXPORT PANEL -->
+    <div id="export" class="panel">
+      <div class="input-group">
+        <label>Export Figma Frame to JSON</label>
+        <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5;">
+          Select a Frame in Figma and click "Export" to convert it into the AI-to-UI JSON format. 
+          You can then paste this JSON into an LLM to understand, modify, or extend your design.
+        </p>
+      </div>
 
+      <div class="actions">
+        <button class="btn btn-primary" id="exportBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="17 8 12 3 7 8" />
+            <line x1="12" y1="3" x2="12" y2="15" />
+          </svg>
+          Export Selected Frame
+        </button>
+      </div>
+
+      <div id="exportStatus" class="status">
+        <span class="spinner"></span>
+        <span class="message"></span>
+      </div>
+
+      <div class="input-group" style="margin-top: 16px;">
+        <label>Exported JSON</label>
+        <div class="textarea-wrapper">
+          <textarea id="exportOutput" placeholder="Exported JSON will appear here...
+
+Select a Frame in Figma and click 'Export Selected Frame' to generate the JSON representation of your design.
+
+The JSON output can be:
+• Pasted into ChatGPT, Claude, or other LLMs
+• Modified and re-imported using the Builder tab
+• Saved for version control or sharing"></textarea>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-secondary" id="formatExportBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 7h16M4 12h10M4 17h16" />
+          </svg>
+          Format
+        </button>
+        <button class="btn btn-purple" id="copyExportBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          Copy to Clipboard
+        </button>
+      </div>
+
+      <div class="examples" style="margin-top: 20px;">
+        <div class="examples-header">💡 Tips for LLM Usage</div>
+        <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.6;">
+          <p style="margin-bottom: 8px;">• <strong>Ask for modifications:</strong> "Change the primary color to blue and increase padding"</p>
+          <p style="margin-bottom: 8px;">• <strong>Request additions:</strong> "Add a footer section with social media links"</p>
+          <p style="margin-bottom: 8px;">• <strong>Get explanations:</strong> "Explain the layout structure of this design"</p>
+          <p>• <strong>Create variations:</strong> "Generate a dark mode version of this component"</p>
+        </div>
+      </div>
+    </div>
     <!-- SCHEMA REFERENCE PANEL -->
     <div id="schema" class="panel">
       <div class="schema-ref">
@@ -700,6 +844,10 @@ Example:
           <tr>
             <td>RECTANGLE</td>
             <td>Shape with fills, strokes, effects</td>
+          </tr>
+          <tr>
+            <td>ICON</td>
+            <td>Vector icon from Phosphor library</td>
           </tr>
         </table>
 
@@ -736,6 +884,14 @@ Example:
           <tr>
             <td>height</td>
             <td>"fill" | "hug" | number</td>
+          </tr>
+          <tr>
+            <td>layoutPositioning</td>
+            <td>"AUTO" | "ABSOLUTE" (for overlays)</td>
+          </tr>
+          <tr>
+            <td>constraints</td>
+            <td>{ horizontal, vertical }: "MIN" | "MAX" | "CENTER"</td>
           </tr>
         </table>
 
@@ -782,8 +938,12 @@ Example:
             <td>number</td>
           </tr>
           <tr>
+            <td>fontFamily</td>
+            <td>"Inter" | "Poppins" | "Roboto" | ...</td>
+          </tr>
+          <tr>
             <td>fontWeight</td>
-            <td>"Regular" | "Medium" | "Bold"</td>
+            <td>"Light" | "Regular" | "Medium" | "SemiBold" | "Bold"</td>
           </tr>
           <tr>
             <td>textColor</td>
@@ -818,6 +978,75 @@ Example:
             <td>Technology themed</td>
           </tr>
         </table>
+
+        <h3 style="margin-top: 20px;">🎯 Icon Properties</h3>
+        <table class="prop-table">
+          <tr>
+            <th>Property</th>
+            <th>Values</th>
+          </tr>
+          <tr>
+            <td>icon</td>
+            <td>Phosphor icon name (e.g. "house", "bell")</td>
+          </tr>
+          <tr>
+            <td>size</td>
+            <td>number (px, default 24)</td>
+          </tr>
+          <tr>
+            <td>color</td>
+            <td>"#HEX"</td>
+          </tr>
+        </table>
+
+        <h3 style="margin-top: 20px;">⭐ Phosphor Icons</h3>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Navigation: house, magnifying-glass, gear, bell, user, users, arrow-left, arrow-right, x, list</p>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Actions: plus, minus, pencil, trash, download, upload, share, copy, check, x-circle</p>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Media: image, camera, video, play, pause, stop, music-note, microphone, speaker-high</p>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Communication: envelope, chat, phone, paper-plane-tilt, at, link, globe, wifi, cloud</p>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Commerce: shopping-cart, credit-card, wallet, receipt, tag, storefront, package, truck, star, heart</p>
+
+        <h3 style="margin-top: 20px;">🎲 Fake Data Placeholders</h3>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 12px;">Use <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">{{placeholder}}</code> in TEXT characters to auto-generate realistic data:</p>
+        <table class="prop-table">
+          <tr>
+            <th>Category</th>
+            <th>Placeholders</th>
+          </tr>
+          <tr>
+            <td>Names</td>
+            <td>{{name}}, {{firstname}}, {{lastname}}, {{username}}</td>
+          </tr>
+          <tr>
+            <td>Contact</td>
+            <td>{{email}}, {{phone}}, {{url}}, {{avatar}}</td>
+          </tr>
+          <tr>
+            <td>Professional</td>
+            <td>{{company}}, {{jobtitle}}, {{title}}</td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>{{address}}, {{city}}, {{country}}, {{zip}}</td>
+          </tr>
+          <tr>
+            <td>Numbers</td>
+            <td>{{number}}, {{price}}, {{percentage}}, {{rating}}</td>
+          </tr>
+          <tr>
+            <td>Date/Time</td>
+            <td>{{date}}, {{time}}, {{datetime}}</td>
+          </tr>
+          <tr>
+            <td>Lorem</td>
+            <td>{{word}}, {{words}}, {{sentence}}, {{paragraph}}</td>
+          </tr>
+          <tr>
+            <td>Other</td>
+            <td>{{uuid}}, {{heading}}, {{short}}</td>
+          </tr>
+        </table>
+        <p style="font-size: 10px; color: var(--text-secondary); margin-top: 8px; font-style: italic;">Example: "Hello, {{name}}!" → "Hello, Sarah Johnson!"</p>
       </div>
     </div>
 
@@ -834,18 +1063,24 @@ Example:
 
 CRITICAL RULES:
 1. Respond ONLY with valid JSON. No explanations, no markdown code blocks.
-2. Always use layoutMode ("HORIZONTAL" or "VERTICAL") on every FRAME.
-3. Never use absolute positioning. Everything uses Auto Layout.
-4. Use professional spacing (8, 16, 24, 32, 48, 64px).
-5. Apply subtle shadows, rounded corners (8-24px), and modern typography.
+2. IMPORTANT: layoutMode MUST be exactly "HORIZONTAL" or "VERTICAL" - never "CENTER" or any other value!
+3. For centering content, use primaryAxisAlignItems or counterAxisAlignItems with "CENTER" - NOT layoutMode.
+4. Use Auto Layout by default. Only use layoutPositioning: "ABSOLUTE" for overlays like badges or floating elements.
+5. Use professional spacing (8, 16, 24, 32, 48, 64px).
+6. Apply subtle shadows, rounded corners (8-24px), and modern typography.
+7. Use ICON type for vector icons with Phosphor icon names.
+
+COMMON MISTAKE TO AVOID:
+- WRONG: "layoutMode": "CENTER" ❌ (CENTER is NOT valid for layoutMode!)
+- RIGHT: "layoutMode": "VERTICAL", "counterAxisAlignItems": "CENTER" ✓
 
 JSON SCHEMA:
 {
-  "type": "FRAME" | "TEXT" | "IMAGE" | "RECTANGLE",
+  "type": "FRAME" | "TEXT" | "IMAGE" | "RECTANGLE" | "ICON",
   "name": "string (layer name)",
-  "layoutMode": "HORIZONTAL" | "VERTICAL",
-  "primaryAxisAlignItems": "MIN" | "MAX" | "CENTER" | "SPACE_BETWEEN",
-  "counterAxisAlignItems": "MIN" | "MAX" | "CENTER",
+  "layoutMode": "HORIZONTAL" | "VERTICAL" (REQUIRED for FRAME - NEVER use CENTER here!),
+  "primaryAxisAlignItems": "MIN" | "MAX" | "CENTER" | "SPACE_BETWEEN" (CENTER is valid here),
+  "counterAxisAlignItems": "MIN" | "MAX" | "CENTER" (CENTER is valid here),
   "itemSpacing": number,
   "padding": { "top": number, "right": number, "bottom": number, "left": number },
   "fills": [{ "type": "SOLID", "color": "#RRGGBB" }],
@@ -855,13 +1090,34 @@ JSON SCHEMA:
   "effects": [{ "type": "DROP_SHADOW", "color": "#RRGGBBAA", "offset": { "x": 0, "y": 4 }, "radius": 12, "visible": true }],
   "width": "fill" | "hug" | number,
   "height": "fill" | "hug" | number,
+  "layoutPositioning": "AUTO" | "ABSOLUTE" (use ABSOLUTE for overlays/badges),
+  "constraints": { "horizontal": "MIN" | "MAX" | "CENTER", "vertical": "MIN" | "MAX" | "CENTER" },
+  "x": number (position when ABSOLUTE),
+  "y": number (position when ABSOLUTE),
   "characters": "string (only for TEXT)",
   "fontSize": number,
-  "fontWeight": "Regular" | "Medium" | "Bold",
+  "fontFamily": "Inter" | "Poppins" | "Roboto" | "Open Sans" | "Montserrat" | "Lato" | "Nunito" | "DM Sans",
+  "fontWeight": "Regular" | "Medium" | "Bold" | "SemiBold" | "Light",
   "textColor": "#RRGGBB",
+  "icon": "phosphor-icon-name (only for ICON, e.g. house, magnifying-glass, bell, user, heart, star, shopping-cart, etc.)",
+  "size": number (icon size in px, default 24),
+  "color": "#RRGGBB (icon color)",
   "src": "keyword or URL (only for IMAGE, keywords: avatar, hero, product, team, nature, tech)",
   "children": [ ...recursive nodes... ]
-}`;
+}
+
+AVAILABLE ICONS (Phosphor): house, magnifying-glass, gear, bell, user, users, arrow-left, arrow-right, x, list, plus, minus, pencil, trash, download, upload, share, copy, check, x-circle, image, camera, video, play, pause, stop, music-note, microphone, speaker-high, envelope, chat, phone, paper-plane-tilt, at, link, globe, wifi, cloud, shopping-cart, credit-card, wallet, receipt, tag, storefront, package, truck, star, heart
+
+FAKE DATA PLACEHOLDERS (use in TEXT "characters" field):
+- Names: {{name}}, {{firstname}}, {{lastname}}, {{username}}
+- Contact: {{email}}, {{phone}}, {{url}}, {{avatar}}
+- Professional: {{company}}, {{jobtitle}}, {{title}}
+- Address: {{address}}, {{city}}, {{country}}, {{zip}}
+- Numbers: {{number}}, {{price}}, {{percentage}}, {{rating}}
+- Date/Time: {{date}}, {{time}}, {{datetime}}
+- Lorem Ipsum: {{word}}, {{words}}, {{sentence}}, {{paragraph}}
+- Other: {{uuid}}, {{heading}}, {{short}}
+Example: "characters": "Hello, {{name}}!" will render as "Hello, Sarah Johnson!"`;
 
     const STYLE_PRESETS = {
       'modern-dark': `
@@ -898,9 +1154,10 @@ COLOR PALETTE (Minimal):
 - Border: #E5E5E5`
     };
 
-    // Track selected components
+    // Track selected components and options
     let selectedComponents = [];
     let selectedStyle = 'modern-dark';
+    let selectedFont = 'Inter';
 
     // Generate the full prompt
     function generateFullPrompt() {
@@ -909,10 +1166,11 @@ COLOR PALETTE (Minimal):
       const componentsHint = selectedComponents.length > 0 
         ? `\nInclude these components: ${selectedComponents.join(', ')}`
         : '';
+      const fontInstruction = `\n\nFONT: Use "${selectedFont}" as the fontFamily for all TEXT nodes.`;
       
       if (!description) {
         return `${SCHEMA_CONTEXT}
-${styleContext}
+${styleContext}${fontInstruction}
 
 TASK: [Describe what you want to design here]${componentsHint}
 
@@ -920,7 +1178,7 @@ Remember: Output ONLY valid JSON, starting with { and ending with }`;
       }
 
       return `${SCHEMA_CONTEXT}
-${styleContext}
+${styleContext}${fontInstruction}
 
 TASK: ${description}${componentsHint}
 
@@ -1173,6 +1431,16 @@ Remember: Output ONLY valid JSON, starting with { and ending with }`;
       });
     });
 
+    // Font family selection
+    document.querySelectorAll('.font-option').forEach(option => {
+      option.addEventListener('click', () => {
+        document.querySelectorAll('.font-option').forEach(o => o.classList.remove('selected'));
+        option.classList.add('selected');
+        selectedFont = option.dataset.font;
+        updatePromptPreview();
+      });
+    });
+
     // Component chips (for prompt generator)
     document.querySelectorAll('#componentChips .chip').forEach(chip => {
       chip.addEventListener('click', () => {
@@ -1249,6 +1517,68 @@ Remember: Output ONLY valid JSON, starting with { and ending with }`;
       }
     }
 
+    // Status display for export panel
+    function showExportStatus(message, type) {
+      const status = document.getElementById('exportStatus');
+      status.className = 'status show ' + type;
+      status.querySelector('.message').textContent = message;
+      status.querySelector('.spinner').style.display = type === 'loading' ? 'block' : 'none';
+      
+      if (type !== 'loading') {
+        setTimeout(() => {
+          status.classList.remove('show');
+        }, 4000);
+      }
+    }
+
+    // Export button handler
+    document.getElementById('exportBtn').addEventListener('click', () => {
+      showExportStatus('Exporting selected frame...', 'loading');
+      parent.postMessage({ pluginMessage: { type: 'export' } }, '*');
+    });
+
+    // Format export JSON button
+    document.getElementById('formatExportBtn').addEventListener('click', () => {
+      const output = document.getElementById('exportOutput');
+      try {
+        const parsed = JSON.parse(output.value);
+        output.value = JSON.stringify(parsed, null, 2);
+        showExportStatus('Formatted successfully!', 'success');
+      } catch (e) {
+        showExportStatus('Invalid JSON: ' + e.message, 'error');
+      }
+    });
+
+    // Copy export JSON to clipboard
+    document.getElementById('copyExportBtn').addEventListener('click', async () => {
+      const output = document.getElementById('exportOutput');
+      const text = output.value.trim();
+      
+      if (!text) {
+        showExportStatus('No JSON to copy. Export a frame first.', 'error');
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(text);
+        
+        // Show success notification
+        const notification = document.createElement('div');
+        notification.className = 'copy-success';
+        notification.textContent = '✓ JSON copied to clipboard!';
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.remove();
+        }, 2000);
+      } catch (err) {
+        // Fallback for older browsers
+        output.select();
+        document.execCommand('copy');
+        showExportStatus('Copied to clipboard!', 'success');
+      }
+    });
+
     // Listen for messages from plugin
     window.onmessage = (event) => {
       const msg = event.data.pluginMessage;
@@ -1256,6 +1586,11 @@ Remember: Output ONLY valid JSON, starting with { and ending with }`;
         showStatus(msg.message, 'success');
       } else if (msg.type === 'error') {
         showStatus(msg.message, 'error');
+      } else if (msg.type === 'export-success') {
+        document.getElementById('exportOutput').value = msg.json;
+        showExportStatus(msg.message, 'success');
+      } else if (msg.type === 'export-error') {
+        showExportStatus(msg.message, 'error');
       }
     };
 
