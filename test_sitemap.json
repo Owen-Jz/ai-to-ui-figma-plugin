@@ -1,0 +1,73 @@
+{
+    "type": "FRAME",
+    "name": "Site Map Test",
+    "layoutMode": "HORIZONTAL",
+    "primaryAxisAlignItems": "CENTER",
+    "counterAxisAlignItems": "CENTER",
+    "width": 1400,
+    "height": 1000,
+    "fills": [{ "type": "SOLID", "color": { "r": 0.95, "g": 0.95, "b": 0.98 } }],
+    "children": [
+        {
+            "type": "SITEMAP",
+            "name": "E-commerce Sitemap",
+            "nodeWidth": 200,
+            "levelSpacing": 80,
+            "siblingSpacing": 40,
+            "sitemapData": {
+                "label": "Home Page",
+                "description": ["Hero Section", "Featured Products", "Newsletter"],
+                "color": "#1E88E5",
+                "children": [
+                    {
+                        "label": "Shop",
+                        "description": ["Product Grid", "Filters"],
+                        "color": "#43A047",
+                        "children": [
+                            {
+                                "label": "Men's",
+                                "description": ["T-Shirts", "Jeans"]
+                            },
+                            {
+                                "label": "Women's",
+                                "description": ["Dresses", "Tops"]
+                            },
+                            {
+                                "label": "Accessories",
+                                "children": [
+                                    { "label": "Hats" },
+                                    { "label": "Belts" }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "About Us",
+                        "description": ["Our Story", "Team"],
+                        "color": "#FB8C00",
+                        "children": [
+                            { "label": "Careers" },
+                            { "label": "Press" }
+                        ]
+                    },
+                    {
+                        "label": "Contact",
+                        "color": "#E53935",
+                        "children": [
+                            { "label": "Support Form" },
+                            { "label": "Locations" }
+                        ]
+                    },
+                    {
+                        "label": "Blog",
+                        "color": "#8E24AA",
+                        "children": [
+                            { "label": "Latest Posts" },
+                            { "label": "Categories" }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

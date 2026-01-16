@@ -1,0 +1,74 @@
+{
+  "type": "FRAME",
+  "name": "Icon Test Sheet",
+  "layoutMode": "VERTICAL",
+  "padding": { "top": 40, "right": 40, "bottom": 40, "left": 40 },
+  "itemSpacing": 32,
+  "fills": [{ "type": "SOLID", "color": "#FFFFFF" }],
+  "children": [
+    {
+      "type": "TEXT",
+      "name": "Title",
+      "characters": "Icon Expansion Test",
+      "fontSize": 32,
+      "fontWeight": "Bold"
+    },
+    {
+      "type": "TEXT",
+      "name": "Subtitle 1",
+      "characters": "New Social Icons",
+      "fontSize": 16,
+      "fontWeight": "Medium",
+      "textColor": "#666666"
+    },
+    {
+      "type": "FRAME",
+      "name": "Social Row",
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 24,
+      "children": [
+        { "type": "ICON", "name": "Twitter", "icon": "twitter", "color": "#1DA1F2", "size": 32 },
+        { "type": "ICON", "name": "GitHub", "icon": "github", "color": "#181717", "size": 32 },
+        { "type": "ICON", "name": "Facebook", "icon": "facebook", "color": "#1877F2", "size": 32 },
+        { "type": "ICON", "name": "Instagram", "icon": "instagram", "color": "#E4405F", "size": 32 }
+      ]
+    },
+    {
+      "type": "TEXT",
+      "name": "Subtitle 2",
+      "characters": "Raw SVG and Arrows",
+      "fontSize": 16,
+      "fontWeight": "Medium",
+      "textColor": "#666666"
+    },
+    {
+      "type": "FRAME",
+      "name": "Raw SVG Row",
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 24,
+      "children": [
+         { 
+             "type": "ICON", 
+             "name": "Custom Chevron (Raw)", 
+             "icon": "M128,180a52,52,0,1,1,52-52A52,52,0,0,1,128,180Z", 
+             "color": "#FF5500", 
+             "size": 32 
+         },
+         {
+             "type": "ICON",
+             "name": "Caret Down",
+             "icon": "caret-down",
+             "color": "#333333",
+             "size": 32
+         },
+         {
+             "type": "ICON",
+             "name": "File PDF",
+             "icon": "file-pdf",
+             "color": "#FF0000",
+             "size": 32
+         }
+      ]
+    }
+  ]
+}

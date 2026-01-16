@@ -76,9 +76,46 @@
     "package": "M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z",
     "truck": "M247.42,117l-14-35A15.93,15.93,0,0,0,218.58,72H184V64a8,8,0,0,0-8-8H24A16,16,0,0,0,8,72V184a16,16,0,0,0,16,16H41a32,32,0,0,0,62,0h50a32,32,0,0,0,62,0h17a16,16,0,0,0,16-16V120A7.94,7.94,0,0,0,247.42,117ZM184,88h34.58l9.6,24H184ZM24,72H168v64H24ZM72,208a16,16,0,1,1,16-16A16,16,0,0,1,72,208Zm81-24H103a32,32,0,0,0-62,0H24V152H168v12.31A32.11,32.11,0,0,0,153,184Zm31,24a16,16,0,1,1,16-16A16,16,0,0,1,184,208Zm48-24H201a32.06,32.06,0,0,0-17-21.41V128h48Z",
     "star": "M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51.07,31a16,16,0,0,1-23.84-17.34l13.49-58.54L21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Zm-23.41-12-54.1-4.69a8,8,0,0,1-6.67-4.85L128,44.65,105.68,92.79a8,8,0,0,1-6.67,4.85l-54.1,4.69,41.06,35.82a8,8,0,0,1,2.59,7.91L75.82,199l47.53-28.88a8,8,0,0,1,8.3,0L179.18,199l-12.74-53a8,8,0,0,1,2.59-7.91Z",
-    "heart": "M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"
+    "heart": "M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z",
+    // Arrows
+    "caret-up": "M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z",
+    "caret-down": "M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z",
+    "caret-left": "M165.66,213.66a8,8,0,0,1,0-11.32L91.31,128l74.35-74.34a8,8,0,0,1-11.32-11.32l-80,80a8,8,0,0,1,0,11.32l80,80A8,8,0,0,1,165.66,213.66Z",
+    "caret-right": "M101.66,213.66a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80a8,8,0,0,1,0,11.32l-80,80A8,8,0,0,1,101.66,213.66Z",
+    "chevron-up": "M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z",
+    "chevron-down": "M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z",
+    "chevron-left": "M165.66,213.66a8,8,0,0,1,0-11.32L91.31,128l74.35-74.34a8,8,0,0,1-11.32-11.32l-80,80a8,8,0,0,1,0,11.32l80,80A8,8,0,0,1,165.66,213.66Z",
+    "chevron-right": "M101.66,213.66a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80a8,8,0,0,1,0,11.32l-80,80A8,8,0,0,1,101.66,213.66Z",
+    // Social & Brands
+    "twitter": "M245.66,77.66l-29.9,29.9C209.72,177.58,150.67,232,80,232c-14.52,0-26.49-2.3-35.58-6.84-7.33-3.67-10.33-7.6-11.08-8.72a8,8,0,0,1,3.85-11.93c.26-.1,24.24-9.31,39.47-26.84a110.93,110.93,0,0,1-21.88-24.2c-12.4-18.41-26.28-50.39-22-98.18a8,8,0,0,1,13.65-4.92c.35.35,33.28,33.1,73.38,43.72,14.77-38.35,53-53.76,57.18-55.93,7-3.62,15.68-2.61,21.73,2.51l24.4,20.67c13.25-3.52,22.86-9.15,22.86-9.15a8,8,0,0,1,3.85,15.79Z",
+    "github": "M208.31,75.68A79.52,79.52,0,0,0,162.77,53,80.17,80.17,0,0,0,32,126.12c0,32.73,21,63.13,54,77.8.21.09.43.16.64.25q.67.29,1.34.54a79.89,79.89,0,0,0,29.56,6L128,210.63H139q8.79-.11,17.23-2.11a80,80,0,0,0,52.09-132.84ZM178,165.73C174.1,172.91,160.7,194.59,128,194.63h-3.41c-30.63-.37-43.18-20.07-46.79-27.42-3-6-5.8-21.5-5.8-37.4,0-17,11.75-26.43,14-28.16l2.35-1.74c2.82-2.09,11.36-7.86,26-7.86,13.79,0,22,5.2,25.9,7.66l2.36,1.48c3.27,2.05,14.65,9.18,14.65,28.62C157.25,148.62,152.06,163.66,148.33,171.19c-1.35-6.68-8.62-42.3,1.35-60.67a8,8,0,0,0-14.07-7.63c-7.23,13.33-4.59,38.33-2.26,51.81-4.72-2.73-10.15-4.14-16-4.14a33.32,33.32,0,0,0-5.87.52c2.4-13.43,5-38.27-2.3-51.49a8,8,0,1,0-14.09,7.56c10.18,19,2.6,56.09,1.18,62.87-2.68-6.55-6.66-20.91-2.91-42.33,0-12.78-7.16-16.71-8.5-17.39-9.15,0-14,3-15.34,3.81-2.75,1.72-6,4.72-6,17.47,0,11.9,2,24.47,4.3,31.74,2.78,8.81,11.53,24.16,36.94,22.86h3.48c26.74-.29,35.61-16.05,38.45-22.18,2.72-5.88,6.86-21.16,6.86-37.76,0-13.68-8-18-10.09-19-4.21-2-12.28-5.85-21-5.85-8.23,0-16.14,3.38-18.4,4.41l-2.08,1c-1.63,1-8.31,5.28-8.31,16.27,0,10.13,3.48,31.43,8.42,48.74a8,8,0,0,0,15.38-4.39C128.71,155,125.75,138,125.7,130.67c3.9.23,7.91.35,11.93.35,5.34,0,10.6-1.5,15.17-2.61a55.19,55.19,0,0,1-3.6,18.91,8,8,0,1,0,14.78,4.74c1.1-3.41,2.07-7.2,2.83-11.3,3.74,7.55,8.8,19.38,11.19,25Z",
+    "facebook": "M224,32H32A16,16,0,0,0,16,48V208a16,16,0,0,0,16,16H128V136H96V96h32V64a40,40,0,0,1,40-40h32V64H168a8,8,0,0,0-8,8V96h40l-8,40H160v88h64a16,16,0,0,0,16-16V48A16,16,0,0,0,224,32Z",
+    "instagram": "M172,120a44,44,0,1,1-44-44A44,44,0,0,1,172,120Zm56,8a52.06,52.06,0,0,0-52-52H80a52.06,52.06,0,0,0-52,52v48a52.06,52.06,0,0,0,52,52h96a52.06,52.06,0,0,0,52-52ZM128,180a52,52,0,1,1,52-52A52,52,0,0,1,128,180Zm54-106a10,10,0,1,1-10-10A10,10,0,0,1,182,74Z",
+    // UI Controls
+    "toggle-left": "M176,56H80a72,72,0,0,0,0,144h96a72,72,0,0,0,0-144ZM80,168a40,40,0,1,1,40-40A40,40,0,0,1,80,168Z",
+    "toggle-right": "M176,56H80a72,72,0,0,0,0,144h96a72,72,0,0,0,0-144Zm0,112a40,40,0,1,1,40-40A40,40,0,0,1,176,168Z",
+    "slider": "M224,120H203.49a40,40,0,0,0-76.91-13.36,39.38,39.38,0,0,0-1.58,13.36H32a8,8,0,0,0,0,16H125a39.38,39.38,0,0,0,1.58,13.36,40,40,0,0,0,76.91-13.36H224a8,8,0,0,0,0-16Zm-59,19.38a24,24,0,1,1,24-24A24,24,0,0,1,165,139.38Z",
+    "circle": "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z",
+    "dots-three": "M128,112a16,16,0,1,0,16,16A16,16,0,0,0,128,112Zm-64,0a16,16,0,1,0,16,16A16,16,0,0,0,64,112Zm128,0a16,16,0,1,0,16,16A16,16,0,0,0,192,112Z",
+    // Files & Folders
+    "folder": "M216,72H130.67L102.93,35.18A16,16,0,0,0,90.13,29.53L32,29.53A16,16,0,0,0,16,45.53V200a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V96a24,24,0,0,0-24-24Zm8,128H32V45.53l58.13,0,20,26.47H216v16H104a8,8,0,0,0,0,16H224Z",
+    "file": "M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48Z",
+    "file-text": "M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48Zm-48-40a8,8,0,0,1,0,16H88a8,8,0,0,1,0-16Zm0,32a8,8,0,0,1,0,16H88a8,8,0,0,1,0-16Z",
+    "file-pdf": "M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48Zm-36-80H92a12,12,0,0,0-12,12v56a12,12,0,0,0,12,12h24a8,8,0,0,0,8-8V172h36a12,12,0,0,0,12-12V148A12,12,0,0,0,164,136Zm-4,20h-36v-4h36Zm-56,20v24H92v-24Z",
+    // Misc
+    "calendar": "M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V80H208Zm0-144H48V48H72v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24Z",
+    "clock": "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z",
+    "map-pin": "M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.52,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206.53C113.83,208.72,56,155.63,56,104a72,72,0,0,1,144,0C200,155.61,142.17,208.7,128,222.53Z",
+    "eye": "M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.19,141.6,183.27,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z",
+    "lock": "M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Zm-80,84a12,12,0,1,1,12-12A12,12,0,0,1,128,164Zm32-84H96V56a32,32,0,0,1,64,0Z"
   };
   function hexToRgb(hex) {
+    if (typeof hex === "object" && hex !== null && "r" in hex && "g" in hex && "b" in hex) {
+      return { r: hex.r, g: hex.g, b: hex.b };
+    }
+    if (typeof hex !== "string") {
+      return { r: 0.5, g: 0.5, b: 0.5 };
+    }
     hex = hex.replace(/^#/, "");
     if (hex.length === 3) {
       hex = hex.split("").map((c) => c + c).join("");
@@ -94,6 +131,9 @@
     };
   }
   function hexToAlpha(hex) {
+    if (typeof hex !== "string") {
+      return 1;
+    }
     hex = hex.replace(/^#/, "");
     if (hex.length === 8) {
       return parseInt(hex.substring(6, 8), 16) / 255;
@@ -880,17 +920,39 @@
     const iconName = data.icon || "star";
     const size = data.size || 24;
     const color = data.color || "#000000";
+    let svgMarkup = "";
     const pathData = PHOSPHOR_ICONS[iconName];
-    if (!pathData) {
+    if (pathData) {
+      svgMarkup = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path d="${pathData}" fill="${color}"/></svg>`;
+    } else if (iconName.trim().startsWith("<svg")) {
+      svgMarkup = iconName;
+    } else if (iconName.trim().match(/^[MmLlHhVvCcSsQqTtAaZz0-9\s,.-]+$/)) {
+      svgMarkup = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path d="${iconName}" fill="${color}"/></svg>`;
+    } else {
       console.warn(`Icon "${iconName}" not found, using star fallback`);
+      const starPath = PHOSPHOR_ICONS["star"];
+      svgMarkup = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path d="${starPath}" fill="${color}"/></svg>`;
     }
-    const svgPath = pathData || PHOSPHOR_ICONS["star"];
-    const svgMarkup = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path d="${svgPath}" fill="${color}"/></svg>`;
-    const svgNode = figma.createNodeFromSvg(svgMarkup);
+    let svgNode;
+    try {
+      svgNode = figma.createNodeFromSvg(svgMarkup);
+    } catch (e) {
+      console.error("Failed to create icon from SVG:", e);
+      const starPath = PHOSPHOR_ICONS["star"];
+      svgMarkup = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path d="${starPath}" fill="${color}"/></svg>`;
+      svgNode = figma.createNodeFromSvg(svgMarkup);
+    }
     svgNode.name = data.name || `Icon: ${iconName}`;
     svgNode.children.forEach((child) => {
       if ("constraints" in child) {
         child.constraints = { horizontal: "SCALE", vertical: "SCALE" };
+      }
+      if (color && "fills" in child) {
+        const fills = child.fills;
+        if (pathData || iconName.trim().match(/^[MmLlHhVvCcSsQqTtAaZz0-9\s,.-]+$/)) {
+          const rgb = hexToRgb(color);
+          child.fills = [{ type: "SOLID", color: rgb }];
+        }
       }
     });
     svgNode.resize(size, size);
@@ -898,6 +960,311 @@
       svgNode.opacity = data.opacity;
     }
     return { node: svgNode, data };
+  }
+  var CHART_COLORS = [
+    "#6366F1",
+    // Indigo
+    "#EC4899",
+    // Pink
+    "#14B8A6",
+    // Teal
+    "#F59E0B",
+    // Amber
+    "#8B5CF6",
+    // Purple
+    "#EF4444",
+    // Red
+    "#10B981",
+    // Emerald
+    "#3B82F6",
+    // Blue
+    "#F97316",
+    // Orange
+    "#06B6D4"
+    // Cyan
+  ];
+  function describeArc(cx, cy, radius, startAngle, endAngle) {
+    const start = polarToCartesian(cx, cy, radius, endAngle);
+    const end = polarToCartesian(cx, cy, radius, startAngle);
+    const largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+    return [
+      "M",
+      start.x,
+      start.y,
+      "A",
+      radius,
+      radius,
+      0,
+      largeArcFlag,
+      0,
+      end.x,
+      end.y,
+      "L",
+      cx,
+      cy,
+      "Z"
+    ].join(" ");
+  }
+  function polarToCartesian(cx, cy, radius, angleInDegrees) {
+    const angleInRadians = (angleInDegrees - 90) * Math.PI / 180;
+    return {
+      x: cx + radius * Math.cos(angleInRadians),
+      y: cy + radius * Math.sin(angleInRadians)
+    };
+  }
+  function createChart(data, parent) {
+    var _a;
+    const chartType = data.chartType || "PIE";
+    const chartData = data.chartData || [
+      { value: 30, label: "A" },
+      { value: 25, label: "B" },
+      { value: 20, label: "C" },
+      { value: 15, label: "D" },
+      { value: 10, label: "E" }
+    ];
+    const width = typeof data.width === "number" ? data.width : 200;
+    const height = typeof data.height === "number" ? data.height : 200;
+    const coloredData = chartData.map((point, index) => __spreadProps(__spreadValues({}, point), {
+      color: point.color || CHART_COLORS[index % CHART_COLORS.length]
+    }));
+    const container = figma.createFrame();
+    container.name = data.name || `${chartType} Chart`;
+    container.resize(width, height);
+    container.fills = [];
+    if (chartType === "PIE" || chartType === "DONUT") {
+      const total = coloredData.reduce((sum, d) => sum + d.value, 0);
+      const cx = width / 2;
+      const cy = height / 2;
+      const radius = Math.min(width, height) / 2 - 4;
+      const donutHole = data.donutHoleSize || 0.5;
+      let currentAngle = 0;
+      coloredData.forEach((point, index) => {
+        const sliceAngle = point.value / total * 360;
+        const endAngle = currentAngle + sliceAngle;
+        const slicePath = describeArc(cx, cy, radius, currentAngle, endAngle);
+        const sliceSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><path d="${slicePath}" fill="${point.color}"/></svg>`;
+        try {
+          const sliceNode = figma.createNodeFromSvg(sliceSvg);
+          sliceNode.name = point.label || `Slice ${index + 1}`;
+          container.appendChild(sliceNode);
+          if (sliceNode.children.length > 0) {
+            sliceNode.children.forEach((child) => {
+              if ("constraints" in child) {
+                child.constraints = { horizontal: "SCALE", vertical: "SCALE" };
+              }
+            });
+          }
+        } catch (e) {
+          console.warn("Failed to create chart slice:", e);
+        }
+        currentAngle = endAngle;
+      });
+      if (chartType === "DONUT") {
+        const holeRadius = radius * donutHole;
+        const hole = figma.createEllipse();
+        hole.name = "Donut Hole";
+        hole.resize(holeRadius * 2, holeRadius * 2);
+        hole.x = cx - holeRadius;
+        hole.y = cy - holeRadius;
+        hole.fills = [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }];
+        container.appendChild(hole);
+      }
+    } else if (chartType === "BAR") {
+      const maxValue = Math.max(...coloredData.map((d) => d.value));
+      const barWidth = (width - 20) / coloredData.length - 8;
+      const chartHeight = height - 40;
+      coloredData.forEach((point, index) => {
+        const barHeight = point.value / maxValue * chartHeight;
+        const x = 10 + index * (barWidth + 8);
+        const y = height - 20 - barHeight;
+        const bar = figma.createRectangle();
+        bar.name = point.label || `Bar ${index + 1}`;
+        bar.resize(barWidth, barHeight);
+        bar.x = x;
+        bar.y = y;
+        bar.cornerRadius = 4;
+        const rgb = hexToRgb(point.color);
+        bar.fills = [{ type: "SOLID", color: rgb }];
+        container.appendChild(bar);
+      });
+    } else if (chartType === "LINE") {
+      const maxValue = Math.max(...coloredData.map((d) => d.value));
+      const chartHeight = height - 40;
+      const stepX = (width - 40) / (coloredData.length - 1);
+      let pathD = "";
+      const points = [];
+      coloredData.forEach((point, index) => {
+        const x = 20 + index * stepX;
+        const y = height - 20 - point.value / maxValue * chartHeight;
+        if (index === 0) {
+          pathD = `M ${x} ${y}`;
+        } else {
+          pathD += ` L ${x} ${y}`;
+        }
+        points.push(`${x},${y}`);
+      });
+      const lineColor = ((_a = coloredData[0]) == null ? void 0 : _a.color) || CHART_COLORS[0];
+      const lineSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><path d="${pathD}" fill="none" stroke="${lineColor}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+      try {
+        const lineNode = figma.createNodeFromSvg(lineSvg);
+        lineNode.name = "Line";
+        container.appendChild(lineNode);
+      } catch (e) {
+        console.warn("Failed to create line chart:", e);
+      }
+      coloredData.forEach((point, index) => {
+        const x = 20 + index * stepX;
+        const y = height - 20 - point.value / maxValue * chartHeight;
+        const dot = figma.createEllipse();
+        dot.name = point.label || `Point ${index + 1}`;
+        dot.resize(10, 10);
+        dot.x = x - 5;
+        dot.y = y - 5;
+        const rgb = hexToRgb(point.color);
+        dot.fills = [{ type: "SOLID", color: rgb }];
+        container.appendChild(dot);
+      });
+    }
+    return { node: container, data };
+  }
+  function layoutTree(data, defaults) {
+    const descArray = data.description;
+    const descLength = descArray && Array.isArray(descArray) ? descArray.length : 0;
+    const descHeight = descLength * 20;
+    const estimatedHeight = 56 + descHeight + (descLength > 0 ? 12 : 0);
+    const node = {
+      data,
+      x: 0,
+      y: 0,
+      width: defaults.nodeWidth,
+      height: estimatedHeight,
+      children: [],
+      subtreeWidth: 0
+    };
+    if (data.children && Array.isArray(data.children) && data.children.length > 0) {
+      let currentX = 0;
+      node.children = data.children.map((child) => {
+        const layoutChild = layoutTree(child, defaults);
+        layoutChild.x = currentX;
+        currentX += layoutChild.subtreeWidth + defaults.siblingSpacing;
+        return layoutChild;
+      });
+      node.subtreeWidth = currentX - defaults.siblingSpacing;
+    } else {
+      node.subtreeWidth = defaults.nodeWidth;
+    }
+    return node;
+  }
+  async function createSitemap(data, parent) {
+    const nodeWidth = data.nodeWidth || 180;
+    const levelSpacing = data.levelSpacing || 60;
+    const siblingSpacing = data.siblingSpacing || 20;
+    const defaultColor = data.color || "#10B981";
+    const sitemapData = data.sitemapData || {
+      label: "Root",
+      children: [
+        { label: "Child 1" },
+        { label: "Child 2" }
+      ]
+    };
+    await figma.loadFontAsync({ family: "Inter", style: "Regular" });
+    await figma.loadFontAsync({ family: "Inter", style: "Bold" });
+    const layoutRoot = layoutTree(sitemapData, { nodeWidth, levelSpacing, siblingSpacing });
+    const container = figma.createFrame();
+    container.name = data.name || "Sitemap";
+    container.fills = [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }];
+    container.resize(layoutRoot.subtreeWidth + 100, 1e3);
+    renderSitemapNodeWithLayout(layoutRoot, container, 50, 50, levelSpacing, defaultColor);
+    let maxX = 0;
+    let maxY = 0;
+    container.children.forEach((child) => {
+      if (child.x + child.width > maxX)
+        maxX = child.x + child.width;
+      if (child.y + child.height > maxY)
+        maxY = child.y + child.height;
+    });
+    container.resize(maxX + 50, maxY + 50);
+    return { node: container, data };
+  }
+  function renderSitemapNodeWithLayout(layout, container, startX, y, levelSpacing, baseColor) {
+    let nodeX = startX + (layout.subtreeWidth - layout.width) / 2;
+    layout.x = nodeX;
+    layout.y = y;
+    const frame = figma.createFrame();
+    frame.name = layout.data.label || "Node";
+    frame.x = nodeX;
+    frame.y = y;
+    frame.resize(layout.width, layout.height);
+    frame.fills = [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }];
+    const colorHex = layout.data.color || baseColor;
+    const rgb = hexToRgb(colorHex);
+    frame.strokes = [{ type: "SOLID", color: rgb }];
+    frame.strokeWeight = 2;
+    frame.cornerRadius = 8;
+    frame.layoutMode = "VERTICAL";
+    frame.paddingTop = 16;
+    frame.paddingBottom = 16;
+    frame.paddingLeft = 16;
+    frame.paddingRight = 16;
+    frame.itemSpacing = 8;
+    frame.primaryAxisSizingMode = "AUTO";
+    frame.counterAxisSizingMode = "FIXED";
+    frame.resize(layout.width, layout.height);
+    const title = figma.createText();
+    title.characters = layout.data.label || "Node";
+    title.fontSize = 14;
+    title.fontName = { family: "Inter", style: "Bold" };
+    title.fills = [{ type: "SOLID", color: rgb }];
+    title.layoutAlign = "STRETCH";
+    frame.appendChild(title);
+    const descriptionArray = layout.data.description;
+    if (descriptionArray && Array.isArray(descriptionArray) && descriptionArray.length > 0) {
+      for (let i = 0; i < descriptionArray.length; i++) {
+        const item = descriptionArray[i];
+        const itemText = figma.createText();
+        itemText.characters = `\u2022 ${item}`;
+        itemText.fontSize = 12;
+        itemText.fills = [{ type: "SOLID", color: { r: 0.2, g: 0.2, b: 0.2 } }];
+        itemText.fontName = { family: "Inter", style: "Regular" };
+        itemText.layoutAlign = "STRETCH";
+        frame.appendChild(itemText);
+      }
+    }
+    container.appendChild(frame);
+    const finalHeight = frame.height;
+    const childrenArray = layout.children;
+    if (childrenArray && Array.isArray(childrenArray) && childrenArray.length > 0) {
+      const childY = y + finalHeight + levelSpacing;
+      for (let i = 0; i < childrenArray.length; i++) {
+        const child = childrenArray[i];
+        const childAbsX = startX + child.x;
+        renderSitemapNodeWithLayout(child, container, childAbsX, childY, levelSpacing, baseColor);
+        const parentBottomX = nodeX + layout.width / 2;
+        const parentBottomY = y + finalHeight;
+        const childCenterAbsX = startX + child.x + child.width / 2;
+        const childAbsY = childY;
+        const midY = parentBottomY + levelSpacing / 2;
+        const minX = Math.min(parentBottomX, childCenterAbsX) - 5;
+        const minY2 = parentBottomY - 5;
+        const maxX = Math.max(parentBottomX, childCenterAbsX) + 5;
+        const maxY = childAbsY + 5;
+        const svgWidth = Math.max(maxX - minX, 10);
+        const svgHeight = Math.max(maxY - minY2, 10);
+        const pathData = [
+          `M ${parentBottomX} ${parentBottomY}`,
+          `L ${parentBottomX} ${midY}`,
+          `L ${childCenterAbsX} ${midY}`,
+          `L ${childCenterAbsX} ${childAbsY}`
+        ].join(" ");
+        try {
+          const svgString = `<svg xmlns="http://www.w3.org/2000/svg" width="${svgWidth}" height="${svgHeight}" viewBox="${minX} ${minY2} ${svgWidth} ${svgHeight}"><path d="${pathData}" stroke="${colorHex}" stroke-width="2" fill="none"/></svg>`;
+          const connector = figma.createNodeFromSvg(svgString);
+          connector.name = "Connector";
+          container.insertChild(0, connector);
+        } catch (e) {
+        }
+      }
+    }
   }
   async function createNodeWithData(data, parent) {
     switch (data.type) {
@@ -911,6 +1278,10 @@
         return createRectangle(data, parent);
       case "ICON":
         return createIcon(data, parent);
+      case "CHART":
+        return createChart(data, parent);
+      case "SITEMAP":
+        return await createSitemap(data, parent);
       default:
         console.warn(`Unknown node type: ${data.type}`);
         return null;

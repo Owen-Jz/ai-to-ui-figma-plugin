@@ -1,0 +1,159 @@
+{
+  "type": "FRAME",
+  "name": "Chart Dashboard",
+  "layoutMode": "VERTICAL",
+  "padding": { "top": 40, "right": 40, "bottom": 40, "left": 40 },
+  "itemSpacing": 32,
+  "fills": [{ "type": "SOLID", "color": "#0F172A" }],
+  "children": [
+    {
+      "type": "TEXT",
+      "name": "Title",
+      "characters": "Analytics Dashboard",
+      "fontSize": 28,
+      "fontWeight": "Bold",
+      "textColor": "#FFFFFF"
+    },
+    {
+      "type": "FRAME",
+      "name": "Charts Row",
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 24,
+      "children": [
+        {
+          "type": "FRAME",
+          "name": "Pie Chart Card",
+          "layoutMode": "VERTICAL",
+          "padding": { "top": 24, "right": 24, "bottom": 24, "left": 24 },
+          "itemSpacing": 16,
+          "cornerRadius": 16,
+          "fills": [{ "type": "SOLID", "color": "#1E293B" }],
+          "children": [
+            {
+              "type": "TEXT",
+              "name": "Chart Title",
+              "characters": "Revenue Split",
+              "fontSize": 16,
+              "fontWeight": "SemiBold",
+              "textColor": "#FFFFFF"
+            },
+            {
+              "type": "CHART",
+              "name": "Revenue Pie",
+              "chartType": "PIE",
+              "width": 180,
+              "height": 180,
+              "chartData": [
+                { "value": 45, "label": "Products", "color": "#6366F1" },
+                { "value": 30, "label": "Services", "color": "#EC4899" },
+                { "value": 25, "label": "Licensing", "color": "#14B8A6" }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "FRAME",
+          "name": "Donut Chart Card",
+          "layoutMode": "VERTICAL",
+          "padding": { "top": 24, "right": 24, "bottom": 24, "left": 24 },
+          "itemSpacing": 16,
+          "cornerRadius": 16,
+          "fills": [{ "type": "SOLID", "color": "#1E293B" }],
+          "children": [
+            {
+              "type": "TEXT",
+              "name": "Chart Title",
+              "characters": "Task Progress",
+              "fontSize": 16,
+              "fontWeight": "SemiBold",
+              "textColor": "#FFFFFF"
+            },
+            {
+              "type": "CHART",
+              "name": "Task Donut",
+              "chartType": "DONUT",
+              "width": 180,
+              "height": 180,
+              "donutHoleSize": 0.6,
+              "chartData": [
+                { "value": 65, "label": "Completed", "color": "#10B981" },
+                { "value": 20, "label": "In Progress", "color": "#F59E0B" },
+                { "value": 15, "label": "Pending", "color": "#EF4444" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "name": "Bar Chart Card",
+      "layoutMode": "VERTICAL",
+      "padding": { "top": 24, "right": 24, "bottom": 24, "left": 24 },
+      "itemSpacing": 16,
+      "cornerRadius": 16,
+      "width": 400,
+      "fills": [{ "type": "SOLID", "color": "#1E293B" }],
+      "children": [
+        {
+          "type": "TEXT",
+          "name": "Chart Title",
+          "characters": "Monthly Sales",
+          "fontSize": 16,
+          "fontWeight": "SemiBold",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "type": "CHART",
+          "name": "Sales Bar",
+          "chartType": "BAR",
+          "width": 350,
+          "height": 150,
+          "chartData": [
+            { "value": 45, "label": "Jan" },
+            { "value": 62, "label": "Feb" },
+            { "value": 55, "label": "Mar" },
+            { "value": 78, "label": "Apr" },
+            { "value": 90, "label": "May" },
+            { "value": 72, "label": "Jun" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "FRAME",
+      "name": "Line Chart Card",
+      "layoutMode": "VERTICAL",
+      "padding": { "top": 24, "right": 24, "bottom": 24, "left": 24 },
+      "itemSpacing": 16,
+      "cornerRadius": 16,
+      "width": 400,
+      "fills": [{ "type": "SOLID", "color": "#1E293B" }],
+      "children": [
+        {
+          "type": "TEXT",
+          "name": "Chart Title",
+          "characters": "User Growth",
+          "fontSize": 16,
+          "fontWeight": "SemiBold",
+          "textColor": "#FFFFFF"
+        },
+        {
+          "type": "CHART",
+          "name": "Growth Line",
+          "chartType": "LINE",
+          "width": 350,
+          "height": 150,
+          "chartData": [
+            { "value": 100, "label": "Jan", "color": "#8B5CF6" },
+            { "value": 150, "label": "Feb", "color": "#8B5CF6" },
+            { "value": 130, "label": "Mar", "color": "#8B5CF6" },
+            { "value": 200, "label": "Apr", "color": "#8B5CF6" },
+            { "value": 280, "label": "May", "color": "#8B5CF6" },
+            { "value": 350, "label": "Jun", "color": "#8B5CF6" }
+          ]
+        }
+      ]
+    }
+  ]
+}

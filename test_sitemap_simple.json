@@ -1,0 +1,22 @@
+{
+    "type": "SITEMAP",
+    "name": "Simple Sitemap Test",
+    "nodeWidth": 180,
+    "levelSpacing": 60,
+    "siblingSpacing": 30,
+    "sitemapData": {
+        "label": "Home",
+        "description": ["Main Page"],
+        "color": "#3B82F6",
+        "children": [
+            {
+                "label": "About",
+                "color": "#10B981"
+            },
+            {
+                "label": "Contact",
+                "color": "#F59E0B"
+            }
+        ]
+    }
+}
