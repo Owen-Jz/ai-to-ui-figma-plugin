@@ -759,7 +759,7 @@ Example:
       <div class="input-group">
         <label>Export Figma Frame to JSON</label>
         <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5;">
-          Select a Frame in Figma and click "Export" to convert it into the AI-to-UI JSON format. 
+          Select a Frame in Figma and click "Export" to convert it into the AI-to-UI JSON format.
           You can then paste this JSON into an LLM to understand, modify, or extend your design.
         </p>
       </div>
@@ -813,9 +813,12 @@ The JSON output can be:
       <div class="examples" style="margin-top: 20px;">
         <div class="examples-header">💡 Tips for LLM Usage</div>
         <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.6;">
-          <p style="margin-bottom: 8px;">• <strong>Ask for modifications:</strong> "Change the primary color to blue and increase padding"</p>
-          <p style="margin-bottom: 8px;">• <strong>Request additions:</strong> "Add a footer section with social media links"</p>
-          <p style="margin-bottom: 8px;">• <strong>Get explanations:</strong> "Explain the layout structure of this design"</p>
+          <p style="margin-bottom: 8px;">• <strong>Ask for modifications:</strong> "Change the primary color to blue and
+            increase padding"</p>
+          <p style="margin-bottom: 8px;">• <strong>Request additions:</strong> "Add a footer section with social media
+            links"</p>
+          <p style="margin-bottom: 8px;">• <strong>Get explanations:</strong> "Explain the layout structure of this
+            design"</p>
           <p>• <strong>Create variations:</strong> "Generate a dark mode version of this component"</p>
         </div>
       </div>
@@ -907,7 +910,7 @@ The JSON output can be:
           </tr>
           <tr>
             <td>fills</td>
-            <td>[{ type: "SOLID", color: "#HEX" }]</td>
+            <td>SOLID, GRADIENT_LINEAR, GRADIENT_RADIAL</td>
           </tr>
           <tr>
             <td>strokes</td>
@@ -923,9 +926,22 @@ The JSON output can be:
           </tr>
           <tr>
             <td>effects</td>
-            <td>[{ type: "DROP_SHADOW", ... }]</td>
+            <td>DROP_SHADOW, INNER_SHADOW, LAYER_BLUR, BG_BLUR</td>
+          </tr>
+          <tr>
+            <td>opacity</td>
+            <td>number (0-1)</td>
+          </tr>
+          <tr>
+            <td>background</td>
+            <td>"gradient-sunset" | "mesh-aurora" | ...</td>
           </tr>
         </table>
+
+        <h3 style="margin-top: 20px;">🎨 Background Presets</h3>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Gradients: gradient-sunset,
+          gradient-ocean, gradient-cotton-candy, gradient-midnight</p>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Meshes: mesh-aurora, mesh-fire</p>
 
         <h3 style="margin-top: 20px;">✏️ Text Properties</h3>
         <table class="prop-table">
@@ -1022,7 +1038,9 @@ The JSON output can be:
             <td>0-1 (for DONUT charts, default 0.5)</td>
           </tr>
         </table>
-        <p style="font-size: 10px; color: var(--text-secondary); margin-top: 8px; font-style: italic;">Example: { "type": "CHART", "chartType": "PIE", "chartData": [{ "value": 30, "label": "Sales" }, { "value": 70, "label": "Costs" }], "width": 200, "height": 200 }</p>
+        <p style="font-size: 10px; color: var(--text-secondary); margin-top: 8px; font-style: italic;">Example: {
+          "type": "CHART", "chartType": "PIE", "chartData": [{ "value": 30, "label": "Sales" }, { "value": 70, "label":
+          "Costs" }], "width": 200, "height": 200 }</p>
 
         <h3 style="margin-top: 20px;">🗺️ Sitemap Properties</h3>
         <table class="prop-table">
@@ -1042,23 +1060,40 @@ The JSON output can be:
             <td>levelSpacing</td>
             <td>number (vertical gap, default 60)</td>
           </tr>
-           <tr>
+          <tr>
             <td>siblingSpacing</td>
             <td>number (horizontal gap, default 20)</td>
           </tr>
         </table>
-        <p style="font-size: 10px; color: var(--text-secondary); margin-top: 8px; font-style: italic;">Example: { "type": "SITEMAP", "sitemapData": { "label": "Home", "children": [...] } }</p>
+        <p style="font-size: 10px; color: var(--text-secondary); margin-top: 8px; font-style: italic;">Example: {
+          "type": "SITEMAP", "sitemapData": { "label": "Home", "children": [...] } }</p>
 
         <h3 style="margin-top: 20px;">⭐ Phosphor Icons</h3>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Navigation: house, magnifying-glass, gear, bell, user, users, arrow-left, arrow-right, x, list</p>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Actions: plus, minus, pencil, trash, download, upload, share, copy, check, x-circle</p>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Media: image, camera, video, play, pause, stop, music-note, microphone, speaker-high</p>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Communication: envelope, chat, phone, paper-plane-tilt, at, link, globe, wifi, cloud</p>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Commerce: shopping-cart, credit-card, wallet, receipt, tag, storefront, package, truck, star, heart</p>
-        <p style="font-size: 11px; color: var(--success); margin-bottom: 8px;">✨ <strong>New:</strong> You can also pass a raw SVG path string (e.g., "M10 10 L50 50...") or a full &lt;svg&gt; string in the "icon" field for custom icons!</p>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Navigation: house,
+          magnifying-glass, gear, bell, user, users, arrow-left, arrow-right, arrow-up, arrow-down, x, list, caret-down,
+          caret-right</p>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Actions: plus, minus, pencil,
+          trash, download, upload, share, copy, check, check-circle, x-circle, warning, info, question, prohibit</p>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Media: image, camera, video, play,
+          pause, stop, music-note, microphone, speaker-high</p>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Communication: envelope, chat,
+          phone, paper-plane-tilt, paper-plane-right, at, link, globe, wifi, cloud</p>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Devices & Tech: desktop, laptop,
+          tablet, device-mobile, keyboard, mouse</p>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Weather: sun, moon, cloud-rain,
+          snowflake, umbrella, wind</p>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Commerce: shopping-cart,
+          credit-card, wallet, receipt, tag, storefront, package, truck, star, heart, bank, medal, funnel</p>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Brands: twitter, github, facebook,
+          instagram, linkedin, youtube, google, apple, figma</p>
+        <p style="font-size: 11px; color: var(--success); margin-bottom: 8px;">✨ <strong>New:</strong> You can also pass
+          a raw SVG path string (e.g., "M10 10 L50 50...") or a full &lt;svg&gt; string in the "icon" field for custom
+          icons!</p>
 
         <h3 style="margin-top: 20px;">🎲 Fake Data Placeholders</h3>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 12px;">Use <code style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">{{placeholder}}</code> in TEXT characters to auto-generate realistic data:</p>
+        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 12px;">Use <code
+            style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">{{placeholder}}</code> in TEXT
+          characters to auto-generate realistic data:</p>
         <table class="prop-table">
           <tr>
             <th>Category</th>
@@ -1097,7 +1132,8 @@ The JSON output can be:
             <td>{{uuid}}, {{heading}}, {{short}}</td>
           </tr>
         </table>
-        <p style="font-size: 10px; color: var(--text-secondary); margin-top: 8px; font-style: italic;">Example: "Hello, {{name}}!" → "Hello, Sarah Johnson!"</p>
+        <p style="font-size: 10px; color: var(--text-secondary); margin-top: 8px; font-style: italic;">Example: "Hello,
+          {{name}}!" → "Hello, Sarah Johnson!"</p>
       </div>
     </div>
 
@@ -1119,8 +1155,8 @@ CRITICAL RULES:
 4. Use Auto Layout by default. Only use layoutPositioning: "ABSOLUTE" for overlays like badges or floating elements.
 5. Use professional spacing (8, 16, 24, 32, 48, 64px).
 6. Apply subtle shadows, rounded corners (8-24px), and modern typography.
-6. Apply subtle shadows, rounded corners (8-24px), and modern typography.
 7. Use ICON type for vector icons. Use Phosphor names OR raw SVG strings for custom icons.
+8. Use GRADIENTS for rich backgrounds where appropriate.
 
 COMMON MISTAKE TO AVOID:
 - WRONG: "layoutMode": "CENTER" ❌ (CENTER is NOT valid for layoutMode!)
@@ -1135,11 +1171,21 @@ JSON SCHEMA:
   "counterAxisAlignItems": "MIN" | "MAX" | "CENTER" (CENTER is valid here),
   "itemSpacing": number,
   "padding": { "top": number, "right": number, "bottom": number, "left": number },
-  "fills": [{ "type": "SOLID", "color": "#RRGGBB" }],
+  "background": "preset-name (e.g. 'gradient-sunset', 'mesh-aurora')",
+  "fills": [
+    { "type": "SOLID", "color": "#RRGGBB", "opacity": 0-1 },
+    { "type": "GRADIENT_LINEAR", "color": "#RRGGBB", "opacity": 1 } 
+  ],
   "strokes": [{ "type": "SOLID", "color": "#RRGGBB" }],
   "strokeWeight": number,
   "cornerRadius": number,
-  "effects": [{ "type": "DROP_SHADOW", "color": "#RRGGBBAA", "offset": { "x": 0, "y": 4 }, "radius": 12, "visible": true }],
+  "effects": [
+    { "type": "DROP_SHADOW", "color": "#RRGGBBAA", "offset": { "x": 0, "y": 4 }, "radius": 12, "visible": true },
+    { "type": "INNER_SHADOW", "color": "#RRGGBBAA", "offset": { "x": 0, "y": 2 }, "radius": 4, "visible": true },
+    { "type": "LAYER_BLUR", "radius": 4, "visible": true },
+    { "type": "BACKGROUND_BLUR", "radius": 20, "visible": true }
+  ],
+  "opacity": number (0-1),
   "width": "fill" | "hug" | number,
   "height": "fill" | "hug" | number,
   "layoutPositioning": "AUTO" | "ABSOLUTE" (use ABSOLUTE for overlays/badges),
@@ -1151,7 +1197,6 @@ JSON SCHEMA:
   "fontFamily": "Inter" | "Poppins" | "Roboto" | "Open Sans" | "Montserrat" | "Lato" | "Nunito" | "DM Sans",
   "fontWeight": "Regular" | "Medium" | "Bold" | "SemiBold" | "Light",
   "textColor": "#RRGGBB",
-  "textColor": "#RRGGBB",
   "icon": "phosphor-name OR raw-svg-path (e.g. 'house' OR 'M10 10...')",
   "size": number (icon size in px, default 24),
   "color": "#RRGGBB (icon color)",
@@ -1162,7 +1207,7 @@ JSON SCHEMA:
   "children": [ ...recursive nodes... ]
 }
 
-AVAILABLE ICONS (Phosphor): house, magnifying-glass, gear, bell, user, users, arrow-left, arrow-right, x, list, plus, minus, pencil, trash, download, upload, share, copy, check, x-circle, image, camera, video, play, pause, stop, music-note, microphone, speaker-high, envelope, chat, phone, paper-plane-tilt, at, link, globe, wifi, cloud, shopping-cart, credit-card, wallet, receipt, tag, storefront, package, truck, star, heart
+AVAILABLE ICONS (Phosphor): house, magnifying-glass, gear, bell, user, users, arrow-left, arrow-right, arrow-up, arrow-down, x, list, plus, minus, pencil, trash, download, upload, share, copy, check, x-circle, image, camera, video, play, pause, stop, music-note, microphone, speaker-high, envelope, chat, phone, paper-plane-tilt, at, link, globe, wifi, cloud, shopping-cart, credit-card, wallet, receipt, tag, storefront, package, truck, star, heart, linkedin, youtube, google, apple, figma, twitter, github, facebook, instagram, desktop, laptop, device-mobile, sun, moon, cloud-rain, snowflake, umbrella, car, airplane, key, shield, chart-pie, chart-bar (100+ icons)
 
 CHARTS: Use type "CHART" with chartType (PIE, DONUT, BAR, LINE) and chartData array.
 SITEMAPS: Use type "SITEMAP" with "sitemapData": { "label": "Page Name", "description": ["bullets"], "children": [...] }
@@ -1232,11 +1277,11 @@ COLOR PALETTE (Minimal):
     function generateFullPrompt() {
       const description = document.getElementById('designDescription').value.trim();
       const styleContext = STYLE_PRESETS[selectedStyle];
-      const componentsHint = selectedComponents.length > 0 
+      const componentsHint = selectedComponents.length > 0
         ? `\nInclude these components: ${selectedComponents.join(', ')}`
         : '';
       const fontInstruction = `\n\nFONT: Use "${selectedFont}" as the fontFamily for all TEXT nodes.`;
-      
+
       if (!description) {
         return `${SCHEMA_CONTEXT}
 ${styleContext}${fontInstruction}
@@ -1258,30 +1303,30 @@ Remember: Output ONLY valid JSON, starting with { and ending with }`;
     function updatePromptPreview() {
       const preview = document.getElementById('promptPreview');
       const fullPrompt = generateFullPrompt();
-      
+
       // Truncate for preview
       const maxLength = 800;
       let displayText = fullPrompt;
       if (fullPrompt.length > maxLength) {
         displayText = fullPrompt.substring(0, maxLength) + '\n\n... (truncated for preview, full prompt will be copied)';
       }
-      
+
       preview.textContent = displayText;
     }
 
     // Copy prompt to clipboard
     async function copyPromptToClipboard() {
       const fullPrompt = generateFullPrompt();
-      
+
       try {
         await navigator.clipboard.writeText(fullPrompt);
-        
+
         // Show success notification
         const notification = document.createElement('div');
         notification.className = 'copy-success';
         notification.textContent = '✓ Prompt copied! Paste it into your AI';
         document.body.appendChild(notification);
-        
+
         setTimeout(() => {
           notification.remove();
         }, 2000);
@@ -1293,7 +1338,7 @@ Remember: Output ONLY valid JSON, starting with { and ending with }`;
         textarea.select();
         document.execCommand('copy');
         document.body.removeChild(textarea);
-        
+
         showPromptStatus('Prompt copied to clipboard!', 'success');
       }
     }
@@ -1303,7 +1348,7 @@ Remember: Output ONLY valid JSON, starting with { and ending with }`;
       const status = document.getElementById('promptStatus');
       status.className = 'status show ' + type;
       status.innerHTML = `<span class="message">${message}</span>`;
-      
+
       setTimeout(() => {
         status.classList.remove('show');
       }, 3000);
@@ -1557,7 +1602,7 @@ Remember: Output ONLY valid JSON, starting with { and ending with }`;
     // Build button
     document.getElementById('buildBtn').addEventListener('click', () => {
       const input = document.getElementById('jsonInput').value.trim();
-      
+
       if (!input) {
         showStatus('Please paste your design JSON first.', 'error');
         return;
@@ -1578,7 +1623,7 @@ Remember: Output ONLY valid JSON, starting with { and ending with }`;
       status.className = 'status show ' + type;
       status.querySelector('.message').textContent = message;
       status.querySelector('.spinner').style.display = type === 'loading' ? 'block' : 'none';
-      
+
       if (type !== 'loading') {
         setTimeout(() => {
           status.classList.remove('show');
@@ -1592,7 +1637,7 @@ Remember: Output ONLY valid JSON, starting with { and ending with }`;
       status.className = 'status show ' + type;
       status.querySelector('.message').textContent = message;
       status.querySelector('.spinner').style.display = type === 'loading' ? 'block' : 'none';
-      
+
       if (type !== 'loading') {
         setTimeout(() => {
           status.classList.remove('show');
@@ -1622,7 +1667,7 @@ Remember: Output ONLY valid JSON, starting with { and ending with }`;
     document.getElementById('copyExportBtn').addEventListener('click', async () => {
       const output = document.getElementById('exportOutput');
       const text = output.value.trim();
-      
+
       if (!text) {
         showExportStatus('No JSON to copy. Export a frame first.', 'error');
         return;
@@ -1630,13 +1675,13 @@ Remember: Output ONLY valid JSON, starting with { and ending with }`;
 
       try {
         await navigator.clipboard.writeText(text);
-        
+
         // Show success notification
         const notification = document.createElement('div');
         notification.className = 'copy-success';
         notification.textContent = '✓ JSON copied to clipboard!';
         document.body.appendChild(notification);
-        
+
         setTimeout(() => {
           notification.remove();
         }, 2000);

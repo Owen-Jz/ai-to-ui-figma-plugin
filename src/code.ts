@@ -59,7 +59,7 @@ const PHOSPHOR_ICONS: Record<string, string> = {
     'arrow-right': 'M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H32a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z',
     'x': 'M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z',
     'list': 'M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z',
-    
+
     // Actions
     'plus': 'M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z',
     'minus': 'M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z',
@@ -71,7 +71,7 @@ const PHOSPHOR_ICONS: Record<string, string> = {
     'copy': 'M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z',
     'check': 'M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z',
     'x-circle': 'M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm37.66-130.34a8,8,0,0,1,0,11.32L147.31,128l18.35,18.34a8,8,0,0,1-11.32,11.32L136,139.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L124.69,128l-18.35-18.34a8,8,0,0,1,11.32-11.32L136,116.69l18.34-18.35A8,8,0,0,1,165.66,85.66Z',
-    
+
     // Media
     'image': 'M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Zm46.14,53.47-25.66-25.65a8,8,0,0,0-11,0L93.66,187.5a8,8,0,0,1-11.32-11.32l60-60a24,24,0,0,1,33.94,0l25.66,25.66a8,8,0,0,1-11.32,11.31Z',
     'camera': 'M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z',
@@ -83,7 +83,7 @@ const PHOSPHOR_ICONS: Record<string, string> = {
     'microphone': 'M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0Zm40,143.6V232a8,8,0,0,1-16,0V207.6A80.11,80.11,0,0,1,48,128a8,8,0,0,1,16,0,64,64,0,0,0,128,0,8,8,0,0,1,16,0A80.11,80.11,0,0,1,136,207.6Z',
     'speaker-high': 'M155.51,24.81a8,8,0,0,0-8.42.88L77.25,80H32A16,16,0,0,0,16,96v64a16,16,0,0,0,16,16H77.25l69.84,54.31A8,8,0,0,0,160,224V32A8,8,0,0,0,155.51,24.81ZM144,207.64,84.91,161.69A7.94,7.94,0,0,0,80,160H32V96H80a7.94,7.94,0,0,0,4.91-1.69L144,48.36Zm54-106.08a40,40,0,0,1,0,52.88,8,8,0,0,1-12-10.58,24,24,0,0,0,0-31.72,8,8,0,0,1,12-10.58Zm35.77-35.77a104,104,0,0,1,0,124.42,8,8,0,0,1-13.54-8.5,88,88,0,0,0,0-107.42,8,8,0,0,1,13.54-8.5Z',
     'speaker-x': 'M155.51,24.81a8,8,0,0,0-8.42.88L77.25,80H32A16,16,0,0,0,16,96v64a16,16,0,0,0,16,16H77.25l69.84,54.31A8,8,0,0,0,160,224V32A8,8,0,0,0,155.51,24.81ZM144,207.64,84.91,161.69A7.94,7.94,0,0,0,80,160H32V96H80a7.94,7.94,0,0,0,4.91-1.69L144,48.36Zm101.66-61.3a8,8,0,0,1-11.32,11.32L216,139.31l-18.34,18.35a8,8,0,0,1-11.32-11.32L204.69,128l-18.35-18.34a8,8,0,0,1,11.32-11.32L216,116.69l18.34-18.35a8,8,0,0,1,11.32,11.32L227.31,128Z',
-    
+
     // Communication
     'envelope': 'M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z',
     'chat': 'M216,48H40A16,16,0,0,0,24,64V224a15.84,15.84,0,0,0,9.25,14.5A16.05,16.05,0,0,0,40,240a15.89,15.89,0,0,0,10.25-3.78.69.69,0,0,0,.13-.11L82.5,208H216a16,16,0,0,0,16-16V64A16,16,0,0,0,216,48ZM40,224h0ZM216,192H82.5a16,16,0,0,0-10.3,3.75l-.12.11L40,224V64H216Z',
@@ -95,7 +95,7 @@ const PHOSPHOR_ICONS: Record<string, string> = {
     'wifi': 'M140,204a12,12,0,1,1-12-12A12,12,0,0,1,140,204ZM237.08,87A172,172,0,0,0,18.92,87,8,8,0,0,0,29.07,98.65a156,156,0,0,1,197.86,0A8,8,0,0,0,237.08,87ZM205,122.77a124,124,0,0,0-153.94,0A8,8,0,0,0,61,135.31a108,108,0,0,1,134.06,0,8,8,0,0,0,9.95-12.54ZM173,158.53a76,76,0,0,0-90.06,0A8,8,0,1,0,92.48,172a60,60,0,0,1,71,0,8,8,0,1,0,9.5-12.88Z',
     'bluetooth': 'M188.8,169.6,133.33,128,188.8,86.4a8,8,0,0,0,0-12.8l-64-48A8,8,0,0,0,112,32v80L60.8,73.6a8,8,0,1,0-9.6,12.8L106.67,128,51.2,169.6a8,8,0,1,0,9.6,12.8L112,144v80a8,8,0,0,0,12.8,6.4l64-48a8,8,0,0,0,0-12.8ZM128,48l42.67,32L128,112Zm0,160V144l42.67,32Z',
     'cloud': 'M160,40A88.09,88.09,0,0,0,81.29,88.67,64,64,0,1,0,72,216h88a88,88,0,0,0,0-176Zm0,160H72a48,48,0,0,1,0-96c1.1,0,2.2,0,3.29.11A88,88,0,0,0,72,128a8,8,0,0,0,16,0,72,72,0,1,1,72,72Z',
-    
+
     // Commerce
     'shopping-cart': 'M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16H34.05l35.92,179.59A24,24,0,1,0,96,232a24,24,0,0,0,23.61-20h56.79A24,24,0,1,0,200,232a24,24,0,0,0,24-24,8,8,0,0,0-8-8H91.17a8,8,0,0,1-7.87-6.57L80.13,178h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,216a8,8,0,1,1-8,8A8,8,0,0,1,96,216Zm104,8a8,8,0,1,1,8-8A8,8,0,0,1,200,224Zm4-48H76.51L64.94,72H207.06Z',
     'credit-card': 'M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,16V88H32V64Zm0,128H32V104H224v88Zm-16-24a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h32A8,8,0,0,1,208,168Zm-64,0a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h16A8,8,0,0,1,144,168Z',
@@ -134,7 +134,7 @@ const PHOSPHOR_ICONS: Record<string, string> = {
     'slider': 'M224,120H203.49a40,40,0,0,0-76.91-13.36,39.38,39.38,0,0,0-1.58,13.36H32a8,8,0,0,0,0,16H125a39.38,39.38,0,0,0,1.58,13.36,40,40,0,0,0,76.91-13.36H224a8,8,0,0,0,0-16Zm-59,19.38a24,24,0,1,1,24-24A24,24,0,0,1,165,139.38Z',
     'circle': 'M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z',
     'dots-three': 'M128,112a16,16,0,1,0,16,16A16,16,0,0,0,128,112Zm-64,0a16,16,0,1,0,16,16A16,16,0,0,0,64,112Zm128,0a16,16,0,1,0,16,16A16,16,0,0,0,192,112Z',
-    
+
     // Files & Folders
     'folder': 'M216,72H130.67L102.93,35.18A16,16,0,0,0,90.13,29.53L32,29.53A16,16,0,0,0,16,45.53V200a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V96a24,24,0,0,0-24-24Zm8,128H32V45.53l58.13,0,20,26.47H216v16H104a8,8,0,0,0,0,16H224Z',
     'file': 'M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48Z',
@@ -147,6 +147,141 @@ const PHOSPHOR_ICONS: Record<string, string> = {
     'map-pin': 'M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.52,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206.53C113.83,208.72,56,155.63,56,104a72,72,0,0,1,144,0C200,155.61,142.17,208.7,128,222.53Z',
     'eye': 'M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.19,141.6,183.27,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z',
     'lock': 'M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Zm-80,84a12,12,0,1,1,12-12A12,12,0,0,1,128,164Zm32-84H96V56a32,32,0,0,1,64,0Z',
+
+    // Weather
+    'sun': 'M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z',
+    'moon': 'M224.21,163.78A96,96,0,1,1,92.22,31.79a8,8,0,0,1,11,11,80,80,0,0,0,110,110,8,8,0,0,1,11,11Z',
+    'cloud-rain': 'M88,208a8,8,0,0,1-8-8V176a8,8,0,0,1,16,0v24A8,8,0,0,1,88,208Zm64.12-58.18A56,56,0,0,0,160,40a55.84,55.84,0,0,0-52.54,37.15,59.39,59.39,0,0,0-13.34-1.55A58,58,0,0,0,36,133.58,7.94,7.94,0,0,1,40,148a74,74,0,0,1,118.89,1.82ZM160,208a8,8,0,0,1-8-8V176a8,8,0,0,1,16,0v24A8,8,0,0,1,160,208Zm71.55-74.42A74,74,0,0,1,161.46,149.2,8,8,0,0,1,160,136h.63a58,58,0,0,0-12.08-114.72c-.45,0-.89,0-1.33,0A72,72,0,1,1,231.55,133.58ZM128,248a8,8,0,0,1-8-8V216a8,8,0,0,1,16,0v24A8,8,0,0,1,128,248Z',
+    'snowflake': 'M220.24,149.17l-16.5-9.52,19.34-11.16a8,8,0,0,0-8-13.86l-19.34,11.17V96a8,8,0,0,0,5.65-2.35l24-24a8,8,0,0,0-11.31-11.31l-24,24A8,8,0,0,0,188,88v20.44l-42.34,24.45V84l23.16-13.37L188,80a8,8,0,0,0,8-13.86l-19.16-11.06V24a8,8,0,0,0-16,0V55.08L141.68,44,153,24.41a8,8,0,1,0-13.86-8l-11.31,19.6-11.32-19.6a8,8,0,1,0-13.86,8L114.32,44l-19.16,11.06V24a8,8,0,0,0-16,0V55.08l-19.16,11.06A8,8,0,0,0,68,80l19.16-9.37L110.34,84v48.89L68,108.44V88a8,8,0,0,0-2.34-5.66l-24-24a8,8,0,0,0-11.32,11.31l24,24A8,8,0,0,0,56,96v29.83L36.66,114.66a8,8,0,0,0-8,13.86l19.34,11.16L31.5,149.17a8,8,0,0,0,8,13.86l16.5-9.53V184a8,8,0,0,0-2.34,5.66l-24,24a8,8,0,0,0,11.32,11.31l24-24A8,8,0,0,0,68,192V162.22l42.34-24.44V188L87.18,201.37,68,192a8,8,0,0,0-8,13.86l19.16,11.06V248a8,8,0,0,0,16,0V216.92l19.16,11.06-11.32,19.6a8,8,0,0,0,13.86,8l11.32-19.6,11.31,19.6a8,8,0,0,0,13.86-8l-11.31-19.6L160,216.92V248a8,8,0,0,0,16,0V216.92l19.16-11.06A8,8,0,0,0,188,192l-19.16,9.37L145.66,188V139.11l42.34,24.45V192a8,8,0,0,0,2.34,5.66l24,24a8,8,0,0,0,11.31-11.31l-24-24A8,8,0,0,0,200,184V153.5l16.5,9.53a8,8,0,0,0,4,1.08,8,8,0,0,0,4-14.94Z',
+    'umbrella': 'M231.6,117.21l-14-74.6A104.18,104.18,0,0,0,116,40.69V32a8,8,0,0,0-16,0v8.69A104.18,104.18,0,0,0,8.43,142.61,8,8,0,0,0,16.29,152h91.71v56A24,24,0,0,1,84,232a8,8,0,0,0,0,16,40,40,0,0,0,40-40V152H232a8,8,0,0,0,7.85-9.42C236.94,127,233.15,119.5,231.6,117.21ZM114.77,56.76a88.16,88.16,0,0,1,26.46,0l12.43,66.27-51.32-9.62ZM96.65,136l-18-96C78.89,40.24,79.16,40.35,80,41s35.07,32,48,95Zm122.7,0H179.35l40-95A87.73,87.73,0,0,1,219.35,136ZM24.63,136H64.65l-40-95A87.73,87.73,0,0,1,24.63,136Z',
+    'wind': 'M184,144a32,32,0,0,1-32,32H40a8,8,0,0,1,0-16h8a32,32,0,0,1,32-32H48a8,8,0,0,1,0-16H80a48,48,0,0,0,0,96H40a8,8,0,0,1,0,16H80a64,64,0,0,1,0-128H48a24,24,0,0,0,0,48h32a16,16,0,0,0,0-32h-6.19a48,48,0,0,1,89.5,14.65A23.86,23.86,0,0,1,162.2,144Zm24-72a32,32,0,0,1-32,32H136a8,8,0,0,1,0-16h8a32,32,0,0,1,32-32h-8a8,8,0,0,1,0-16h8a48,48,0,0,0,0,96h-8a8,8,0,0,1,0,16h8a64,64,0,0,1,0-128h-8a24,24,0,0,0,0,48h8a16,16,0,0,0,0-32h-6.19A48,48,0,0,1,208,82.68Z',
+
+    // Devices
+    'desktop': 'M208,40H48A24,24,0,0,0,24,64V168a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40Zm8,128a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8ZM96,216H160a8,8,0,0,0,0-16H96a8,8,0,0,0,0,16Z',
+    'laptop': 'M224,168H32a16,16,0,0,0-16,16v8a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16v-8A16,16,0,0,0,224,168ZM48,56A24,24,0,0,0,24,80v80H232V80a24,24,0,0,0-24-24Zm24,96a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H184a8,8,0,0,1,8,8v64a8,8,0,0,1-8,8Z',
+    'device-mobile': 'M176,24H80A24,24,0,0,0,56,48V208a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V48A24,24,0,0,0,176,24Zm8,184a8,8,0,0,1-8,8H80a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8h96a8,8,0,0,1,8,8ZM128,192a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z',
+    'tablet': 'M192,24H64A24,24,0,0,0,40,48V208a24,24,0,0,0,24,24H192a24,24,0,0,0,24-24V48A24,24,0,0,0,192,24Zm8,184a8,8,0,0,1-8,8H64a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H192a8,8,0,0,1,8,8ZM128,212a12,12,0,1,1,12-12A12,12,0,0,1,128,212Z',
+    'mouse': 'M128,24A64.07,64.07,0,0,0,64,88v80a64.07,64.07,0,0,0,128,0V88A64.07,64.07,0,0,0,128,24Zm48,144a48.05,48.05,0,0,1-48,48,48.05,48.05,0,0,1-48-48V88a48,48,0,0,1,48-48,48,48,0,0,1,48,48Zm-48-64a8,8,0,0,1-8-8V64a8,8,0,0,1,16,0V96A8,8,0,0,1,128,104Z',
+    'keyboard': 'M224,56H32A16,16,0,0,0,16,72V184a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V72A16,16,0,0,0,224,56Zm0,128H32V72H224ZM144,152H112a8,8,0,0,1,0-16h32a8,8,0,0,1,0,16Zm16-48H128a8,8,0,0,1,0-16h32a8,8,0,0,1,0,16Zm-64,0H64a8,8,0,0,1,0-16H96a8,8,0,0,1,0,16Zm64-32H128a8,8,0,0,1,0-16h32a8,8,0,0,1,0,16Zm32,32H160a8,8,0,0,1,0-16h32a8,8,0,0,1,0,16Z',
+
+    // Status & Indicators
+    'check-circle': 'M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm45.66-109.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,144.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z',
+    'warning': 'M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.38A8.5,8.5,0,0,1,215.45,208H40.55a8.5,8.5,0,0,1-7.48-4.62,8.38,8.38,0,0,1,0-8.26L120.48,43.2a8.87,8.87,0,0,1,15,0l87.45,151.92A8.38,8.38,0,0,1,222.93,203.38ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,40a12,12,0,1,1-12-12A12,12,0,0,1,128,184Z',
+    'info': 'M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z',
+    'prohibit': 'M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,0,1-72.33-140.35l112.68,112.68A87.61,87.61,0,0,1,128,216Zm82.35-37.67L97.67,65.65A88,88,0,0,1,210.35,178.33Z',
+    'question': 'M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V155.43C122.18,148,136,141.27,136,124a20,20,0,0,0-40,0,8,8,0,0,1-16,0,36,36,0,0,1,72,0c0,28.84-25.29,38-29.23,39.54A6.1,6.1,0,0,0,120,168h8A8,8,0,0,1,144,176Z',
+
+    // Security
+    'shield': 'M208,40H48A16,16,0,0,0,32,56v58.78c0,89.65,75.82,118.13,88.25,121.78a16,16,0,0,0,8.84,0C141.6,233.15,224,204.09,224,114.78V56A16,16,0,0,0,208,40Zm0,74.78C208,194.2,143.15,220.12,128,223.63,112,219.79,48,193.36,48,114.78V56H208Z',
+    'shield-check': 'M208,40H48A16,16,0,0,0,32,56v58.78c0,89.65,75.82,118.13,88.25,121.78a16,16,0,0,0,8.84,0C141.6,233.15,224,204.09,224,114.78V56A16,16,0,0,0,208,40Zm-50.34,74.34-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L102,159.31l50.34-50.35a8,8,0,0,1,11.32,11.32Z',
+    'key': 'M144,124a36,36,0,0,0-61.42,25.45l-59.92,60a12,12,0,0,0,0,17l5.66,5.66a12,12,0,0,0,17,0l12-12.06,8.48,8.49a12,12,0,0,0,17,0l5.65-5.66a12,12,0,0,0,0-17l-8.48-8.48,12-12,8.48,8.48a12,12,0,0,0,17,0l13.6-13.6A36,36,0,0,0,144,124Zm-18,34-19.34,19.36a12.08,12.08,0,0,0,0,17L95.31,206l-5.65,5.66-8.49-8.49-5.65,5.66L64.2,197.51l-8.49-8.48L37.37,210.34,31.72,204.69,96.69,139.72a20,20,0,1,1,29.28,18.33Z',
+    'fingerprint': 'M224,128a96,96,0,1,0-104,95.66,8,8,0,1,0,3.34-15.65A80,80,0,1,1,208,128,8,8,0,0,0,224,128Zm-28,0a68,68,0,1,0-76,67.53,8,8,0,0,0,3.34,15.65,8,8,0,0,0,1.31-.11A84,84,0,1,1,196,128Zm-32,0a36,36,0,1,0-44,35.1,8,8,0,1,0,3.58-15.6,20,20,0,1,1,34.84-29,8,8,0,0,0,15.2,4.92A35.85,35.85,0,0,0,164,128Z',
+
+    // Layout & Editor
+    'columns': 'M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H136V56h80Zm-96,0H40V56h80Z',
+    'layout': 'M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm-96,160H40V128h80Zm96,0H136V128h80Zm0-88H40V56H216Z',
+    'sidebar': 'M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H96V56h120ZM80,200H40V56H80Z',
+    'grid-four': 'M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm-96,160H40V128h80Zm96,0H136V128h80Zm0-88H136V56h80Zm-96,0H40V56h80Z',
+    'squares-four': 'M216,40H160a24,24,0,0,0-24,24v56a24,24,0,0,0,24,24h56a24,24,0,0,0,24-24V64A24,24,0,0,0,216,40Zm8,80a8,8,0,0,1-8,8H160a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8h56a8,8,0,0,1,8,8ZM96,40H40A24,24,0,0,0,16,64v56a24,24,0,0,0,24,24H96a24,24,0,0,0,24-24V64A24,24,0,0,0,96,40Zm8,80a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H96a8,8,0,0,1,8,8ZM216,160H160a24,24,0,0,0-24,24v32a24,24,0,0,0,24,24h56a24,24,0,0,0,24-24V184A24,24,0,0,0,216,160Zm8,56a8,8,0,0,1-8,8H160a8,8,0,0,1-8-8V184a8,8,0,0,1,8-8h56a8,8,0,0,1,8,8ZM96,160H40a24,24,0,0,0-24,24v32a24,24,0,0,0,24,24H96a24,24,0,0,0,24-24V184A24,24,0,0,0,96,160Zm8,56a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V184a8,8,0,0,1,8-8H96a8,8,0,0,1,8,8Z',
+
+    // Charts & Data
+    'chart-pie': 'M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-16-40h48a8,8,0,0,0,0-16H112a8,8,0,0,0,0,16Z',
+    'chart-bar': 'M224,200H48V40a8,8,0,0,0-16,0V208a8,8,0,0,0,8,8H224a8,8,0,0,0,0-16ZM96,112v80a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm56-32v112a8,8,0,0,1-16,0V80a8,8,0,0,1,16,0Zm56,64v48a8,8,0,0,1-16,0V144a8,8,0,0,1,16,0Z',
+    'chart-line': 'M228.49,126.49a8,8,0,0,0-11.32.84L168.08,181l-42.34-42.35a8,8,0,0,0-11.32,0L42.34,210.34a8,8,0,0,0,11.32,11.32L120.08,155l42.34,42.35a8,8,0,0,0,11.32,0l54-59.2A8,8,0,0,0,228.49,126.49ZM224,200H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16Z',
+    'trend-up': 'M230.14,64.29l-38.63-10.35a8,8,0,0,0-8.35,3.48L169.34,81.1,133.66,45.42a8,8,0,0,0-11.32,0L42.34,125.42a8,8,0,0,0,11.32,11.32L128,62.4l35.66,35.68a8,8,0,0,0,11.32,0l20.47-30.7,9.39,35.06a8,8,0,0,0,7.74,5.91,8.38,8.38,0,0,0,2.15-.29l38.63-10.35a8,8,0,0,0,5.77-10.08A8.06,8.06,0,0,0,230.14,64.29Z',
+    'trend-down': 'M232,184a8,8,0,0,1-16,0V144.31L134.46,192,80,123.94,29.66,163.66a8,8,0,0,1-9.32-13.32l56-44.2a8,8,0,0,1,10.66.6L141.54,160,217.63,113.8A8,8,0,1,1,226,127.56L164.84,164.71,232,184Z',
+
+    // Social & Smiles
+    'smiley': 'M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a12,12,0,1,1-12-12A12,12,0,0,1,192,128Zm-128,0a12,12,0,1,1,12-12A12,12,0,0,1,64,128Zm64,72a56,56,0,0,1-48.51-28,8,8,0,0,1,13.85-8,40,40,0,0,0,69.32,0,8,8,0,0,1,13.85,8A56,56,0,0,1,128,200Z',
+    'smiley-sad': 'M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a12,12,0,1,1-12-12A12,12,0,0,1,192,128Zm-128,0a12,12,0,1,1,12-12A12,12,0,0,1,64,128Zm64,24a56,56,0,0,1-48.49,28,8,8,0,1,1-8-13.87,40,40,0,0,0,69.3,0,8,8,0,0,1-8-13.87,55.93,55.93,0,0,1-4.81-2.26Z',
+    'heart-straight': 'M217.36,54.64C200.72,38,173.67,36.56,155.8,50.31L128,70.62,100.2,50.31C82.33,36.56,55.28,38,38.64,54.64-4.87,98.15-4.87,175,99.93,212.7a24,24,0,0,0,56.14,0C260.87,175,260.87,98.15,217.36,54.64Z',
+    'thumbs-up': 'M224,112h-58.54l8.28-27.59a32,32,0,0,0-3-24.73,31.78,31.78,0,0,0-23.94-13.41,12.2,12.2,0,0,0-3.64.55l-59.54,17.86A32,32,0,0,0,64,95.34V208a16,16,0,0,0,16,16H184a32,32,0,0,0,31.25-24.19l15.52-62.1A24,24,0,0,0,224,112ZM32,104H48v112H32a8,8,0,0,1-8-8V112A8,8,0,0,1,32,104Z',
+
+    // Arrows & Navigation
+    'arrow-up': 'M120,232V51.31L45.66,125.66A8,8,0,0,1,34.34,114.34l88-88a8,8,0,0,1,11.32,0l88,88a8,8,0,0,1-11.32,11.32L136,51.31V232a8,8,0,0,1-16,0Z',
+    'arrow-down': 'M210.34,141.66a8,8,0,0,1,11.32,11.32l-88,88a8,8,0,0,1-11.32,0l-88-88a8,8,0,0,1,11.32-11.32L120,204.69V24a8,8,0,0,1,16,0V204.69Z',
+    'arrow-u-up-left': 'M80,136V80H176a56,56,0,0,1,56,56v88a8,8,0,0,1-16,0V136a40,40,0,0,0-40-40H80v56a8,8,0,0,1-13.66,5.66l-64-64a8,8,0,0,1,0-11.32l64-64A8,8,0,0,1,80,24Z',
+    'paper-plane-right': 'M223.37,114.61,48.8,32.74A16,16,0,0,0,28,48.09V207.91a16,16,0,0,0,20.85,15.35l174.56-81.87A15.93,15.93,0,0,0,223.37,114.61ZM48,197.63,184.14,128H72a8,8,0,0,1,0-16H184.14L48,58.37Z',
+
+    // Content & Books
+    'book': 'M208,48H64A32,32,0,0,0,32,80V224a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V64A16,16,0,0,0,208,48Zm0,176H64a16,16,0,0,1-16-16V80A16,16,0,0,1,64,64H208Zm-48-32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h72A8,8,0,0,1,160,192Zm0-32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h72A8,8,0,0,1,160,160Zm0-32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h72A8,8,0,0,1,160,128Z',
+    'bookmark': 'M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Z',
+
+    // Objects
+    'lightbulb': 'M128,154.55a29.8,29.8,0,0,0-5.69-21.75c-15.68-18.42-26.31-29.28-26.31-50.8,0-23.73,20.07-39.75,32-39.75,35.87,0,32,49.52,32,50.8a8,8,0,0,0,16,1.42s5.32-60.22-48-60.22A56,56,0,0,0,72,90.25c0,29.15,16.89,45.89,32.31,64,3.77,4.42,7.69,8.5,7.69,14.77v16.32a.91.91,0,0,1,0,.14v30a8,8,0,0,0,16,0V192h16v23.53a8,8,0,0,0,16,0v-30a.91.91,0,0,1,0-.14V169.32a30.2,30.2,0,0,0-12-14.77Z',
+    'airplane': 'M247.33,161.76l-28.8-76.49a24.28,24.28,0,0,0-14-14.36L128,40.11V26a10,10,0,0,0-20,0V40.11L31.52,70.91a24.28,24.28,0,0,0-14,14.36L8,131.91a8,8,0,0,0,12.61,9L58.53,115.6l53.94,84.77-18.89,8.5A8,8,0,0,0,96,224v8a8,8,0,0,0,11.23,7.31L128,231l20.77,8.3A8,8,0,0,0,160,232v-8a8,8,0,0,0-4.66-7.27l-18.23-8.2,53.25-83.69,36.56,26.41a8,8,0,0,0,12.61-9l-9.52-25.29H230a8,8,0,0,0,4.48-1.37h0A8,8,0,0,0,247.33,161.76ZM136,192,89.5,119l90.3,65.23L167.6,192Zm-23.53,8L120,189.92l7.53,10.08Zm83.47-38.39-44.57-32.2A8,8,0,0,0,138.83,128l-87.12,35.09,16.63-44.17L128,95.05l59.66,24ZM227.1,154.21h0l-8.62,2.3L234.37,131l-7.27,23.21Z',
+
+    // Transport
+    'car': 'M240,112H229.2L201.42,49.5A16,16,0,0,0,186.8,40H69.2a16,16,0,0,0-14.62,9.5L26.8,112H16a16,16,0,0,0-16,16v80a16,16,0,0,0,16,16H35.26a24,24,0,0,0,45.42,0h94.63a24,24,0,0,0,45.42,0H240a16,16,0,0,0,16-16V128A16,16,0,0,0,240,112ZM192,208a8,8,0,1,1,8-8A8,8,0,0,1,192,208ZM64,208a8,8,0,1,1,8-8A8,8,0,0,1,64,208ZM69.2,56H186.8l24.89,56H44.31Z',
+    'bank': 'M232,56H223.51a24,24,0,0,0-19.16-9.6H51.65A24,24,0,0,0,32.49,56H24a8,8,0,0,0,0,16H36.93a24.11,24.11,0,0,0,.73,4.42,23.47,23.47,0,0,0,4.88,8.23l-7.37,125.1a16,16,0,0,0,16,16.94H204.83a16,16,0,0,0,16-16.94l-7.37-125.1A23.53,23.53,0,0,0,219,67.42a8,8,0,0,0,8-3.42H232a8,8,0,0,0,0-16ZM51.65,62.4H204.35a8,8,0,0,1,0,16H51.65a8,8,0,0,1,0-16ZM204.91,209.06H51.09l7.07-120a23.9,23.9,0,0,0,139.68,0Z',
+
+    // Tools
+    'funnel': 'M231.39,34.14l-83.18,80L128,133.7V224a8,8,0,0,1-12.8,6.4L83.2,206.4A8,8,0,0,1,80,200V133.7L59.79,114.12,24.61,34.14A16,16,0,0,1,36.56,8H219.44a16,16,0,0,1,12,26.14ZM195.9,24H60.1l32,72.68L112,116.3V195.2l32-19.2V116.3l19.92-19.64Z',
+    'medal': 'M208,32H168a8,8,0,0,0-6.15,2.9L128,78.25,94.15,34.9A8,8,0,0,0,88,32H48a8,8,0,0,0-6.25,12.89L98,116.27a8,8,0,0,0,.92.83A63.95,63.95,0,1,0,172.93,121l41.32-76.11A8,8,0,0,0,208,32ZM128,216a48,48,0,1,1,48-48A48.05,48.05,0,0,1,128,216Z',
+};
+
+// ============================================================================
+// BACKGROUND PRESETS
+// ============================================================================
+
+const BACKGROUND_PRESETS: Record<string, FillStyle[]> = {
+    // Linear Gradients
+    'gradient-sunset': [
+        {
+            type: 'GRADIENT_LINEAR',
+            gradientStops: [{ position: 0, color: '#FF512F' }, { position: 1, color: '#DD2476' }],
+            gradientTransform: [[0, 1, 0], [-1, 0, 1]]
+        }
+    ],
+    'gradient-ocean': [
+        {
+            type: 'GRADIENT_LINEAR',
+            gradientStops: [{ position: 0, color: '#2193b0' }, { position: 1, color: '#6dd5ed' }],
+            gradientTransform: [[0, 1, 0], [-1, 0, 1]]
+        }
+    ],
+    'gradient-cotton-candy': [
+        {
+            type: 'GRADIENT_LINEAR',
+            gradientStops: [{ position: 0, color: '#D9AFD9' }, { position: 1, color: '#97D9E1' }],
+            gradientTransform: [[0, 1, 0], [-1, 0, 1]]
+        }
+    ],
+    'gradient-midnight': [
+        {
+            type: 'GRADIENT_LINEAR',
+            gradientStops: [{ position: 0, color: '#232526' }, { position: 1, color: '#414345' }],
+            gradientTransform: [[0, 1, 0], [-1, 0, 1]]
+        }
+    ],
+
+    // Mesh Gradients (approximated with multi-layer radial gradients)
+    'mesh-aurora': [
+        { type: 'SOLID', color: '#1A1A2E' }, // Base
+        {
+            type: 'GRADIENT_RADIAL',
+            gradientStops: [{ position: 0, color: '#00FF94', opacity: 0.6 }, { position: 1, color: '#00FF94', opacity: 0 }],
+            gradientTransform: [[0.8, 0, 0], [0, 0.8, 0]] // Top Left
+        },
+        {
+            type: 'GRADIENT_RADIAL',
+            gradientStops: [{ position: 0, color: '#FF00CC', opacity: 0.6 }, { position: 1, color: '#FF00CC', opacity: 0 }],
+            gradientTransform: [[0.6, 0, 0.4], [0, 0.6, 0.4]] // Bottom Right
+        }
+    ],
+    'mesh-fire': [
+        { type: 'SOLID', color: '#220901' },
+        {
+            type: 'GRADIENT_RADIAL',
+            gradientStops: [{ position: 0, color: '#FF4500', opacity: 0.8 }, { position: 1, color: '#FF4500', opacity: 0 }],
+            gradientTransform: [[0.7, 0, 0.3], [0, 0.7, 0]]
+        },
+        {
+            type: 'GRADIENT_RADIAL',
+            gradientStops: [{ position: 0, color: '#FFD700', opacity: 0.6 }, { position: 1, color: '#FFD700', opacity: 0 }],
+            gradientTransform: [[0.5, 0, 0], [0, 0.5, 0.5]]
+        }
+    ]
 };
 
 interface ChartDataPoint {
@@ -172,14 +307,42 @@ interface SitemapLayoutNode {
     subtreeWidth: number;
 }
 
+// New Interfaces for Design System & Components
+interface StyleDefinition {
+    colors?: Record<string, string>; // name -> hex
+    typography?: Record<string, {
+        fontFamily: string;
+        fontSize: number;
+        fontWeight: string;
+        lineHeight?: number | 'AUTO';
+        letterSpacing?: number;
+    }>;
+}
+
+interface PluginInput {
+    styles?: StyleDefinition;
+    components?: Record<string, NodeData>;
+    root: NodeData;
+}
+
+interface BuildContext {
+    styles: {
+        colors: Record<string, string>; // name -> styleId
+        typography: Record<string, string>; // name -> styleId
+    };
+    components: Record<string, ComponentNode>;
+}
+
 interface NodeData {
-    type: 'FRAME' | 'TEXT' | 'IMAGE' | 'RECTANGLE' | 'ICON' | 'CHART' | 'SITEMAP';
+    type: 'FRAME' | 'TEXT' | 'IMAGE' | 'RECTANGLE' | 'ICON' | 'CHART' | 'SITEMAP' | 'INSTANCE'; // Added INSTANCE
     name?: string;
+    componentName?: string; // For INSTANCE type
 
     // Layout properties
-    layoutMode?: 'HORIZONTAL' | 'VERTICAL';
+    layoutMode?: 'HORIZONTAL' | 'VERTICAL' | 'WRAP'; // Added WRAP shorthand
+    layoutWrap?: 'NO_WRAP' | 'WRAP'; // Explicit Figma property
     primaryAxisAlignItems?: 'MIN' | 'MAX' | 'CENTER' | 'SPACE_BETWEEN';
-    counterAxisAlignItems?: 'MIN' | 'MAX' | 'CENTER';
+    counterAxisAlignItems?: 'MIN' | 'MAX' | 'CENTER' | 'BASELINE'; // Added BASELINE
     primaryAxisSizingMode?: 'FIXED' | 'AUTO';
     counterAxisSizingMode?: 'FIXED' | 'AUTO';
     itemSpacing?: number;
@@ -207,7 +370,9 @@ interface NodeData {
 
     // Styling
     fills?: FillStyle[];
+    fillStyleId?: string; // Reference to a style name (e.g., "Primary")
     strokes?: StrokeStyle[];
+    strokeStyleId?: string; // Reference to a style name
     strokeWeight?: number;
     strokeAlign?: 'INSIDE' | 'OUTSIDE' | 'CENTER';
     cornerRadius?: number;
@@ -224,6 +389,7 @@ interface NodeData {
     fontWeight?: 'Regular' | 'Medium' | 'Bold' | 'Light' | 'SemiBold' | 'ExtraBold';
     fontFamily?: string;
     textColor?: string;
+    textStyleId?: string; // Reference to a text style name
     textAlign?: 'LEFT' | 'CENTER' | 'RIGHT' | 'JUSTIFIED';
     lineHeight?: number | 'AUTO';
     letterSpacing?: number;
@@ -236,6 +402,9 @@ interface NodeData {
     icon?: string;
     size?: number;
     color?: string;
+
+    // Background property
+    background?: string;
 
     // Chart properties
     chartType?: 'PIE' | 'DONUT' | 'BAR' | 'LINE';
@@ -267,12 +436,12 @@ function hexToRgb(hex: string | { r: number; g: number; b: number }): { r: numbe
     if (typeof hex === 'object' && hex !== null && 'r' in hex && 'g' in hex && 'b' in hex) {
         return { r: hex.r, g: hex.g, b: hex.b };
     }
-    
+
     // If not a string, return default gray
     if (typeof hex !== 'string') {
         return { r: 0.5, g: 0.5, b: 0.5 };
     }
-    
+
     // Remove # if present
     hex = hex.replace(/^#/, '');
 
@@ -393,89 +562,89 @@ function randomInt(min: number, max: number): number {
  */
 function generateFakeData(placeholder: string): string {
     const type = placeholder.toLowerCase().trim();
-    
+
     switch (type) {
         // Names
         case 'firstname':
         case 'first_name':
             return randomElement(FIRST_NAMES);
-        
+
         case 'lastname':
         case 'last_name':
             return randomElement(LAST_NAMES);
-        
+
         case 'fullname':
         case 'full_name':
         case 'name':
             return `${randomElement(FIRST_NAMES)} ${randomElement(LAST_NAMES)}`;
-        
+
         // Contact
         case 'email':
             const emailFirst = randomElement(FIRST_NAMES).toLowerCase();
             const emailLast = randomElement(LAST_NAMES).toLowerCase();
             const domains = ['gmail.com', 'yahoo.com', 'outlook.com', 'email.com', 'company.io'];
             return `${emailFirst}.${emailLast}@${randomElement(domains)}`;
-        
+
         case 'phone':
         case 'phonenumber':
         case 'phone_number':
             return `+1 (${randomInt(200, 999)}) ${randomInt(200, 999)}-${randomInt(1000, 9999)}`;
-        
+
         // Professional
         case 'company':
         case 'companyname':
         case 'company_name':
             return randomElement(COMPANY_NAMES);
-        
+
         case 'job':
         case 'jobtitle':
         case 'job_title':
         case 'title':
             return randomElement(JOB_TITLES);
-        
+
         // Address
         case 'address':
         case 'streetaddress':
         case 'street_address':
             return `${randomInt(100, 9999)} ${randomElement(STREET_NAMES)}`;
-        
+
         case 'city':
             return randomElement(CITIES);
-        
+
         case 'country':
             return randomElement(COUNTRIES);
-        
+
         case 'zipcode':
         case 'zip_code':
         case 'zip':
             return `${randomInt(10000, 99999)}`;
-        
+
         // Numbers
         case 'number':
         case 'num':
             return `${randomInt(1, 100)}`;
-        
+
         case 'price':
             return `$${randomInt(9, 999)}.${randomInt(0, 99).toString().padStart(2, '0')}`;
-        
+
         case 'percentage':
         case 'percent':
             return `${randomInt(1, 100)}%`;
-        
+
         case 'rating':
             return `${(randomInt(30, 50) / 10).toFixed(1)}`;
-        
+
         // Date & Time
         case 'date':
             const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
             return `${randomElement(months)} ${randomInt(1, 28)}, ${randomInt(2020, 2026)}`;
-        
+
         case 'time':
             const hour = randomInt(1, 12);
             const minute = randomInt(0, 59).toString().padStart(2, '0');
             const ampm = Math.random() > 0.5 ? 'AM' : 'PM';
             return `${hour}:${minute} ${ampm}`;
-        
+
         case 'datetime':
         case 'date_time':
             const dt_months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -483,18 +652,18 @@ function generateFakeData(placeholder: string): string {
             const dt_minute = randomInt(0, 59).toString().padStart(2, '0');
             const dt_ampm = Math.random() > 0.5 ? 'AM' : 'PM';
             return `${randomElement(dt_months)} ${randomInt(1, 28)}, ${randomInt(2020, 2026)} at ${dt_hour}:${dt_minute} ${dt_ampm}`;
-        
+
         // Lorem Ipsum
         case 'word':
             return randomElement(LOREM_WORDS);
-        
+
         case 'words':
             return Array.from({ length: randomInt(3, 6) }, () => randomElement(LOREM_WORDS)).join(' ');
-        
+
         case 'sentence':
             const sentenceWords = Array.from({ length: randomInt(8, 15) }, () => randomElement(LOREM_WORDS)).join(' ');
             return sentenceWords.charAt(0).toUpperCase() + sentenceWords.slice(1) + '.';
-        
+
         case 'paragraph':
         case 'para':
             const sentences = Array.from({ length: randomInt(3, 5) }, () => {
@@ -502,17 +671,17 @@ function generateFakeData(placeholder: string): string {
                 return words.charAt(0).toUpperCase() + words.slice(1) + '.';
             });
             return sentences.join(' ');
-        
+
         // UI specific
         case 'username':
         case 'user_name':
             const userFirst = randomElement(FIRST_NAMES).toLowerCase();
             return `${userFirst}${randomInt(1, 999)}`;
-        
+
         case 'avatar':
         case 'avatar_url':
             return `https://i.pravatar.cc/150?u=${randomInt(1, 1000)}`;
-        
+
         case 'uuid':
         case 'id':
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
@@ -520,24 +689,24 @@ function generateFakeData(placeholder: string): string {
                 const v = c === 'x' ? r : (r & 0x3 | 0x8);
                 return v.toString(16);
             });
-        
+
         case 'url':
         case 'website':
             const urlCompany = randomElement(COMPANY_NAMES).toLowerCase().replace(/\s+/g, '');
             const tlds = ['.com', '.io', '.co', '.org', '.net'];
             return `https://www.${urlCompany}${randomElement(tlds)}`;
-        
+
         // Headings / Titles
         case 'heading':
         case 'headline':
             const headingWords = Array.from({ length: randomInt(3, 6) }, () => randomElement(LOREM_WORDS));
             return headingWords.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-        
+
         case 'short':
         case 'shorttext':
         case 'short_text':
             return Array.from({ length: randomInt(2, 4) }, () => randomElement(LOREM_WORDS)).join(' ');
-        
+
         default:
             // If no match, return the original placeholder text
             return `{{${placeholder}}}`;
@@ -550,7 +719,7 @@ function generateFakeData(placeholder: string): string {
 function processFakePlaceholders(text: string): string {
     // Match {{anything}} pattern
     const placeholderRegex = /\{\{([^}]+)\}\}/g;
-    
+
     return text.replace(placeholderRegex, (match, placeholder) => {
         return generateFakeData(placeholder);
     });
@@ -618,11 +787,41 @@ async function loadImageFromUrl(url: string): Promise<string | null> {
 /**
  * Apply common styling properties to a node
  */
-function applyCommonStyles(node: SceneNode & MinimalFillsMixin & MinimalBlendMixin, data: NodeData): void {
-    // Apply fills
-    if (data.fills && data.fills.length > 0) {
+function applyCommonStyles(node: SceneNode & MinimalFillsMixin & MinimalBlendMixin, data: NodeData, context?: BuildContext): void {
+    let styleApplied = false;
+
+    // Apply Fill Style if present in context
+    if (data.fillStyleId && context?.styles?.colors?.[data.fillStyleId]) {
+        // We cast to any because TS might not know some nodes have fillStyleId, but SceneNode & MinimalFillsMixin definitely does in Figma API
+        if ('fillStyleId' in node) {
+            try {
+                (node as any).fillStyleId = context.styles.colors[data.fillStyleId];
+                styleApplied = true;
+            } catch (e) {
+                console.warn(`Failed to apply fill style ${data.fillStyleId}:`, e);
+            }
+        }
+    }
+
+    // Apply background preset if present (overrides common fills, but style takes precedence? Let's say Style > Background > Fills)
+    if (!styleApplied && data.background && BACKGROUND_PRESETS[data.background]) {
+        // Use the preset fills
+        node.fills = JSON.parse(JSON.stringify(BACKGROUND_PRESETS[data.background]));
+    }
+    // Apply explicit fills (only if no style applied)
+    else if (!styleApplied && data.fills && data.fills.length > 0) {
         const paints: Paint[] = data.fills.map(fill => {
             if (fill.type === 'SOLID' && fill.color) {
+                // Check if the color string is actually a reference to a style (e.g. "Primary")
+                // This allows "color": "Primary" to work even without fillStyleId property
+                if (context?.styles?.colors?.[fill.color]) {
+                    // We can't apply style ID to a single paint in the array easily.
+                    // If there's only one fill, we could try to switch to styleId.
+                    // For now, we'll fall back to hex processing if it's not a hex.
+                    // But wait, hexToRgb defaults to gray if not hex.
+                    // We should try to lookup if possible.
+                }
+
                 const rgb = hexToRgb(fill.color);
                 return {
                     type: 'SOLID' as const,
@@ -630,26 +829,20 @@ function applyCommonStyles(node: SceneNode & MinimalFillsMixin & MinimalBlendMix
                     opacity: fill.opacity ?? hexToAlpha(fill.color)
                 };
             } else if ((fill.type === 'GRADIENT_LINEAR' || fill.type === 'GRADIENT_RADIAL') && fill.gradientStops) {
-                 const stops = fill.gradientStops.map(stop => {
-                     const rgb = hexToRgb(stop.color);
-                     const alpha = stop.opacity ?? hexToAlpha(stop.color); // Handle hex alpha or explicit opacity
-                     return {
-                         color: { ...rgb, a: alpha },
-                         position: stop.position
-                     };
-                 });
-                 
-                 // Default transform for linear (vertical top-down) if not provided
-                 // Figma default linear is horizontal, but CSS/Web usually expects top-down by default for simple gradients
-                 // We'll stick to Figma's default if not specified, or try to make a standard vertical one
-                 // A simple vertical gradient transform: [[0, 1, 0], [0, 1, 1]] (Wait, Figma matrices are tricky)
-                 // Let's just use standard identity or provided transform
-                 
-                 return {
-                     type: fill.type,
-                     gradientStops: stops,
-                     gradientTransform: fill.gradientTransform || [[0, 1, 0], [-1, 0, 1]] // 90 degree rotation for vertical gradient roughly
-                 };
+                const stops = fill.gradientStops.map(stop => {
+                    const rgb = hexToRgb(stop.color);
+                    const alpha = stop.opacity ?? hexToAlpha(stop.color);
+                    return {
+                        color: { ...rgb, a: alpha },
+                        position: stop.position
+                    };
+                });
+
+                return {
+                    type: fill.type,
+                    gradientStops: stops,
+                    gradientTransform: fill.gradientTransform || [[0, 1, 0], [-1, 0, 1]]
+                };
             }
             return { type: 'SOLID' as const, color: { r: 0.5, g: 0.5, b: 0.5 } };
         });
@@ -665,9 +858,22 @@ function applyCommonStyles(node: SceneNode & MinimalFillsMixin & MinimalBlendMix
 /**
  * Apply geometry styles (strokes, corners, effects) to a node
  */
-function applyGeometryStyles(node: FrameNode | RectangleNode, data: NodeData): void {
+function applyGeometryStyles(node: FrameNode | RectangleNode, data: NodeData, context?: BuildContext): void {
+    // Apply stroke style
+    let strokeStyleApplied = false;
+    if (data.strokeStyleId && context?.styles?.colors?.[data.strokeStyleId]) {
+        if ('strokeStyleId' in node) {
+            try {
+                (node as any).strokeStyleId = context.styles.colors[data.strokeStyleId];
+                strokeStyleApplied = true;
+            } catch (e) {
+                console.warn(`Failed to apply stroke style ${data.strokeStyleId}:`, e);
+            }
+        }
+    }
+
     // Apply strokes
-    if (data.strokes && data.strokes.length > 0) {
+    if (!strokeStyleApplied && data.strokes && data.strokes.length > 0) {
         const strokePaints: Paint[] = data.strokes.map(stroke => {
             const rgb = hexToRgb(stroke.color);
             return {
@@ -677,6 +883,10 @@ function applyGeometryStyles(node: FrameNode | RectangleNode, data: NodeData): v
             };
         });
         node.strokes = strokePaints;
+    }
+
+    // Apply stroke weight and align (these apply regardless of style usage)
+    if (data.strokes?.length || strokeStyleApplied) {
         node.strokeWeight = data.strokeWeight ?? 1;
         node.strokeAlign = data.strokeAlign ?? 'INSIDE';
     }
@@ -799,9 +1009,9 @@ function applySizing(node: FrameNode | RectangleNode | TextNode, data: NodeData,
  */
 function normalizeAlignmentValue(value: string | undefined, defaultValue: 'MIN' | 'MAX' | 'CENTER' | 'BASELINE' = 'MIN'): 'MIN' | 'MAX' | 'CENTER' | 'BASELINE' {
     if (!value) return defaultValue;
-    
+
     const upperValue = value.toUpperCase().replace(/-/g, '_');
-    
+
     switch (upperValue) {
         case 'MIN':
         case 'START':
@@ -830,9 +1040,9 @@ function normalizeAlignmentValue(value: string | undefined, defaultValue: 'MIN' 
  */
 function normalizePrimaryAxisAlignment(value: string | undefined, defaultValue: 'MIN' | 'MAX' | 'CENTER' | 'SPACE_BETWEEN' = 'MIN'): 'MIN' | 'MAX' | 'CENTER' | 'SPACE_BETWEEN' {
     if (!value) return defaultValue;
-    
+
     const upperValue = value.toUpperCase().replace(/-/g, '_');
-    
+
     switch (upperValue) {
         case 'MIN':
         case 'START':
@@ -853,9 +1063,147 @@ function normalizePrimaryAxisAlignment(value: string | undefined, defaultValue: 
 }
 
 /**
+ * Create color styles from definitions
+ */
+async function createColorStyles(colors: Record<string, string>): Promise<Record<string, string>> {
+    const styleMap: Record<string, string> = {};
+    for (const [name, hex] of Object.entries(colors)) {
+        // Check if style exists or create new
+        const styles = figma.getLocalPaintStyles();
+        let style = styles.find(s => s.name === name);
+        if (!style) {
+            style = figma.createPaintStyle();
+            style.name = name;
+        }
+        const rgb = hexToRgb(hex);
+        const alpha = hexToAlpha(hex);
+        style.paints = [{ type: 'SOLID', color: rgb, opacity: alpha }];
+        styleMap[name] = style.id;
+    }
+    return styleMap;
+}
+
+/**
+ * Create text styles from definitions
+ */
+async function createTextStyles(typography: Record<string, any>): Promise<Record<string, string>> {
+    const styleMap: Record<string, string> = {};
+    for (const [name, props] of Object.entries(typography)) {
+        const styles = figma.getLocalTextStyles();
+        let style = styles.find(s => s.name === name);
+        if (!style) {
+            style = figma.createTextStyle();
+            style.name = name;
+        }
+
+        const family = props.fontFamily || 'Inter';
+        const weight = mapFontWeight(props.fontWeight);
+
+        // Load font before assigning
+        try {
+            await figma.loadFontAsync({ family, style: weight });
+        } catch (e) {
+            // Fallback
+            await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
+        }
+
+        style.fontName = { family, style: weight };
+        style.fontSize = props.fontSize || 16;
+
+        if (props.lineHeight === 'AUTO') {
+            style.lineHeight = { unit: 'AUTO' };
+        } else if (typeof props.lineHeight === 'number') {
+            style.lineHeight = { unit: 'PIXELS', value: props.lineHeight };
+        }
+
+        if (props.letterSpacing !== undefined) {
+            style.letterSpacing = { unit: 'PIXELS', value: props.letterSpacing };
+        }
+        styleMap[name] = style.id;
+    }
+    return styleMap;
+}
+
+/**
+ * Create Components from definitions
+ */
+async function createComponents(
+    components: Record<string, NodeData>,
+    context: BuildContext
+): Promise<Record<string, ComponentNode>> {
+    const componentMap: Record<string, ComponentNode> = {};
+
+    for (const [name, data] of Object.entries(components)) {
+        // Create the element as a Frame first
+        // We use createNodeWithData to build the structure
+        const result = await createNodeWithData(data, undefined, context);
+
+        if (result && result.node) {
+            // Create component definition
+            const comp = figma.createComponent();
+            comp.name = name;
+            const source = result.node as FrameNode; // Assuming usually a frame
+
+            // Copy geometry & props
+            comp.resize(source.width, source.height);
+            comp.fills = source.fills;
+            comp.strokes = source.strokes;
+            comp.strokeWeight = source.strokeWeight;
+            comp.strokeAlign = source.strokeAlign;
+            comp.effects = source.effects;
+            comp.cornerRadius = source.cornerRadius;
+            comp.topLeftRadius = source.topLeftRadius;
+            comp.topRightRadius = source.topRightRadius;
+            comp.bottomLeftRadius = source.bottomLeftRadius;
+            comp.bottomRightRadius = source.bottomRightRadius;
+            comp.opacity = source.opacity;
+
+            // Copy properties if styleIds were applied on the source
+            if ('fillStyleId' in source && (source as any).fillStyleId) comp.fillStyleId = (source as any).fillStyleId;
+            if ('strokeStyleId' in source && (source as any).strokeStyleId) comp.strokeStyleId = (source as any).strokeStyleId;
+
+            // Copy Layout
+            if ('layoutMode' in source && source.layoutMode !== "NONE") {
+                comp.layoutMode = source.layoutMode;
+                comp.primaryAxisAlignItems = source.primaryAxisAlignItems;
+                comp.counterAxisAlignItems = source.counterAxisAlignItems;
+                comp.itemSpacing = source.itemSpacing;
+                comp.paddingTop = source.paddingTop;
+                comp.paddingRight = source.paddingRight;
+                comp.paddingBottom = source.paddingBottom;
+                comp.paddingLeft = source.paddingLeft;
+                comp.primaryAxisSizingMode = source.primaryAxisSizingMode;
+                comp.counterAxisSizingMode = source.counterAxisSizingMode;
+                if ('layoutWrap' in source) {
+                    comp.layoutWrap = source.layoutWrap;
+                }
+            }
+
+            // Move children
+            if ('children' in source) {
+                const children = [...source.children];
+                for (const child of children) {
+                    comp.appendChild(child);
+                }
+            }
+
+            // Cleanup source
+            source.remove();
+
+            componentMap[name] = comp;
+            context.components[name] = comp;
+        }
+    }
+    return componentMap;
+}
+
+/**
  * Create a FRAME node with Auto Layout
  */
-async function createFrame(data: NodeData, parent?: FrameNode): Promise<{ node: FrameNode; data: NodeData }> {
+/**
+ * Create a FRAME node with Auto Layout
+ */
+async function createFrame(data: NodeData, parent?: FrameNode, context?: BuildContext): Promise<{ node: FrameNode; data: NodeData }> {
     const frame = figma.createFrame();
     frame.name = data.name || 'Frame';
 
@@ -863,17 +1211,31 @@ async function createFrame(data: NodeData, parent?: FrameNode): Promise<{ node: 
     if (!data.absolute) {
         // Validate and auto-correct layoutMode - common AI mistake is using "CENTER"
         let validLayoutMode = data.layoutMode || 'VERTICAL';
-        if (validLayoutMode !== 'HORIZONTAL' && validLayoutMode !== 'VERTICAL') {
-            console.warn(`Invalid layoutMode "${validLayoutMode}" - defaulting to VERTICAL. Use primaryAxisAlignItems/counterAxisAlignItems for centering.`);
-            // If AI mistakenly used CENTER, apply centering to alignment instead
-            if ((validLayoutMode as string) === 'CENTER') {
-                data.counterAxisAlignItems = data.counterAxisAlignItems || 'CENTER';
-                data.primaryAxisAlignItems = data.primaryAxisAlignItems || 'CENTER';
+
+        // Handle WRAP shorthand
+        if (validLayoutMode === 'WRAP') {
+            frame.layoutMode = 'HORIZONTAL';
+            frame.layoutWrap = 'WRAP'; // Figma property for wrapping
+        } else {
+            if (validLayoutMode !== 'HORIZONTAL' && validLayoutMode !== 'VERTICAL') {
+                console.warn(`Invalid layoutMode "${validLayoutMode}" - defaulting to VERTICAL.`);
+                // If AI mistakenly used CENTER, apply centering to alignment instead
+                if ((validLayoutMode as string) === 'CENTER') {
+                    data.counterAxisAlignItems = data.counterAxisAlignItems || 'CENTER';
+                    data.primaryAxisAlignItems = data.primaryAxisAlignItems || 'CENTER';
+                }
+                validLayoutMode = 'VERTICAL';
             }
-            validLayoutMode = 'VERTICAL';
+            frame.layoutMode = validLayoutMode;
+
+            // Handle explicit layoutWrap property
+            if (data.layoutWrap === 'WRAP') {
+                frame.layoutWrap = 'WRAP';
+            } else if (data.layoutWrap === 'NO_WRAP') {
+                frame.layoutWrap = 'NO_WRAP';
+            }
         }
-        frame.layoutMode = validLayoutMode;
-        
+
         // Normalize alignment values from CSS-style to Figma API values
         frame.primaryAxisAlignItems = normalizePrimaryAxisAlignment(data.primaryAxisAlignItems);
         frame.counterAxisAlignItems = normalizeAlignmentValue(data.counterAxisAlignItems);
@@ -893,8 +1255,8 @@ async function createFrame(data: NodeData, parent?: FrameNode): Promise<{ node: 
     }
 
     // Apply common and geometry styles
-    applyCommonStyles(frame, data);
-    applyGeometryStyles(frame, data);
+    applyCommonStyles(frame, data, context);
+    applyGeometryStyles(frame, data, context);
 
     // Set initial size if specified (fixed sizes only)
     if (typeof data.width === 'number') {
@@ -907,32 +1269,32 @@ async function createFrame(data: NodeData, parent?: FrameNode): Promise<{ node: 
     // Process children recursively
     if (data.children && data.children.length > 0) {
         for (const childData of data.children) {
-            const result = await createNodeWithData(childData, frame);
+            const result = await createNodeWithData(childData, frame, context);
             if (result) {
                 // Append child to frame first
                 frame.appendChild(result.node);
-                
+
                 // Apply layout positioning for absolute children within auto-layout
                 if (childData.layoutPositioning === 'ABSOLUTE' && 'layoutPositioning' in result.node) {
                     (result.node as FrameNode).layoutPositioning = 'ABSOLUTE';
-                    
+
                     // Apply constraints if specified
                     if (childData.constraints) {
                         const node = result.node as FrameNode;
                         if (childData.constraints.horizontal) {
-                            node.constraints = { 
+                            node.constraints = {
                                 ...node.constraints,
-                                horizontal: childData.constraints.horizontal 
+                                horizontal: childData.constraints.horizontal
                             };
                         }
                         if (childData.constraints.vertical) {
-                            node.constraints = { 
+                            node.constraints = {
                                 ...node.constraints,
-                                vertical: childData.constraints.vertical 
+                                vertical: childData.constraints.vertical
                             };
                         }
                     }
-                    
+
                     // Apply position for absolute children
                     if (childData.x !== undefined) {
                         result.node.x = childData.x;
@@ -968,57 +1330,70 @@ async function createFrame(data: NodeData, parent?: FrameNode): Promise<{ node: 
 /**
  * Create a TEXT node
  */
-async function createText(data: NodeData, parent?: FrameNode): Promise<{ node: TextNode; data: NodeData }> {
+async function createText(data: NodeData, parent?: FrameNode, context?: BuildContext): Promise<{ node: TextNode; data: NodeData }> {
     const text = figma.createText();
     text.name = data.name || 'Text';
 
-    // Determine font family and style
-    const fontFamily = data.fontFamily || 'Inter';
-    const fontStyle = mapFontWeight(data.fontWeight);
+    let fontLoaded = false;
 
-    // Track which font we actually loaded
-    let loadedFont = { family: fontFamily, style: fontStyle };
-
-    // Load font FIRST before any text operations
-    try {
-        await figma.loadFontAsync({ family: fontFamily, style: fontStyle });
-    } catch {
-        // Fallback to Inter Regular if requested font isn't available
+    // Apply Text Style if present
+    if (data.textStyleId && context?.styles?.typography?.[data.textStyleId]) {
         try {
-            await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
-            loadedFont = { family: 'Inter', style: 'Regular' };
-        } catch {
-            // Last resort fallback
-            await figma.loadFontAsync({ family: 'Roboto', style: 'Regular' });
-            loadedFont = { family: 'Roboto', style: 'Regular' };
+            const styleId = context.styles.typography[data.textStyleId];
+            await figma.importStyleByKeyAsync(styleId).catch(() => { }); // Attempt preload
+            text.textStyleId = styleId;
+            // When style is set, we still need to load the font to change characters
+            // But we don't know easily what font the style uses without checking the style definition
+            // Luckily figma.loadFontAsync(text.fontName) loads the current font
+            await figma.loadFontAsync(text.fontName as FontName);
+            fontLoaded = true;
+        } catch (e) {
+            console.warn(`Failed to apply text style ${data.textStyleId}`, e);
         }
     }
 
-    // Set fontName BEFORE setting characters (required by Figma API)
-    text.fontName = loadedFont;
+    // Standard Font Loading (if no style or fallback)
+    const fontFamily = data.fontFamily || 'Inter';
+    const fontStyle = mapFontWeight(data.fontWeight);
+
+    if (!fontLoaded) {
+        let loadedFont = { family: fontFamily, style: fontStyle };
+        try {
+            await figma.loadFontAsync({ family: fontFamily, style: fontStyle });
+        } catch {
+            try {
+                await figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
+                loadedFont = { family: 'Inter', style: 'Regular' };
+            } catch {
+                await figma.loadFontAsync({ family: 'Roboto', style: 'Regular' });
+                loadedFont = { family: 'Roboto', style: 'Regular' };
+            }
+        }
+        text.fontName = loadedFont;
+    }
 
     // Process fake data placeholders and set text content
     const rawText = data.characters || 'Text';
     const processedText = processFakePlaceholders(rawText);
     text.characters = processedText;
 
-    // Apply font size after characters are set
+    // Apply other properties only if NO text style is applied (Manual overrides)
+    // Or if we want to support overrides on top of styles (Figma supports this)
+
     if (data.fontSize) {
         text.fontSize = data.fontSize;
     }
 
-    // Apply text color
     if (data.textColor) {
+        // If textStyle is set, this might override just color
         const rgb = hexToRgb(data.textColor);
         text.fills = [{ type: 'SOLID', color: rgb }];
     }
 
-    // Apply text alignment
     if (data.textAlign) {
         text.textAlignHorizontal = data.textAlign;
     }
 
-    // Apply line height
     if (data.lineHeight !== undefined) {
         if (data.lineHeight === 'AUTO') {
             text.lineHeight = { unit: 'AUTO' };
@@ -1027,12 +1402,10 @@ async function createText(data: NodeData, parent?: FrameNode): Promise<{ node: T
         }
     }
 
-    // Apply letter spacing
     if (data.letterSpacing !== undefined) {
         text.letterSpacing = { unit: 'PIXELS', value: data.letterSpacing };
     }
 
-    // Apply text decoration
     if (data.textDecoration) {
         text.textDecoration = data.textDecoration;
     }
@@ -1090,7 +1463,7 @@ async function createImage(data: NodeData, parent?: FrameNode): Promise<{ node: 
 /**
  * Create a RECTANGLE node
  */
-function createRectangle(data: NodeData, parent?: FrameNode): { node: RectangleNode; data: NodeData } {
+function createRectangle(data: NodeData, parent?: FrameNode, context?: BuildContext): { node: RectangleNode; data: NodeData } {
     const rect = figma.createRectangle();
     rect.name = data.name || 'Rectangle';
 
@@ -1100,8 +1473,8 @@ function createRectangle(data: NodeData, parent?: FrameNode): { node: RectangleN
     rect.resize(width, height);
 
     // Apply common and geometry styles
-    applyCommonStyles(rect, data);
-    applyGeometryStyles(rect, data);
+    applyCommonStyles(rect, data, context);
+    applyGeometryStyles(rect, data, context);
 
     // Note: FILL sizing will be applied after appending to parent
     return { node: rect, data };
@@ -1114,11 +1487,11 @@ function createIcon(data: NodeData, parent?: FrameNode): { node: FrameNode; data
     const iconName = data.icon || 'star';
     const size = data.size || 24;
     const color = data.color || '#000000';
-    
+
     // Get the SVG path data
     let svgMarkup = '';
     const pathData = PHOSPHOR_ICONS[iconName];
-    
+
     if (pathData) {
         // Standard icon from our library
         svgMarkup = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path d="${pathData}" fill="${color}"/></svg>`;
@@ -1133,7 +1506,7 @@ function createIcon(data: NodeData, parent?: FrameNode): { node: FrameNode; data
         const starPath = PHOSPHOR_ICONS['star'];
         svgMarkup = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path d="${starPath}" fill="${color}"/></svg>`;
     }
-    
+
     // Use createNodeFromSvg which properly handles all SVG path commands
     // Capture errors to prevent plugin crash on bad SVG data
     let svgNode: FrameNode;
@@ -1146,9 +1519,9 @@ function createIcon(data: NodeData, parent?: FrameNode): { node: FrameNode; data
         svgMarkup = `<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"><path d="${starPath}" fill="${color}"/></svg>`;
         svgNode = figma.createNodeFromSvg(svgMarkup);
     }
-    
+
     svgNode.name = data.name || `Icon: ${iconName}`;
-    
+
     // Lock aspect ratio and scale contents by setting constraints
     // This ensures that when we resize the parent frame, the icon vectors scale proportionally
     // instead of being forced into a square bounding box (which causes warping)
@@ -1156,30 +1529,32 @@ function createIcon(data: NodeData, parent?: FrameNode): { node: FrameNode; data
         if ('constraints' in child) {
             child.constraints = { horizontal: 'SCALE', vertical: 'SCALE' };
         }
-        
+
         // Ensure color is applied if it wasn't in the SVG
         if (color && 'fills' in child) {
-             const fills = child.fills as Paint[];
-             // Only override if black or undefined, allowing multicolor SVGs to preserve colors
-             // But for single path icons, we usually want to force color
-             // If we found a known icon, force color. If raw SVG, be careful.
-             if (pathData || iconName.trim().match(/^[MmLlHhVvCcSsQqTtAaZz0-9\s,.-]+$/)) {
-                 const rgb = hexToRgb(color);
-                 child.fills = [{ type: 'SOLID', color: rgb }];
-             }
+            const fills = child.fills as Paint[];
+            // Only override if black or undefined, allowing multicolor SVGs to preserve colors
+            // But for single path icons, we usually want to force color
+            // If we found a known icon, force color. If raw SVG, be careful.
+            if (pathData || iconName.trim().match(/^[MmLlHhVvCcSsQqTtAaZz0-9\s,.-]+$/)) {
+                const rgb = hexToRgb(color);
+                child.fills = [{ type: 'SOLID', color: rgb }];
+            }
         }
     });
 
     // Resize the container frame to the desired size
     svgNode.resize(size, size);
-    
+
     // Apply opacity if specified
     if (data.opacity !== undefined) {
         svgNode.opacity = data.opacity;
     }
-    
+
     return { node: svgNode, data };
 }
+
+
 
 // ============================================================================
 // CHART GENERATION
@@ -1206,7 +1581,7 @@ function describeArc(cx: number, cy: number, radius: number, startAngle: number,
     const start = polarToCartesian(cx, cy, radius, endAngle);
     const end = polarToCartesian(cx, cy, radius, startAngle);
     const largeArcFlag = endAngle - startAngle <= 180 ? '0' : '1';
-    
+
     return [
         'M', start.x, start.y,
         'A', radius, radius, 0, largeArcFlag, 0, end.x, end.y,
@@ -1226,7 +1601,7 @@ function polarToCartesian(cx: number, cy: number, radius: number, angleInDegrees
 /**
  * Create a CHART node (pie, donut, bar, or line)
  */
-function createChart(data: NodeData, parent?: FrameNode): { node: FrameNode; data: NodeData } {
+function createChart(data: NodeData, parent?: FrameNode, context?: BuildContext): { node: FrameNode; data: NodeData } {
     const chartType = data.chartType || 'PIE';
     const chartData = data.chartData || [
         { value: 30, label: 'A' },
@@ -1237,41 +1612,41 @@ function createChart(data: NodeData, parent?: FrameNode): { node: FrameNode; dat
     ];
     const width = typeof data.width === 'number' ? data.width : 200;
     const height = typeof data.height === 'number' ? data.height : 200;
-    
+
     // Assign colors to data points
     const coloredData = chartData.map((point, index) => ({
         ...point,
         color: point.color || CHART_COLORS[index % CHART_COLORS.length]
     }));
-    
+
     // Create container frame
     const container = figma.createFrame();
     container.name = data.name || `${chartType} Chart`;
     container.resize(width, height);
     container.fills = []; // Transparent background
-    
+
     if (chartType === 'PIE' || chartType === 'DONUT') {
         const total = coloredData.reduce((sum, d) => sum + d.value, 0);
         const cx = width / 2;
         const cy = height / 2;
         const radius = Math.min(width, height) / 2 - 4;
         const donutHole = data.donutHoleSize || 0.5;
-        
+
         let currentAngle = 0;
-        
+
         coloredData.forEach((point, index) => {
             const sliceAngle = (point.value / total) * 360;
             const endAngle = currentAngle + sliceAngle;
-            
+
             // Create slice SVG
             const slicePath = describeArc(cx, cy, radius, currentAngle, endAngle);
             const sliceSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><path d="${slicePath}" fill="${point.color}"/></svg>`;
-            
+
             try {
                 const sliceNode = figma.createNodeFromSvg(sliceSvg);
                 sliceNode.name = point.label || `Slice ${index + 1}`;
                 container.appendChild(sliceNode);
-                
+
                 // Flatten the frame to get the vector
                 if (sliceNode.children.length > 0) {
                     sliceNode.children.forEach(child => {
@@ -1283,10 +1658,10 @@ function createChart(data: NodeData, parent?: FrameNode): { node: FrameNode; dat
             } catch (e) {
                 console.warn('Failed to create chart slice:', e);
             }
-            
+
             currentAngle = endAngle;
         });
-        
+
         // Add donut hole if needed
         if (chartType === 'DONUT') {
             const holeRadius = radius * donutHole;
@@ -1302,37 +1677,37 @@ function createChart(data: NodeData, parent?: FrameNode): { node: FrameNode; dat
         const maxValue = Math.max(...coloredData.map(d => d.value));
         const barWidth = (width - 20) / coloredData.length - 8;
         const chartHeight = height - 40;
-        
+
         coloredData.forEach((point, index) => {
             const barHeight = (point.value / maxValue) * chartHeight;
             const x = 10 + index * (barWidth + 8);
             const y = height - 20 - barHeight;
-            
+
             const bar = figma.createRectangle();
             bar.name = point.label || `Bar ${index + 1}`;
             bar.resize(barWidth, barHeight);
             bar.x = x;
             bar.y = y;
             bar.cornerRadius = 4;
-            
+
             const rgb = hexToRgb(point.color);
             bar.fills = [{ type: 'SOLID', color: rgb }];
-            
+
             container.appendChild(bar);
         });
     } else if (chartType === 'LINE') {
         const maxValue = Math.max(...coloredData.map(d => d.value));
         const chartHeight = height - 40;
         const stepX = (width - 40) / (coloredData.length - 1);
-        
+
         // Build path
         let pathD = '';
         const points: string[] = [];
-        
+
         coloredData.forEach((point, index) => {
             const x = 20 + index * stepX;
             const y = height - 20 - (point.value / maxValue) * chartHeight;
-            
+
             if (index === 0) {
                 pathD = `M ${x} ${y}`;
             } else {
@@ -1340,11 +1715,11 @@ function createChart(data: NodeData, parent?: FrameNode): { node: FrameNode; dat
             }
             points.push(`${x},${y}`);
         });
-        
+
         // Create line using SVG
         const lineColor = coloredData[0]?.color || CHART_COLORS[0];
         const lineSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><path d="${pathD}" fill="none" stroke="${lineColor}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
-        
+
         try {
             const lineNode = figma.createNodeFromSvg(lineSvg);
             lineNode.name = 'Line';
@@ -1352,25 +1727,25 @@ function createChart(data: NodeData, parent?: FrameNode): { node: FrameNode; dat
         } catch (e) {
             console.warn('Failed to create line chart:', e);
         }
-        
+
         // Add data points
         coloredData.forEach((point, index) => {
             const x = 20 + index * stepX;
             const y = height - 20 - (point.value / maxValue) * chartHeight;
-            
+
             const dot = figma.createEllipse();
             dot.name = point.label || `Point ${index + 1}`;
             dot.resize(10, 10);
             dot.x = x - 5;
             dot.y = y - 5;
-            
+
             const rgb = hexToRgb(point.color);
             dot.fills = [{ type: 'SOLID', color: rgb }];
-            
+
             container.appendChild(dot);
         });
     }
-    
+
     return { node: container, data };
 }
 
@@ -1414,7 +1789,7 @@ function layoutTree(
             currentX += layoutChild.subtreeWidth + defaults.siblingSpacing;
             return layoutChild;
         });
-        
+
         // Total width of children + spacing
         node.subtreeWidth = currentX - defaults.siblingSpacing;
     } else {
@@ -1429,7 +1804,7 @@ function layoutTree(
 /**
  * Main function to create SITEMAP
  */
-async function createSitemap(data: NodeData, parent?: FrameNode): Promise<{ node: FrameNode; data: NodeData }> {
+async function createSitemap(data: NodeData, parent?: FrameNode, context?: BuildContext): Promise<{ node: FrameNode; data: NodeData }> {
     const nodeWidth = data.nodeWidth || 180;
     const levelSpacing = data.levelSpacing || 60;
     const siblingSpacing = data.siblingSpacing || 20;
@@ -1454,7 +1829,7 @@ async function createSitemap(data: NodeData, parent?: FrameNode): Promise<{ node
     const container = figma.createFrame();
     container.name = data.name || 'Sitemap';
     container.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }];
-    
+
     // Resize container
     // Width is layoutRoot.subtreeWidth
     // Height is roughly depth * (height + levelSpacing)
@@ -1481,10 +1856,10 @@ async function createSitemap(data: NodeData, parent?: FrameNode): Promise<{ node
 
 // Fixed Render function that correctly uses the pre-calculated layout x/y
 function renderSitemapNodeWithLayout(
-    layout: SitemapLayoutNode, 
-    container: FrameNode, 
+    layout: SitemapLayoutNode,
+    container: FrameNode,
     startX: number, // The starting X of this entire subtree
-    y: number, 
+    y: number,
     levelSpacing: number,
     baseColor: string
 ) {
@@ -1493,7 +1868,7 @@ function renderSitemapNodeWithLayout(
     // The node itself should be centered within that width.
     // `layout.width` is the node width.
     let nodeX = startX + (layout.subtreeWidth - layout.width) / 2;
-    
+
     // Store calculated absolute position for connector logic
     layout.x = nodeX;
     layout.y = y;
@@ -1505,14 +1880,14 @@ function renderSitemapNodeWithLayout(
     frame.y = y;
     frame.resize(layout.width, layout.height);
     frame.fills = [{ type: 'SOLID', color: { r: 1, g: 1, b: 1 } }]; // White bg
-    
+
     // Stroke
     const colorHex = layout.data.color || baseColor;
     const rgb = hexToRgb(colorHex);
     frame.strokes = [{ type: 'SOLID', color: rgb }];
     frame.strokeWeight = 2;
     frame.cornerRadius = 8;
-    
+
     // AutoLayout settings
     frame.layoutMode = 'VERTICAL';
     frame.paddingTop = 16;
@@ -1521,8 +1896,8 @@ function renderSitemapNodeWithLayout(
     frame.paddingRight = 16;
     frame.itemSpacing = 8;
     // Important: We set primary axis to AUTO so height grows with content
-    frame.primaryAxisSizingMode = 'AUTO'; 
-    frame.counterAxisSizingMode = 'FIXED'; 
+    frame.primaryAxisSizingMode = 'AUTO';
+    frame.counterAxisSizingMode = 'FIXED';
     frame.resize(layout.width, layout.height); // Set initial width
 
     // Label
@@ -1530,7 +1905,7 @@ function renderSitemapNodeWithLayout(
     title.characters = layout.data.label || 'Node';
     title.fontSize = 14;
     title.fontName = { family: 'Inter', style: 'Bold' };
-    title.fills = [{ type: 'SOLID', color: rgb }]; 
+    title.fills = [{ type: 'SOLID', color: rgb }];
     title.layoutAlign = 'STRETCH';
     frame.appendChild(title);
 
@@ -1548,7 +1923,7 @@ function renderSitemapNodeWithLayout(
             frame.appendChild(itemText);
         }
     }
-    
+
     container.appendChild(frame);
 
     // Store actual height for connector calculation (in case auto-layout changed it)
@@ -1558,13 +1933,13 @@ function renderSitemapNodeWithLayout(
     const childrenArray = layout.children;
     if (childrenArray && Array.isArray(childrenArray) && childrenArray.length > 0) {
         const childY = y + finalHeight + levelSpacing;
-        
+
         for (let i = 0; i < childrenArray.length; i++) {
             const child = childrenArray[i];
             // Use the relative x calculated in layout to position children relative to their siblings block
             const childAbsX = startX + child.x;
             renderSitemapNodeWithLayout(child, container, childAbsX, childY, levelSpacing, baseColor);
-            
+
             // Draw Connector
             const parentBottomX = nodeX + layout.width / 2;
             const parentBottomY = y + finalHeight;
@@ -1573,7 +1948,7 @@ function renderSitemapNodeWithLayout(
 
             // Connector path - calculate bounds for SVG viewBox
             const midY = parentBottomY + (levelSpacing / 2);
-            
+
             // Calculate SVG bounds
             const minX = Math.min(parentBottomX, childCenterAbsX) - 5;
             const minY2 = parentBottomY - 5;
@@ -1581,7 +1956,7 @@ function renderSitemapNodeWithLayout(
             const maxY = childAbsY + 5;
             const svgWidth = Math.max(maxX - minX, 10);
             const svgHeight = Math.max(maxY - minY2, 10);
-            
+
             const pathData = [
                 `M ${parentBottomX} ${parentBottomY}`,
                 `L ${parentBottomX} ${midY}`,
@@ -1609,22 +1984,44 @@ interface NodeResult {
  * Main recursive function to create nodes - returns node with its data
  * for deferred sizing application
  */
-async function createNodeWithData(data: NodeData, parent?: FrameNode): Promise<NodeResult | null> {
+async function createNodeWithData(data: NodeData, parent?: FrameNode, context?: BuildContext): Promise<NodeResult | null> {
+    // Handle INSTANCE
+    if (data.type === 'INSTANCE' && data.componentName && context?.components?.[data.componentName]) {
+        try {
+            const component = context.components[data.componentName];
+            const instance = component.createInstance();
+            instance.name = data.name || data.componentName;
+
+            // Position
+            if (data.absolute && data.x !== undefined && data.y !== undefined) {
+                instance.x = data.x;
+                instance.y = data.y;
+            }
+
+            // Apply overrides if any (recursive?)
+            if (data.width) applySizing(instance, data, !!parent);
+
+            return { node: instance, data };
+        } catch (e) {
+            console.warn(`Failed to create instance of ${data.componentName}`, e);
+        }
+    }
+
     switch (data.type) {
         case 'FRAME':
-            return await createFrame(data, parent);
+            return await createFrame(data, parent, context);
         case 'TEXT':
-            return await createText(data, parent);
+            return await createText(data, parent, context);
         case 'IMAGE':
             return await createImage(data, parent);
         case 'RECTANGLE':
-            return createRectangle(data, parent);
+            return createRectangle(data, parent, context);
         case 'ICON':
             return createIcon(data, parent);
         case 'CHART':
-            return createChart(data, parent);
+            return createChart(data, parent, context);
         case 'SITEMAP':
-            return await createSitemap(data, parent);
+            return await createSitemap(data, parent, context);
         default:
             console.warn(`Unknown node type: ${(data as any).type}`);
             return null;
@@ -1634,8 +2031,40 @@ async function createNodeWithData(data: NodeData, parent?: FrameNode): Promise<N
 /**
  * Create the root node - handles the top-level node that gets added to the page
  */
-async function createRootNode(data: NodeData): Promise<SceneNode | null> {
-    const result = await createNodeWithData(data);
+async function createRootNode(input: NodeData | PluginInput): Promise<SceneNode | null> {
+    let rootData: NodeData;
+    let context: BuildContext = {
+        styles: { colors: {}, typography: {} },
+        components: {}
+    };
+
+    // Determine input type
+    if ('root' in input) {
+        // It's a PluginInput
+        const pluginInput = input as PluginInput;
+        rootData = pluginInput.root;
+
+        // generated styles
+        if (pluginInput.styles) {
+            if (pluginInput.styles.colors) {
+                context.styles.colors = await createColorStyles(pluginInput.styles.colors);
+            }
+            if (pluginInput.styles.typography) {
+                context.styles.typography = await createTextStyles(pluginInput.styles.typography);
+            }
+        }
+
+        // generate components
+        if (pluginInput.components) {
+            context.components = await createComponents(pluginInput.components, context);
+        }
+
+    } else {
+        // Legacy NodeData
+        rootData = input as NodeData;
+    }
+
+    const result = await createNodeWithData(rootData, undefined, context);
     if (!result) return null;
 
     // Root nodes don't need FILL sizing since they're not in an auto-layout parent
@@ -1768,7 +2197,7 @@ function getColorFromFills(fills: readonly Paint[] | typeof figma.mixed): string
     if (fills === figma.mixed || !fills || fills.length === 0) {
         return undefined;
     }
-    
+
     for (const fill of fills) {
         if (fill.type === 'SOLID') {
             return rgbToHex(fill.color);
@@ -1797,8 +2226,8 @@ function serializeNode(node: SceneNode): NodeData | null {
     // Handle FRAME nodes
     if (node.type === 'FRAME' || node.type === 'COMPONENT' || node.type === 'INSTANCE') {
         const frame = node as FrameNode;
-        
-        // Check if this is an icon
+
+        // Check if this is an icon (simple heuristic)
         const iconName = detectIconFromFrame(frame);
         if (iconName) {
             // Get color from the first vector child
@@ -1809,7 +2238,7 @@ function serializeNode(node: SceneNode): NodeData | null {
                     iconColor = getColorFromFills(firstChild.fills as readonly Paint[]) || iconColor;
                 }
             }
-            
+
             return {
                 type: 'ICON',
                 name: frame.name,
@@ -1820,23 +2249,40 @@ function serializeNode(node: SceneNode): NodeData | null {
         }
 
         const nodeData: NodeData = {
-            type: 'FRAME',
+            type: node.type === 'INSTANCE' ? 'INSTANCE' : 'FRAME',
             name: frame.name
         };
+
+        // Handle Instance
+        if (node.type === 'INSTANCE') {
+            const instance = node as InstanceNode;
+            if (instance.mainComponent) {
+                nodeData.componentName = instance.mainComponent.name;
+            }
+        }
 
         // Layout mode
         if (frame.layoutMode && frame.layoutMode !== 'NONE') {
             nodeData.layoutMode = frame.layoutMode;
+
+            // Handle Wrap
+            if (frame.layoutMode === 'HORIZONTAL' && frame.layoutWrap === 'WRAP') {
+                nodeData.layoutMode = 'WRAP';
+                nodeData.layoutWrap = 'WRAP';
+            } else if (frame.layoutWrap === 'WRAP') {
+                nodeData.layoutWrap = 'WRAP';
+            }
+
             nodeData.primaryAxisAlignItems = frame.primaryAxisAlignItems;
             nodeData.counterAxisAlignItems = frame.counterAxisAlignItems;
-            
+
             if (frame.itemSpacing > 0) {
                 nodeData.itemSpacing = Math.round(frame.itemSpacing);
             }
-            
+
             // Padding
-            const hasPadding = frame.paddingTop > 0 || frame.paddingRight > 0 || 
-                               frame.paddingBottom > 0 || frame.paddingLeft > 0;
+            const hasPadding = frame.paddingTop > 0 || frame.paddingRight > 0 ||
+                frame.paddingBottom > 0 || frame.paddingLeft > 0;
             if (hasPadding) {
                 nodeData.padding = {
                     top: Math.round(frame.paddingTop),
@@ -1863,6 +2309,10 @@ function serializeNode(node: SceneNode): NodeData | null {
         } else {
             nodeData.height = Math.round(frame.height);
         }
+
+        // Styles References
+        if ((frame as any).fillStyleId && (frame as any).fillStyleId !== figma.mixed) nodeData.fillStyleId = (frame as any).fillStyleId;
+        if ((frame as any).strokeStyleId && (frame as any).strokeStyleId !== figma.mixed) nodeData.strokeStyleId = (frame as any).strokeStyleId;
 
         // Styling
         const fills = serializeFills(frame.fills);
@@ -1916,7 +2366,7 @@ function serializeNode(node: SceneNode): NodeData | null {
     // Handle TEXT nodes
     if (node.type === 'TEXT') {
         const text = node as TextNode;
-        
+
         const nodeData: NodeData = {
             type: 'TEXT',
             name: text.name,
@@ -1969,7 +2419,7 @@ function serializeNode(node: SceneNode): NodeData | null {
     // Handle RECTANGLE nodes
     if (node.type === 'RECTANGLE') {
         const rect = node as RectangleNode;
-        
+
         // Check if it's an image (has image fill)
         if (hasImageFill(rect.fills)) {
             const nodeData: NodeData = {
@@ -2023,7 +2473,7 @@ function serializeNode(node: SceneNode): NodeData | null {
     // Handle ELLIPSE nodes
     if (node.type === 'ELLIPSE') {
         const ellipse = node as EllipseNode;
-        
+
         const nodeData: NodeData = {
             type: 'RECTANGLE', // Treat as rectangle for simplicity
             name: ellipse.name,
@@ -2041,7 +2491,7 @@ function serializeNode(node: SceneNode): NodeData | null {
     // Handle VECTOR nodes (attempt to identify icons)
     if (node.type === 'VECTOR') {
         const vector = node as VectorNode;
-        
+
         const nodeData: NodeData = {
             type: 'RECTANGLE',
             name: vector.name,
@@ -2058,7 +2508,7 @@ function serializeNode(node: SceneNode): NodeData | null {
     // Handle GROUP nodes
     if (node.type === 'GROUP') {
         const group = node as GroupNode;
-        
+
         const nodeData: NodeData = {
             type: 'FRAME',
             name: group.name,
@@ -2112,7 +2562,7 @@ figma.showUI(__html__, {
 });
 
 // Handle messages from the UI
-figma.ui.onmessage = async (msg: { type: string; data?: NodeData }) => {
+figma.ui.onmessage = async (msg: { type: string; data?: NodeData | PluginInput }) => {
     if (msg.type === 'build' && msg.data) {
         try {
             // Start building the design
@@ -2150,12 +2600,12 @@ figma.ui.onmessage = async (msg: { type: string; data?: NodeData }) => {
             });
         }
     }
-    
+
     // Handle export requests
     if (msg.type === 'export') {
         try {
             const selection = figma.currentPage.selection;
-            
+
             if (selection.length === 0) {
                 figma.ui.postMessage({
                     type: 'export-error',
@@ -2165,10 +2615,10 @@ figma.ui.onmessage = async (msg: { type: string; data?: NodeData }) => {
             }
 
             const selectedNode = selection[0];
-            
+
             // Validate that we have a frame-like node
-            if (selectedNode.type !== 'FRAME' && 
-                selectedNode.type !== 'COMPONENT' && 
+            if (selectedNode.type !== 'FRAME' &&
+                selectedNode.type !== 'COMPONENT' &&
                 selectedNode.type !== 'INSTANCE' &&
                 selectedNode.type !== 'GROUP') {
                 figma.ui.postMessage({
@@ -2180,7 +2630,7 @@ figma.ui.onmessage = async (msg: { type: string; data?: NodeData }) => {
 
             // Serialize the selected node
             const serializedData = serializeNode(selectedNode);
-            
+
             if (serializedData) {
                 const nodeCount = countSerializedNodes(serializedData);
                 figma.ui.postMessage({
@@ -2207,10 +2657,17 @@ figma.ui.onmessage = async (msg: { type: string; data?: NodeData }) => {
 /**
  * Count total nodes in the design
  */
-function countNodes(data: NodeData): number {
+function countNodes(data: NodeData | PluginInput): number {
+    let root: NodeData;
+    if ('root' in data) {
+        root = (data as PluginInput).root;
+    } else {
+        root = data as NodeData;
+    }
+
     let count = 1;
-    if (data.children) {
-        for (const child of data.children) {
+    if (root.children) {
+        for (const child of root.children) {
             count += countNodes(child);
         }
     }
