@@ -1,0 +1,32 @@
+{
+  "type": "FRAME",
+  "name": "Derek's Signal",
+  "layoutMode": "VERTICAL",
+  "primaryAxisAlignItems": "CENTER",
+  "counterAxisAlignItems": "CENTER",
+  "padding": { "top": 40, "right": 40, "bottom": 40, "left": 40 },
+  "itemSpacing": 20,
+  "fills": [{ "type": "SOLID", "color": "#111111" }],
+  "cornerRadius": 16,
+  "children": [
+    {
+      "type": "ICON",
+      "icon": "lightning",
+      "size": 64,
+      "color": "#FACC15"
+    },
+    {
+      "type": "TEXT",
+      "characters": "Derek is Connected",
+      "fontSize": 24,
+      "fontWeight": "Bold",
+      "textColor": "#FFFFFF"
+    },
+    {
+      "type": "TEXT",
+      "characters": "Waiting for your first design command...",
+      "fontSize": 14,
+      "textColor": "#888888"
+    }
+  ]
+}

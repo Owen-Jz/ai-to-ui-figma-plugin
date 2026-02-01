@@ -127,18 +127,21 @@
       box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
     }
 
-    textarea {
+    textarea, input[type="text"] {
       width: 100%;
-      height: 280px;
       padding: 16px;
       background: transparent;
       border: none;
       color: var(--text-primary);
       font-family: 'SF Mono', 'Fira Code', 'Monaco', monospace;
       font-size: 12px;
+      outline: none;
+    }
+
+    textarea {
+      height: 280px;
       line-height: 1.6;
       resize: none;
-      outline: none;
     }
 
     textarea.prompt-input {
@@ -577,6 +580,7 @@
     <div class="tabs">
       <button class="tab" data-panel="prompt">🤖 Prompt</button>
       <button class="tab active" data-panel="builder">⚡ Builder</button>
+      <button class="tab" data-panel="remote">📡 Remote</button>
       <button class="tab" data-panel="export">📤 Export</button>
       <button class="tab" data-panel="schema">📐 Schema</button>
     </div>
@@ -754,6 +758,40 @@ Example:
         </div>
       </div>
     </div>
+
+    <!-- REMOTE PANEL -->
+    <div id="remote" class="panel">
+      <div class="input-group">
+        <label>Remote Design Source (Derek)</label>
+        <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5;">
+          Connect to Derek's signal. The plugin will poll this URL for new designs.
+        </p>
+        <div class="textarea-wrapper" style="margin-bottom: 12px;">
+          <input type="text" id="remoteUrl" value="https://raw.githubusercontent.com/Owen-Jz/ai-to-ui-figma-plugin/main/designs/current.json" style="height: auto;">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" id="toggleRemoteBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="2" />
+            <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14" />
+          </svg>
+          Start Listening
+        </button>
+      </div>
+
+      <div id="remoteStatus" class="status">
+        <span class="spinner"></span>
+        <span class="message">Waiting to connect...</span>
+      </div>
+
+      <div style="margin-top: 20px; font-size: 11px; color: var(--text-secondary);">
+        <p><strong>Status:</strong> <span id="connectionState">Disconnected</span></p>
+        <p><strong>Last Update:</strong> <span id="lastUpdate">Never</span></p>
+      </div>
+    </div>
+
     <!-- EXPORT PANEL -->
     <div id="export" class="panel">
       <div class="input-group">
@@ -1143,6 +1181,91 @@ The JSON output can be:
   </div>
 
   <script>
+    // =========================================================================
+    // REMOTE LISTENER LOGIC
+    // =========================================================================
+    let pollingInterval = null;
+    let lastJsonString = "";
+
+    const remoteStatus = document.getElementById('remoteStatus');
+    const connectionState = document.getElementById('connectionState');
+    const lastUpdate = document.getElementById('lastUpdate');
+    const toggleRemoteBtn = document.getElementById('toggleRemoteBtn');
+    const remoteUrlInput = document.getElementById('remoteUrl');
+
+    function updateRemoteStatus(message, type) {
+      remoteStatus.className = 'status show ' + type;
+      remoteStatus.querySelector('.message').textContent = message;
+      remoteStatus.querySelector('.spinner').style.display = type === 'loading' ? 'block' : 'none';
+    }
+
+    async function pollDesign() {
+      const url = remoteUrlInput.value;
+      try {
+        const response = await fetch(url + '?t=' + new Date().getTime()); // Prevent caching
+        if (!response.ok) throw new Error('Fetch failed');
+        
+        const json = await response.json();
+        const jsonString = JSON.stringify(json);
+
+        if (jsonString !== lastJsonString) {
+          lastJsonString = jsonString;
+          // New design found!
+          updateRemoteStatus('New design received! Building...', 'success');
+          lastUpdate.textContent = new Date().toLocaleTimeString();
+          
+          // Send to plugin
+          parent.postMessage({ pluginMessage: { type: 'build', data: json } }, '*');
+        } else {
+          // No change, just heartbeat
+          // updateRemoteStatus('Listening... (No changes)', 'loading');
+        }
+        
+        connectionState.textContent = 'Connected & Listening';
+        connectionState.style.color = 'var(--success)';
+
+      } catch (error) {
+        console.error('Polling error:', error);
+        updateRemoteStatus('Error fetching design: ' + error.message, 'error');
+        connectionState.textContent = 'Connection Error';
+        connectionState.style.color = 'var(--error)';
+      }
+    }
+
+    toggleRemoteBtn.addEventListener('click', () => {
+      if (pollingInterval) {
+        // Stop
+        clearInterval(pollingInterval);
+        pollingInterval = null;
+        toggleRemoteBtn.innerHTML = `
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="2" />
+            <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14" />
+          </svg>
+          Start Listening
+        `;
+        toggleRemoteBtn.classList.remove('btn-secondary');
+        toggleRemoteBtn.classList.add('btn-primary');
+        updateRemoteStatus('Disconnected', 'error');
+        connectionState.textContent = 'Disconnected';
+        connectionState.style.color = 'var(--text-secondary)';
+      } else {
+        // Start
+        updateRemoteStatus('Connecting...', 'loading');
+        pollingInterval = setInterval(pollDesign, 2000); // Poll every 2s
+        pollDesign(); // Immediate check
+        
+        toggleRemoteBtn.innerHTML = `
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="6" y="6" width="12" height="12" rx="2" ry="2"></rect>
+          </svg>
+          Stop Listening
+        `;
+        toggleRemoteBtn.classList.remove('btn-primary');
+        toggleRemoteBtn.classList.add('btn-secondary');
+      }
+    });
+
     // =========================================================================
     // PROMPT GENERATOR - THE FULL CONTEXT PROMPT
     // =========================================================================
