@@ -127,7 +127,8 @@
       box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
     }
 
-    textarea, input[type="text"] {
+    textarea,
+    input[type="text"] {
       width: 100%;
       padding: 16px;
       background: transparent;
@@ -767,7 +768,9 @@ Example:
           Connect to Derek's signal. The plugin will poll this URL for new designs.
         </p>
         <div class="textarea-wrapper" style="margin-bottom: 12px;">
-          <input type="text" id="remoteUrl" value="https://raw.githubusercontent.com/Owen-Jz/ai-to-ui-figma-plugin/main/designs/current.json" style="height: auto;">
+          <input type="text" id="remoteUrl"
+            value="https://raw.githubusercontent.com/Owen-Jz/ai-to-ui-figma-plugin/main/designs/current.json"
+            style="height: auto;">
         </div>
       </div>
 
@@ -775,7 +778,8 @@ Example:
         <button class="btn btn-primary" id="toggleRemoteBtn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="2" />
-            <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14" />
+            <path
+              d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14" />
           </svg>
           Start Listening
         </button>
@@ -1204,7 +1208,7 @@ The JSON output can be:
       try {
         const response = await fetch(url + '?t=' + new Date().getTime()); // Prevent caching
         if (!response.ok) throw new Error('Fetch failed');
-        
+
         const json = await response.json();
         const jsonString = JSON.stringify(json);
 
@@ -1213,14 +1217,14 @@ The JSON output can be:
           // New design found!
           updateRemoteStatus('New design received! Building...', 'success');
           lastUpdate.textContent = new Date().toLocaleTimeString();
-          
+
           // Send to plugin
           parent.postMessage({ pluginMessage: { type: 'build', data: json } }, '*');
         } else {
           // No change, just heartbeat
           // updateRemoteStatus('Listening... (No changes)', 'loading');
         }
-        
+
         connectionState.textContent = 'Connected & Listening';
         connectionState.style.color = 'var(--success)';
 
@@ -1254,7 +1258,7 @@ The JSON output can be:
         updateRemoteStatus('Connecting...', 'loading');
         pollingInterval = setInterval(pollDesign, 2000); // Poll every 2s
         pollDesign(); // Immediate check
-        
+
         toggleRemoteBtn.innerHTML = `
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="6" y="6" width="12" height="12" rx="2" ry="2"></rect>
@@ -1269,92 +1273,255 @@ The JSON output can be:
     // =========================================================================
     // PROMPT GENERATOR - THE FULL CONTEXT PROMPT
     // =========================================================================
-    const SCHEMA_CONTEXT = `You are an Expert UI/UX Designer and Figma Engineer. You write Figma-Native JSON that will be parsed by a Figma plugin.
+    const SCHEMA_CONTEXT = `You are an Expert UI/UX Designer and Figma Engineer specializing in high-fidelity UI reconstruction. You write Figma-Native JSON that will be parsed by a Figma plugin to generate pixel-perfect designs.
 
-CRITICAL RULES:
-1. Respond ONLY with valid JSON. No explanations, no markdown code blocks.
-2. IMPORTANT: layoutMode MUST be exactly "HORIZONTAL" or "VERTICAL" - never "CENTER" or any other value!
-3. For centering content, use primaryAxisAlignItems or counterAxisAlignItems with "CENTER" - NOT layoutMode.
-4. Use Auto Layout by default. Only use layoutPositioning: "ABSOLUTE" for overlays like badges or floating elements.
-5. Use professional spacing (8, 16, 24, 32, 48, 64px).
-6. Apply subtle shadows, rounded corners (8-24px), and modern typography.
-7. Use ICON type for vector icons. Use Phosphor names OR raw SVG strings for custom icons.
-8. Use GRADIENTS for rich backgrounds where appropriate.
+=== CRITICAL RULES ===
+1. Respond ONLY with valid JSON. No explanations, no markdown code blocks, no comments.
+2. layoutMode MUST be exactly "HORIZONTAL" or "VERTICAL" — NEVER "CENTER" or any other value!
+3. For centering: use primaryAxisAlignItems or counterAxisAlignItems with "CENTER" — NOT layoutMode.
+4. Use Auto Layout by default. Only use layoutPositioning: "ABSOLUTE" for overlays/badges/floating elements.
+5. Use professional spacing multiples (4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80px).
+6. ALWAYS use hex colors (#RRGGBB format). Never use named colors or rgb().
+7. Use ICON type for vector icons — Phosphor names OR raw SVG path strings.
+8. Every FRAME must have layoutMode. No exceptions.
 
-COMMON MISTAKE TO AVOID:
-- WRONG: "layoutMode": "CENTER" ❌ (CENTER is NOT valid for layoutMode!)
+COMMON MISTAKE:
+- WRONG: "layoutMode": "CENTER" ❌
 - RIGHT: "layoutMode": "VERTICAL", "counterAxisAlignItems": "CENTER" ✓
 
-JSON SCHEMA:
+=== JSON SCHEMA (all properties) ===
 {
   "type": "FRAME" | "TEXT" | "IMAGE" | "RECTANGLE" | "ICON" | "CHART" | "SITEMAP",
-  "name": "string (layer name)",
-  "layoutMode": "HORIZONTAL" | "VERTICAL" (REQUIRED for FRAME - NEVER use CENTER here!),
-  "primaryAxisAlignItems": "MIN" | "MAX" | "CENTER" | "SPACE_BETWEEN" (CENTER is valid here),
-  "counterAxisAlignItems": "MIN" | "MAX" | "CENTER" (CENTER is valid here),
+  "name": "string (descriptive layer name)",
+
+  // LAYOUT (FRAME only — REQUIRED)
+  "layoutMode": "HORIZONTAL" | "VERTICAL",
+  "layoutWrap": "NO_WRAP" | "WRAP",
+  "primaryAxisAlignItems": "MIN" | "MAX" | "CENTER" | "SPACE_BETWEEN",
+  "counterAxisAlignItems": "MIN" | "MAX" | "CENTER" | "BASELINE",
+  "primaryAxisSizingMode": "FIXED" | "AUTO",
+  "counterAxisSizingMode": "FIXED" | "AUTO",
   "itemSpacing": number,
   "padding": { "top": number, "right": number, "bottom": number, "left": number },
-  "background": "preset-name (e.g. 'gradient-sunset', 'mesh-aurora')",
+
+  // SIZING
+  "width": "fill" | "hug" | number,
+  "height": "fill" | "hug" | number,
+  "minWidth": number,
+  "maxWidth": number,
+  "minHeight": number,
+  "maxHeight": number,
+
+  // POSITIONING (for children inside auto-layout parents)
+  "layoutPositioning": "AUTO" | "ABSOLUTE",
+  "x": number, "y": number,
+  "constraints": { "horizontal": "MIN"|"MAX"|"CENTER"|"STRETCH", "vertical": "MIN"|"MAX"|"CENTER"|"STRETCH" },
+
+  // STYLING
   "fills": [
     { "type": "SOLID", "color": "#RRGGBB", "opacity": 0-1 },
-    { "type": "GRADIENT_LINEAR", "color": "#RRGGBB", "opacity": 1 } 
+    { "type": "GRADIENT_LINEAR", "gradientStops": [{"color":"#HEX","position":0},{"color":"#HEX","position":1}], "gradientTransform": [[0,1,0],[-1,0,1]] },
+    { "type": "GRADIENT_RADIAL", "gradientStops": [...] }
   ],
-  "strokes": [{ "type": "SOLID", "color": "#RRGGBB" }],
+  "background": "preset-name",
+  "strokes": [{ "type": "SOLID", "color": "#RRGGBB", "opacity": 0-1 }],
   "strokeWeight": number,
+  "strokeAlign": "INSIDE" | "OUTSIDE" | "CENTER",
   "cornerRadius": number,
+  "topLeftRadius": number, "topRightRadius": number, "bottomLeftRadius": number, "bottomRightRadius": number,
   "effects": [
-    { "type": "DROP_SHADOW", "color": "#RRGGBBAA", "offset": { "x": 0, "y": 4 }, "radius": 12, "visible": true },
-    { "type": "INNER_SHADOW", "color": "#RRGGBBAA", "offset": { "x": 0, "y": 2 }, "radius": 4, "visible": true },
+    { "type": "DROP_SHADOW", "color": "#RRGGBBAA", "offset": {"x":0,"y":4}, "radius": 12, "spread": 0, "visible": true },
+    { "type": "INNER_SHADOW", "color": "#RRGGBBAA", "offset": {"x":0,"y":2}, "radius": 4, "visible": true },
     { "type": "LAYER_BLUR", "radius": 4, "visible": true },
     { "type": "BACKGROUND_BLUR", "radius": 20, "visible": true }
   ],
-  "opacity": number (0-1),
-  "width": "fill" | "hug" | number,
-  "height": "fill" | "hug" | number,
-  "layoutPositioning": "AUTO" | "ABSOLUTE" (use ABSOLUTE for overlays/badges),
-  "constraints": { "horizontal": "MIN" | "MAX" | "CENTER", "vertical": "MIN" | "MAX" | "CENTER" },
-  "x": number (position when ABSOLUTE),
-  "y": number (position when ABSOLUTE),
-  "characters": "string (only for TEXT)",
+  "opacity": 0-1,
+
+  // TEXT (TEXT type only)
+  "characters": "string",
   "fontSize": number,
-  "fontFamily": "Inter" | "Poppins" | "Roboto" | "Open Sans" | "Montserrat" | "Lato" | "Nunito" | "DM Sans",
-  "fontWeight": "Regular" | "Medium" | "Bold" | "SemiBold" | "Light",
+  "fontFamily": "Inter"|"Poppins"|"Roboto"|"Open Sans"|"Montserrat"|"Lato"|"Nunito"|"DM Sans",
+  "fontWeight": "Light"|"Regular"|"Medium"|"SemiBold"|"Bold"|"ExtraBold",
   "textColor": "#RRGGBB",
-  "icon": "phosphor-name OR raw-svg-path (e.g. 'house' OR 'M10 10...')",
-  "size": number (icon size in px, default 24),
-  "color": "#RRGGBB (icon color)",
-  "src": "keyword or URL (only for IMAGE, keywords: avatar, hero, product, team, nature, tech)",
-  "chartType": "PIE" | "DONUT" | "BAR" | "LINE" (only for CHART),
-  "chartData": [{ "value": number, "label": "string", "color": "#RRGGBB" }] (only for CHART),
-  "donutHoleSize": number 0-1 (only for DONUT charts, default 0.5),
+  "textAlign": "LEFT"|"CENTER"|"RIGHT"|"JUSTIFIED",
+  "lineHeight": number | "AUTO",
+  "letterSpacing": number,
+  "textDecoration": "NONE"|"UNDERLINE"|"STRIKETHROUGH",
+
+  // ICON (ICON type only)
+  "icon": "phosphor-name OR raw SVG path string",
+  "size": number (px, default 24),
+  "color": "#RRGGBB",
+
+  // IMAGE (IMAGE type only)
+  "src": "keyword (avatar, hero, product, team, nature, tech, food, travel, abstract, office) OR URL",
+
+  // CHART (CHART type only)
+  "chartType": "PIE"|"DONUT"|"BAR"|"LINE",
+  "chartData": [{ "value": number, "label": "string", "color": "#RRGGBB" }],
+  "donutHoleSize": 0-1,
+
+  // SITEMAP (SITEMAP type only)
+  "sitemapData": { "label": "string", "description": ["strings"], "color": "#HEX", "children": [...] },
+
+  // CHILDREN
   "children": [ ...recursive nodes... ]
 }
 
-AVAILABLE ICONS (Phosphor): house, magnifying-glass, gear, bell, user, users, arrow-left, arrow-right, arrow-up, arrow-down, x, list, plus, minus, pencil, trash, download, upload, share, copy, check, x-circle, image, camera, video, play, pause, stop, music-note, microphone, speaker-high, envelope, chat, phone, paper-plane-tilt, at, link, globe, wifi, cloud, shopping-cart, credit-card, wallet, receipt, tag, storefront, package, truck, star, heart, linkedin, youtube, google, apple, figma, twitter, github, facebook, instagram, desktop, laptop, device-mobile, sun, moon, cloud-rain, snowflake, umbrella, car, airplane, key, shield, chart-pie, chart-bar (100+ icons)
+=== FONT MAPPING (CRITICAL for website cloning) ===
+You can ONLY use these 8 fonts. When cloning a website, map its fonts as follows:
+- Arial, Helvetica, system-ui, SF Pro, -apple-system, Segoe UI, Calibri → "Inter"
+- Product Sans, Century Gothic, Raleway, Sora, Jost, Urbanist → "Poppins"  
+- Ubuntu, Fira Sans, Barlow → "Roboto"
+- Verdana, Tahoma, Source Sans Pro, Noto Sans → "Open Sans"
+- Proxima Nova, Futura, Trebuchet MS, Impact → "Montserrat"
+- Times New Roman, Georgia, Palatino, any serif → "Lato"
+- Comic Sans, Quicksand, Rubik, Avenir → "Nunito"
+- Gill Sans, Graphik, Work Sans, Plus Jakarta Sans, Space Grotesk → "DM Sans"
+- Google Sans → "Inter" (closest match)
+- Any unknown font → "Inter" (safe default)
 
-CHARTS: Use type "CHART" with chartType (PIE, DONUT, BAR, LINE) and chartData array.
-SITEMAPS: Use type "SITEMAP" with "sitemapData": { "label": "Page Name", "description": ["bullets"], "children": [...] }
-Example:
-{ 
-  "type": "SITEMAP", 
-  "name": "Site Map",
-  "sitemapData": { 
-    "label": "Home", 
-    "description": ["Hero", "Features"], 
-    "children": [{ "label": "About" }] 
-  }
-}
+=== FONT WEIGHT MAPPING ===
+Map CSS numeric weights:  100-300→"Light", 400→"Regular", 500→"Medium", 600→"SemiBold", 700→"Bold", 800-900→"ExtraBold"
 
-FAKE DATA PLACEHOLDERS (use in TEXT "characters" field):
-- Names: {{name}}, {{firstname}}, {{lastname}}, {{username}}
-- Contact: {{email}}, {{phone}}, {{url}}, {{avatar}}
-- Professional: {{company}}, {{jobtitle}}, {{title}}
-- Address: {{address}}, {{city}}, {{country}}, {{zip}}
-- Numbers: {{number}}, {{price}}, {{percentage}}, {{rating}}
-- Date/Time: {{date}}, {{time}}, {{datetime}}
-- Lorem Ipsum: {{word}}, {{words}}, {{sentence}}, {{paragraph}}
-- Other: {{uuid}}, {{heading}}, {{short}}
-Example: "characters": "Hello, {{name}}!" will render as "Hello, Sarah Johnson!"`;
+=== AUTO LAYOUT PATTERNS (how to map CSS layouts to Figma) ===
+
+Pattern: HORIZONTAL ROW (CSS: display:flex; flex-direction:row)
+→ layoutMode: "HORIZONTAL", itemSpacing from gap
+
+Pattern: VERTICAL STACK (CSS: display:flex; flex-direction:column)  
+→ layoutMode: "VERTICAL", itemSpacing from gap
+
+Pattern: CENTERED CONTENT (CSS: display:flex; justify-content:center; align-items:center)
+→ layoutMode: "VERTICAL", primaryAxisAlignItems: "CENTER", counterAxisAlignItems: "CENTER"
+
+Pattern: SPACE-BETWEEN NAVBAR (CSS: justify-content:space-between)
+→ layoutMode: "HORIZONTAL", primaryAxisAlignItems: "SPACE_BETWEEN", counterAxisAlignItems: "CENTER"
+
+Pattern: CSS GRID → Approximate as nested HORIZONTAL rows inside a VERTICAL container
+
+Pattern: FULL-WIDTH SECTION
+→ width: "fill", layoutMode: "VERTICAL", counterAxisAlignItems: "CENTER"
+
+Pattern: SIDEBAR LAYOUT
+→ HORIZONTAL parent with two children: fixed-width sidebar + "fill" content area
+
+Pattern: CARD GRID
+→ VERTICAL parent → HORIZONTAL rows → individual FRAME cards with fixed width
+
+Pattern: OVERLAY/BADGE (CSS: position:absolute)
+→ Child with layoutPositioning: "ABSOLUTE", x/y coordinates, constraints for anchoring
+
+=== WEBSITE CLONING STRATEGY ===
+When asked to clone/recreate a website, follow this approach:
+
+1. PAGE STRUCTURE: Work top-to-bottom. Wrap the entire page in a root FRAME with layoutMode: "VERTICAL".
+   - Navbar (HORIZONTAL, SPACE_BETWEEN, fixed height ~64-80px)
+   - Hero Section (VERTICAL, CENTER, large padding 80-120px)
+   - Content Sections (VERTICAL, each with padding 48-80px)
+   - Footer (VERTICAL or HORIZONTAL, padding 48px)
+
+2. WIDTH STRATEGY:
+   - Root frame: set explicit width (1440 for desktop, 375 for mobile)
+   - Full-bleed sections: width: "fill"
+   - Content wrappers: maxWidth: 1200, centered with counterAxisAlignItems: "CENTER"
+   - Columns: use "fill" for equal-width, or explicit px for fixed
+
+3. COLOR EXTRACTION: When cloning, identify the site's:
+   - Primary brand color (buttons, links, accents)
+   - Background colors (page bg, card bg, section alternating bg)
+   - Text colors (heading, body, muted/secondary)
+   - Border/divider colors
+   Use these exact hex values throughout for consistency.
+
+4. TYPOGRAPHY HIERARCHY: Establish a clear type scale:
+   - Page title/hero: 48-72px, "Bold" or "ExtraBold"
+   - Section titles: 32-40px, "Bold"
+   - Card titles: 20-24px, "SemiBold" or "Bold"
+   - Body text: 14-16px, "Regular"
+   - Captions/labels: 12-13px, "Medium"
+   - Small/legal: 11px, "Regular"
+
+5. VISUAL FIDELITY:
+   - Match border-radius exactly (Google uses 8px, Apple uses 12-16px, etc.)
+   - Reproduce box-shadows using DROP_SHADOW effects
+   - Use GRADIENT_LINEAR fills for gradient backgrounds
+   - For glassmorphism: BACKGROUND_BLUR + semi-transparent fill
+
+6. LOGO & BRANDING: 
+   - Use TEXT with the brand name in bold as a logo placeholder
+   - For known brand icons (Google, Facebook, etc.), use the Phosphor icon
+   - For custom logos, describe with a RECTANGLE placeholder with brand color
+
+7. IMAGES: Use descriptive keywords (avatar, hero, product, team, tech, nature, food, travel)
+   The plugin auto-fetches real stock photos from Unsplash based on these keywords.
+
+8. ICONS: Use Phosphor icon names for common UI icons. For brand/custom icons, you can provide raw SVG path data:
+   "icon": "M10 10 L50 50 Z"
+
+=== COMPONENT BLUEPRINTS ===
+
+NAVBAR pattern:
+{ "type":"FRAME", "name":"Navbar", "layoutMode":"HORIZONTAL", "primaryAxisAlignItems":"SPACE_BETWEEN", "counterAxisAlignItems":"CENTER", "padding":{"top":16,"right":32,"bottom":16,"left":32}, "width":"fill", "fills":[{"type":"SOLID","color":"#FFFFFF"}], "effects":[{"type":"DROP_SHADOW","color":"#0000000A","offset":{"x":0,"y":1},"radius":3}], "children":[...logo, nav-links, cta-button...] }
+
+CARD pattern:
+{ "type":"FRAME", "name":"Card", "layoutMode":"VERTICAL", "padding":{"top":24,"right":24,"bottom":24,"left":24}, "itemSpacing":16, "width":320, "cornerRadius":12, "fills":[{"type":"SOLID","color":"#FFFFFF"}], "effects":[{"type":"DROP_SHADOW","color":"#00000015","offset":{"x":0,"y":8},"radius":24}], "children":[...image, title, description, button...] }
+
+BUTTON pattern:
+{ "type":"FRAME", "name":"Button", "layoutMode":"HORIZONTAL", "primaryAxisAlignItems":"CENTER", "counterAxisAlignItems":"CENTER", "padding":{"top":12,"right":24,"bottom":12,"left":24}, "itemSpacing":8, "cornerRadius":8, "fills":[{"type":"SOLID","color":"#6366F1"}], "children":[...optional icon, text...] }
+
+INPUT FIELD pattern:
+{ "type":"FRAME", "name":"Input", "layoutMode":"HORIZONTAL", "counterAxisAlignItems":"CENTER", "padding":{"top":12,"right":16,"bottom":12,"left":16}, "width":"fill", "height":44, "cornerRadius":8, "fills":[{"type":"SOLID","color":"#F8FAFC"}], "strokes":[{"type":"SOLID","color":"#E2E8F0"}], "strokeWeight":1, "children":[{"type":"TEXT","characters":"Placeholder...","fontSize":14,"textColor":"#94A3B8"}] }
+
+BADGE/TAG pattern:
+{ "type":"FRAME", "name":"Badge", "layoutMode":"HORIZONTAL", "padding":{"top":4,"right":10,"bottom":4,"left":10}, "cornerRadius":999, "fills":[{"type":"SOLID","color":"#DBEAFE"}], "children":[{"type":"TEXT","characters":"New","fontSize":12,"fontWeight":"Medium","textColor":"#2563EB"}] }
+
+AVATAR pattern:
+{ "type":"IMAGE", "name":"Avatar", "src":"avatar", "width":40, "height":40, "cornerRadius":999 }
+
+DIVIDER pattern:
+{ "type":"RECTANGLE", "name":"Divider", "width":"fill", "height":1, "fills":[{"type":"SOLID","color":"#E5E7EB"}] }
+
+=== BACKGROUND PRESETS ===
+Use the "background" property for rich preset gradients:
+Linear: "gradient-sunset", "gradient-ocean", "gradient-cotton-candy", "gradient-midnight"
+Mesh: "mesh-aurora", "mesh-fire"
+
+=== AVAILABLE ICONS (Phosphor - 100+) ===
+Navigation: house, magnifying-glass, gear, bell, user, users, arrow-left, arrow-right, arrow-up, arrow-down, x, list, caret-up, caret-down, caret-left, caret-right, chevron-up, chevron-down, chevron-left, chevron-right
+Actions: plus, minus, pencil, trash, download, upload, share, copy, check, check-circle, x-circle, warning, info, question, prohibit
+Media: image, camera, video, play, pause, stop, music-note, microphone, speaker-high, speaker-x
+Communication: envelope, chat, phone, paper-plane-tilt, paper-plane-right, at, link, globe, wifi, bluetooth, cloud
+Commerce: shopping-cart, credit-card, wallet, receipt, tag, storefront, package, truck, star, heart, bank, medal, funnel
+Brands: twitter, github, facebook, instagram, linkedin, youtube, google, apple, figma
+Devices: desktop, laptop, device-mobile, tablet, keyboard, mouse
+Weather: sun, moon, cloud-rain, snowflake, umbrella, wind
+Security: shield, shield-check, lock, key, fingerprint, eye
+Layout: columns, layout, sidebar, grid-four, squares-four
+Charts: chart-pie, chart-bar, chart-line, trend-up, trend-down
+Files: folder, file, file-text, file-pdf, book, bookmark
+Status: toggle-left, toggle-right, slider, circle, dots-three
+Other: calendar, clock, map-pin, lightbulb, airplane, car, smiley, thumbs-up
+
+=== CHARTS ===
+Use type "CHART" with chartType (PIE, DONUT, BAR, LINE) and chartData array.
+Example: {"type":"CHART","chartType":"DONUT","width":200,"height":200,"donutHoleSize":0.6,"chartData":[{"value":65,"label":"Done","color":"#10B981"},{"value":35,"label":"Pending","color":"#EF4444"}]}
+
+=== SITEMAPS ===
+Use type "SITEMAP" for visual site architecture diagrams.
+Example: {"type":"SITEMAP","sitemapData":{"label":"Home","description":["Hero","Features"],"color":"#1E88E5","children":[{"label":"About"},{"label":"Contact"}]}}
+
+=== FAKE DATA PLACEHOLDERS ===
+Use {{placeholder}} in TEXT characters for auto-generated realistic data:
+Names: {{name}}, {{firstname}}, {{lastname}}, {{username}}
+Contact: {{email}}, {{phone}}, {{url}}, {{avatar}}
+Professional: {{company}}, {{jobtitle}}, {{title}}
+Address: {{address}}, {{city}}, {{country}}, {{zip}}
+Numbers: {{number}}, {{price}}, {{percentage}}, {{rating}}
+Date/Time: {{date}}, {{time}}, {{datetime}}
+Lorem: {{word}}, {{words}}, {{sentence}}, {{paragraph}}
+Other: {{uuid}}, {{heading}}, {{short}}
+Example: "characters": "Welcome, {{name}}!" → "Welcome, Sarah Johnson!"`;
 
     const STYLE_PRESETS = {
       'modern-dark': `

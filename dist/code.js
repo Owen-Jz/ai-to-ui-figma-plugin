@@ -91,6 +91,11 @@
     "github": "M208.31,75.68A79.52,79.52,0,0,0,162.77,53,80.17,80.17,0,0,0,32,126.12c0,32.73,21,63.13,54,77.8.21.09.43.16.64.25q.67.29,1.34.54a79.89,79.89,0,0,0,29.56,6L128,210.63H139q8.79-.11,17.23-2.11a80,80,0,0,0,52.09-132.84ZM178,165.73C174.1,172.91,160.7,194.59,128,194.63h-3.41c-30.63-.37-43.18-20.07-46.79-27.42-3-6-5.8-21.5-5.8-37.4,0-17,11.75-26.43,14-28.16l2.35-1.74c2.82-2.09,11.36-7.86,26-7.86,13.79,0,22,5.2,25.9,7.66l2.36,1.48c3.27,2.05,14.65,9.18,14.65,28.62C157.25,148.62,152.06,163.66,148.33,171.19c-1.35-6.68-8.62-42.3,1.35-60.67a8,8,0,0,0-14.07-7.63c-7.23,13.33-4.59,38.33-2.26,51.81-4.72-2.73-10.15-4.14-16-4.14a33.32,33.32,0,0,0-5.87.52c2.4-13.43,5-38.27-2.3-51.49a8,8,0,1,0-14.09,7.56c10.18,19,2.6,56.09,1.18,62.87-2.68-6.55-6.66-20.91-2.91-42.33,0-12.78-7.16-16.71-8.5-17.39-9.15,0-14,3-15.34,3.81-2.75,1.72-6,4.72-6,17.47,0,11.9,2,24.47,4.3,31.74,2.78,8.81,11.53,24.16,36.94,22.86h3.48c26.74-.29,35.61-16.05,38.45-22.18,2.72-5.88,6.86-21.16,6.86-37.76,0-13.68-8-18-10.09-19-4.21-2-12.28-5.85-21-5.85-8.23,0-16.14,3.38-18.4,4.41l-2.08,1c-1.63,1-8.31,5.28-8.31,16.27,0,10.13,3.48,31.43,8.42,48.74a8,8,0,0,0,15.38-4.39C128.71,155,125.75,138,125.7,130.67c3.9.23,7.91.35,11.93.35,5.34,0,10.6-1.5,15.17-2.61a55.19,55.19,0,0,1-3.6,18.91,8,8,0,1,0,14.78,4.74c1.1-3.41,2.07-7.2,2.83-11.3,3.74,7.55,8.8,19.38,11.19,25Z",
     "facebook": "M224,32H32A16,16,0,0,0,16,48V208a16,16,0,0,0,16,16H128V136H96V96h32V64a40,40,0,0,1,40-40h32V64H168a8,8,0,0,0-8,8V96h40l-8,40H160v88h64a16,16,0,0,0,16-16V48A16,16,0,0,0,224,32Z",
     "instagram": "M172,120a44,44,0,1,1-44-44A44,44,0,0,1,172,120Zm56,8a52.06,52.06,0,0,0-52-52H80a52.06,52.06,0,0,0-52,52v48a52.06,52.06,0,0,0,52,52h96a52.06,52.06,0,0,0,52-52ZM128,180a52,52,0,1,1,52-52A52,52,0,0,1,128,180Zm54-106a10,10,0,1,1-10-10A10,10,0,0,1,182,74Z",
+    "linkedin": "M204,64H52A12,12,0,0,0,40,76V180a12,12,0,0,0,12,12H204a12,12,0,0,0,12-12V76A12,12,0,0,0,204,64ZM84,168a4,4,0,0,1-8,0V112a4,4,0,0,1,8,0Zm-4-66a8,8,0,1,1,8-8A8,8,0,0,1,80,102Zm104,66a4,4,0,0,1-8,0V130a20,20,0,0,0-40,0v38a4,4,0,0,1-8,0V112a4,4,0,0,1,8,0v6.86a28.09,28.09,0,0,1,38-5.32A28,28,0,0,1,184,140Z",
+    "youtube": "M234.33,69.52a24,24,0,0,0-14.49-16.4C185.56,44,128,44,128,44s-57.56,0-91.84,9.12A24,24,0,0,0,21.67,69.52C16,97.74,16,128,16,128s0,30.26,5.67,58.48a24,24,0,0,0,14.49,16.4C54.44,212,112,212,112,212s57.56,0,91.84-9.12a24,24,0,0,0,14.49-16.4C240,158.26,240,128,240,128S240,97.74,234.33,69.52ZM96,160V96l64,32Z",
+    "google": "M128,128h88a88.13,88.13,0,0,1-88,88C83.87,216,48,176.61,48,128S83.87,40,128,40a87.72,87.72,0,0,1,62.15,25.85,8,8,0,1,1-11.3,11.32A71.74,71.74,0,0,0,128,56c-39.7,0-72,32.3-72,72s32.3,72,72,72,72-32.3,72-72H128a8,8,0,0,1,0-16Z",
+    "apple": "M199.39,152.61C194.22,175.7,181.79,209,158.7,209c-10.45,0-14.77-6.27-27.76-6.27-14.18,0-17.76,6-27.46,6-19.1,0-35.82-31.94-35.82-58.5,0-27.76,17-42.39,33.13-42.39,11.34,0,17,6.86,27.16,6.86s19.4-7.46,28.95-7.46c2.09,0,13.13.3,23.58,12.24a40.48,40.48,0,0,1-17.61,31.34A38,38,0,0,1,199.39,152.61ZM154.52,65.06c5.37-6.86,9-16.12,9-25,0-1.19-.15-2.39-.3-3.28-8.36,1.49-18.21,6.57-23.28,12.84-4.78,5.67-8.36,14.92-8.36,23.58,0,1.19.15,2.09.45,2.99C140.49,77.3,149.44,71.93,154.52,65.06Z",
+    "figma": "M82,108a26,26,0,1,1,26-26A26,26,0,0,1,82,108Zm0,52a26,26,0,1,1,26-26A26,26,0,0,1,82,160ZM174,28H82a26,26,0,0,0,0,52h92a26,26,0,0,0,0-52Zm0,52H134v52h40a26,26,0,0,0,0-52Zm-92,80a26,26,0,1,0,26,26V160Z",
     // UI Controls
     "toggle-left": "M176,56H80a72,72,0,0,0,0,144h96a72,72,0,0,0,0-144ZM80,168a40,40,0,1,1,40-40A40,40,0,0,1,80,168Z",
     "toggle-right": "M176,56H80a72,72,0,0,0,0,144h96a72,72,0,0,0,0-144Zm0,112a40,40,0,1,1,40-40A40,40,0,0,1,176,168Z",
@@ -107,7 +112,127 @@
     "clock": "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z",
     "map-pin": "M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.52,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206.53C113.83,208.72,56,155.63,56,104a72,72,0,0,1,144,0C200,155.61,142.17,208.7,128,222.53Z",
     "eye": "M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.19,141.6,183.27,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z",
-    "lock": "M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Zm-80,84a12,12,0,1,1,12-12A12,12,0,0,1,128,164Zm32-84H96V56a32,32,0,0,1,64,0Z"
+    "lock": "M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Zm-80,84a12,12,0,1,1,12-12A12,12,0,0,1,128,164Zm32-84H96V56a32,32,0,0,1,64,0Z",
+    // Weather
+    "sun": "M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z",
+    "moon": "M224.21,163.78A96,96,0,1,1,92.22,31.79a8,8,0,0,1,11,11,80,80,0,0,0,110,110,8,8,0,0,1,11,11Z",
+    "cloud-rain": "M88,208a8,8,0,0,1-8-8V176a8,8,0,0,1,16,0v24A8,8,0,0,1,88,208Zm64.12-58.18A56,56,0,0,0,160,40a55.84,55.84,0,0,0-52.54,37.15,59.39,59.39,0,0,0-13.34-1.55A58,58,0,0,0,36,133.58,7.94,7.94,0,0,1,40,148a74,74,0,0,1,118.89,1.82ZM160,208a8,8,0,0,1-8-8V176a8,8,0,0,1,16,0v24A8,8,0,0,1,160,208Zm71.55-74.42A74,74,0,0,1,161.46,149.2,8,8,0,0,1,160,136h.63a58,58,0,0,0-12.08-114.72c-.45,0-.89,0-1.33,0A72,72,0,1,1,231.55,133.58ZM128,248a8,8,0,0,1-8-8V216a8,8,0,0,1,16,0v24A8,8,0,0,1,128,248Z",
+    "snowflake": "M220.24,149.17l-16.5-9.52,19.34-11.16a8,8,0,0,0-8-13.86l-19.34,11.17V96a8,8,0,0,0,5.65-2.35l24-24a8,8,0,0,0-11.31-11.31l-24,24A8,8,0,0,0,188,88v20.44l-42.34,24.45V84l23.16-13.37L188,80a8,8,0,0,0,8-13.86l-19.16-11.06V24a8,8,0,0,0-16,0V55.08L141.68,44,153,24.41a8,8,0,1,0-13.86-8l-11.31,19.6-11.32-19.6a8,8,0,1,0-13.86,8L114.32,44l-19.16,11.06V24a8,8,0,0,0-16,0V55.08l-19.16,11.06A8,8,0,0,0,68,80l19.16-9.37L110.34,84v48.89L68,108.44V88a8,8,0,0,0-2.34-5.66l-24-24a8,8,0,0,0-11.32,11.31l24,24A8,8,0,0,0,56,96v29.83L36.66,114.66a8,8,0,0,0-8,13.86l19.34,11.16L31.5,149.17a8,8,0,0,0,8,13.86l16.5-9.53V184a8,8,0,0,0-2.34,5.66l-24,24a8,8,0,0,0,11.32,11.31l24-24A8,8,0,0,0,68,192V162.22l42.34-24.44V188L87.18,201.37,68,192a8,8,0,0,0-8,13.86l19.16,11.06V248a8,8,0,0,0,16,0V216.92l19.16,11.06-11.32,19.6a8,8,0,0,0,13.86,8l11.32-19.6,11.31,19.6a8,8,0,0,0,13.86-8l-11.31-19.6L160,216.92V248a8,8,0,0,0,16,0V216.92l19.16-11.06A8,8,0,0,0,188,192l-19.16,9.37L145.66,188V139.11l42.34,24.45V192a8,8,0,0,0,2.34,5.66l24,24a8,8,0,0,0,11.31-11.31l-24-24A8,8,0,0,0,200,184V153.5l16.5,9.53a8,8,0,0,0,4,1.08,8,8,0,0,0,4-14.94Z",
+    "umbrella": "M231.6,117.21l-14-74.6A104.18,104.18,0,0,0,116,40.69V32a8,8,0,0,0-16,0v8.69A104.18,104.18,0,0,0,8.43,142.61,8,8,0,0,0,16.29,152h91.71v56A24,24,0,0,1,84,232a8,8,0,0,0,0,16,40,40,0,0,0,40-40V152H232a8,8,0,0,0,7.85-9.42C236.94,127,233.15,119.5,231.6,117.21ZM114.77,56.76a88.16,88.16,0,0,1,26.46,0l12.43,66.27-51.32-9.62ZM96.65,136l-18-96C78.89,40.24,79.16,40.35,80,41s35.07,32,48,95Zm122.7,0H179.35l40-95A87.73,87.73,0,0,1,219.35,136ZM24.63,136H64.65l-40-95A87.73,87.73,0,0,1,24.63,136Z",
+    "wind": "M184,144a32,32,0,0,1-32,32H40a8,8,0,0,1,0-16h8a32,32,0,0,1,32-32H48a8,8,0,0,1,0-16H80a48,48,0,0,0,0,96H40a8,8,0,0,1,0,16H80a64,64,0,0,1,0-128H48a24,24,0,0,0,0,48h32a16,16,0,0,0,0-32h-6.19a48,48,0,0,1,89.5,14.65A23.86,23.86,0,0,1,162.2,144Zm24-72a32,32,0,0,1-32,32H136a8,8,0,0,1,0-16h8a32,32,0,0,1,32-32h-8a8,8,0,0,1,0-16h8a48,48,0,0,0,0,96h-8a8,8,0,0,1,0,16h8a64,64,0,0,1,0-128h-8a24,24,0,0,0,0,48h8a16,16,0,0,0,0-32h-6.19A48,48,0,0,1,208,82.68Z",
+    // Devices
+    "desktop": "M208,40H48A24,24,0,0,0,24,64V168a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40Zm8,128a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8ZM96,216H160a8,8,0,0,0,0-16H96a8,8,0,0,0,0,16Z",
+    "laptop": "M224,168H32a16,16,0,0,0-16,16v8a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16v-8A16,16,0,0,0,224,168ZM48,56A24,24,0,0,0,24,80v80H232V80a24,24,0,0,0-24-24Zm24,96a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H184a8,8,0,0,1,8,8v64a8,8,0,0,1-8,8Z",
+    "device-mobile": "M176,24H80A24,24,0,0,0,56,48V208a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V48A24,24,0,0,0,176,24Zm8,184a8,8,0,0,1-8,8H80a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8h96a8,8,0,0,1,8,8ZM128,192a12,12,0,1,1,12-12A12,12,0,0,1,128,192Z",
+    "tablet": "M192,24H64A24,24,0,0,0,40,48V208a24,24,0,0,0,24,24H192a24,24,0,0,0,24-24V48A24,24,0,0,0,192,24Zm8,184a8,8,0,0,1-8,8H64a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H192a8,8,0,0,1,8,8ZM128,212a12,12,0,1,1,12-12A12,12,0,0,1,128,212Z",
+    "mouse": "M128,24A64.07,64.07,0,0,0,64,88v80a64.07,64.07,0,0,0,128,0V88A64.07,64.07,0,0,0,128,24Zm48,144a48.05,48.05,0,0,1-48,48,48.05,48.05,0,0,1-48-48V88a48,48,0,0,1,48-48,48,48,0,0,1,48,48Zm-48-64a8,8,0,0,1-8-8V64a8,8,0,0,1,16,0V96A8,8,0,0,1,128,104Z",
+    "keyboard": "M224,56H32A16,16,0,0,0,16,72V184a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V72A16,16,0,0,0,224,56Zm0,128H32V72H224ZM144,152H112a8,8,0,0,1,0-16h32a8,8,0,0,1,0,16Zm16-48H128a8,8,0,0,1,0-16h32a8,8,0,0,1,0,16Zm-64,0H64a8,8,0,0,1,0-16H96a8,8,0,0,1,0,16Zm64-32H128a8,8,0,0,1,0-16h32a8,8,0,0,1,0,16Zm32,32H160a8,8,0,0,1,0-16h32a8,8,0,0,1,0,16Z",
+    // Status & Indicators
+    "check-circle": "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm45.66-109.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,144.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z",
+    "warning": "M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.38A8.5,8.5,0,0,1,215.45,208H40.55a8.5,8.5,0,0,1-7.48-4.62,8.38,8.38,0,0,1,0-8.26L120.48,43.2a8.87,8.87,0,0,1,15,0l87.45,151.92A8.38,8.38,0,0,1,222.93,203.38ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm8,40a12,12,0,1,1-12-12A12,12,0,0,1,128,184Z",
+    "info": "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z",
+    "prohibit": "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,0,1-72.33-140.35l112.68,112.68A87.61,87.61,0,0,1,128,216Zm82.35-37.67L97.67,65.65A88,88,0,0,1,210.35,178.33Z",
+    "question": "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V155.43C122.18,148,136,141.27,136,124a20,20,0,0,0-40,0,8,8,0,0,1-16,0,36,36,0,0,1,72,0c0,28.84-25.29,38-29.23,39.54A6.1,6.1,0,0,0,120,168h8A8,8,0,0,1,144,176Z",
+    // Security
+    "shield": "M208,40H48A16,16,0,0,0,32,56v58.78c0,89.65,75.82,118.13,88.25,121.78a16,16,0,0,0,8.84,0C141.6,233.15,224,204.09,224,114.78V56A16,16,0,0,0,208,40Zm0,74.78C208,194.2,143.15,220.12,128,223.63,112,219.79,48,193.36,48,114.78V56H208Z",
+    "shield-check": "M208,40H48A16,16,0,0,0,32,56v58.78c0,89.65,75.82,118.13,88.25,121.78a16,16,0,0,0,8.84,0C141.6,233.15,224,204.09,224,114.78V56A16,16,0,0,0,208,40Zm-50.34,74.34-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L102,159.31l50.34-50.35a8,8,0,0,1,11.32,11.32Z",
+    "key": "M144,124a36,36,0,0,0-61.42,25.45l-59.92,60a12,12,0,0,0,0,17l5.66,5.66a12,12,0,0,0,17,0l12-12.06,8.48,8.49a12,12,0,0,0,17,0l5.65-5.66a12,12,0,0,0,0-17l-8.48-8.48,12-12,8.48,8.48a12,12,0,0,0,17,0l13.6-13.6A36,36,0,0,0,144,124Zm-18,34-19.34,19.36a12.08,12.08,0,0,0,0,17L95.31,206l-5.65,5.66-8.49-8.49-5.65,5.66L64.2,197.51l-8.49-8.48L37.37,210.34,31.72,204.69,96.69,139.72a20,20,0,1,1,29.28,18.33Z",
+    "fingerprint": "M224,128a96,96,0,1,0-104,95.66,8,8,0,1,0,3.34-15.65A80,80,0,1,1,208,128,8,8,0,0,0,224,128Zm-28,0a68,68,0,1,0-76,67.53,8,8,0,0,0,3.34,15.65,8,8,0,0,0,1.31-.11A84,84,0,1,1,196,128Zm-32,0a36,36,0,1,0-44,35.1,8,8,0,1,0,3.58-15.6,20,20,0,1,1,34.84-29,8,8,0,0,0,15.2,4.92A35.85,35.85,0,0,0,164,128Z",
+    // Layout & Editor
+    "columns": "M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H136V56h80Zm-96,0H40V56h80Z",
+    "layout": "M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm-96,160H40V128h80Zm96,0H136V128h80Zm0-88H40V56H216Z",
+    "sidebar": "M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H96V56h120ZM80,200H40V56H80Z",
+    "grid-four": "M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm-96,160H40V128h80Zm96,0H136V128h80Zm0-88H136V56h80Zm-96,0H40V56h80Z",
+    "squares-four": "M216,40H160a24,24,0,0,0-24,24v56a24,24,0,0,0,24,24h56a24,24,0,0,0,24-24V64A24,24,0,0,0,216,40Zm8,80a8,8,0,0,1-8,8H160a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8h56a8,8,0,0,1,8,8ZM96,40H40A24,24,0,0,0,16,64v56a24,24,0,0,0,24,24H96a24,24,0,0,0,24-24V64A24,24,0,0,0,96,40Zm8,80a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H96a8,8,0,0,1,8,8ZM216,160H160a24,24,0,0,0-24,24v32a24,24,0,0,0,24,24h56a24,24,0,0,0,24-24V184A24,24,0,0,0,216,160Zm8,56a8,8,0,0,1-8,8H160a8,8,0,0,1-8-8V184a8,8,0,0,1,8-8h56a8,8,0,0,1,8,8ZM96,160H40a24,24,0,0,0-24,24v32a24,24,0,0,0,24,24H96a24,24,0,0,0,24-24V184A24,24,0,0,0,96,160Zm8,56a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V184a8,8,0,0,1,8-8H96a8,8,0,0,1,8,8Z",
+    // Charts & Data
+    "chart-pie": "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-16-40h48a8,8,0,0,0,0-16H112a8,8,0,0,0,0,16Z",
+    "chart-bar": "M224,200H48V40a8,8,0,0,0-16,0V208a8,8,0,0,0,8,8H224a8,8,0,0,0,0-16ZM96,112v80a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm56-32v112a8,8,0,0,1-16,0V80a8,8,0,0,1,16,0Zm56,64v48a8,8,0,0,1-16,0V144a8,8,0,0,1,16,0Z",
+    "chart-line": "M228.49,126.49a8,8,0,0,0-11.32.84L168.08,181l-42.34-42.35a8,8,0,0,0-11.32,0L42.34,210.34a8,8,0,0,0,11.32,11.32L120.08,155l42.34,42.35a8,8,0,0,0,11.32,0l54-59.2A8,8,0,0,0,228.49,126.49ZM224,200H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16Z",
+    "trend-up": "M230.14,64.29l-38.63-10.35a8,8,0,0,0-8.35,3.48L169.34,81.1,133.66,45.42a8,8,0,0,0-11.32,0L42.34,125.42a8,8,0,0,0,11.32,11.32L128,62.4l35.66,35.68a8,8,0,0,0,11.32,0l20.47-30.7,9.39,35.06a8,8,0,0,0,7.74,5.91,8.38,8.38,0,0,0,2.15-.29l38.63-10.35a8,8,0,0,0,5.77-10.08A8.06,8.06,0,0,0,230.14,64.29Z",
+    "trend-down": "M232,184a8,8,0,0,1-16,0V144.31L134.46,192,80,123.94,29.66,163.66a8,8,0,0,1-9.32-13.32l56-44.2a8,8,0,0,1,10.66.6L141.54,160,217.63,113.8A8,8,0,1,1,226,127.56L164.84,164.71,232,184Z",
+    // Social & Smiles
+    "smiley": "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a12,12,0,1,1-12-12A12,12,0,0,1,192,128Zm-128,0a12,12,0,1,1,12-12A12,12,0,0,1,64,128Zm64,72a56,56,0,0,1-48.51-28,8,8,0,0,1,13.85-8,40,40,0,0,0,69.32,0,8,8,0,0,1,13.85,8A56,56,0,0,1,128,200Z",
+    "smiley-sad": "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a12,12,0,1,1-12-12A12,12,0,0,1,192,128Zm-128,0a12,12,0,1,1,12-12A12,12,0,0,1,64,128Zm64,24a56,56,0,0,1-48.49,28,8,8,0,1,1-8-13.87,40,40,0,0,0,69.3,0,8,8,0,0,1-8-13.87,55.93,55.93,0,0,1-4.81-2.26Z",
+    "heart-straight": "M217.36,54.64C200.72,38,173.67,36.56,155.8,50.31L128,70.62,100.2,50.31C82.33,36.56,55.28,38,38.64,54.64-4.87,98.15-4.87,175,99.93,212.7a24,24,0,0,0,56.14,0C260.87,175,260.87,98.15,217.36,54.64Z",
+    "thumbs-up": "M224,112h-58.54l8.28-27.59a32,32,0,0,0-3-24.73,31.78,31.78,0,0,0-23.94-13.41,12.2,12.2,0,0,0-3.64.55l-59.54,17.86A32,32,0,0,0,64,95.34V208a16,16,0,0,0,16,16H184a32,32,0,0,0,31.25-24.19l15.52-62.1A24,24,0,0,0,224,112ZM32,104H48v112H32a8,8,0,0,1-8-8V112A8,8,0,0,1,32,104Z",
+    // Arrows & Navigation
+    "arrow-up": "M120,232V51.31L45.66,125.66A8,8,0,0,1,34.34,114.34l88-88a8,8,0,0,1,11.32,0l88,88a8,8,0,0,1-11.32,11.32L136,51.31V232a8,8,0,0,1-16,0Z",
+    "arrow-down": "M210.34,141.66a8,8,0,0,1,11.32,11.32l-88,88a8,8,0,0,1-11.32,0l-88-88a8,8,0,0,1,11.32-11.32L120,204.69V24a8,8,0,0,1,16,0V204.69Z",
+    "arrow-u-up-left": "M80,136V80H176a56,56,0,0,1,56,56v88a8,8,0,0,1-16,0V136a40,40,0,0,0-40-40H80v56a8,8,0,0,1-13.66,5.66l-64-64a8,8,0,0,1,0-11.32l64-64A8,8,0,0,1,80,24Z",
+    "paper-plane-right": "M223.37,114.61,48.8,32.74A16,16,0,0,0,28,48.09V207.91a16,16,0,0,0,20.85,15.35l174.56-81.87A15.93,15.93,0,0,0,223.37,114.61ZM48,197.63,184.14,128H72a8,8,0,0,1,0-16H184.14L48,58.37Z",
+    // Content & Books
+    "book": "M208,48H64A32,32,0,0,0,32,80V224a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V64A16,16,0,0,0,208,48Zm0,176H64a16,16,0,0,1-16-16V80A16,16,0,0,1,64,64H208Zm-48-32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h72A8,8,0,0,1,160,192Zm0-32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h72A8,8,0,0,1,160,160Zm0-32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h72A8,8,0,0,1,160,128Z",
+    "bookmark": "M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Z",
+    // Objects
+    "lightbulb": "M128,154.55a29.8,29.8,0,0,0-5.69-21.75c-15.68-18.42-26.31-29.28-26.31-50.8,0-23.73,20.07-39.75,32-39.75,35.87,0,32,49.52,32,50.8a8,8,0,0,0,16,1.42s5.32-60.22-48-60.22A56,56,0,0,0,72,90.25c0,29.15,16.89,45.89,32.31,64,3.77,4.42,7.69,8.5,7.69,14.77v16.32a.91.91,0,0,1,0,.14v30a8,8,0,0,0,16,0V192h16v23.53a8,8,0,0,0,16,0v-30a.91.91,0,0,1,0-.14V169.32a30.2,30.2,0,0,0-12-14.77Z",
+    "airplane": "M247.33,161.76l-28.8-76.49a24.28,24.28,0,0,0-14-14.36L128,40.11V26a10,10,0,0,0-20,0V40.11L31.52,70.91a24.28,24.28,0,0,0-14,14.36L8,131.91a8,8,0,0,0,12.61,9L58.53,115.6l53.94,84.77-18.89,8.5A8,8,0,0,0,96,224v8a8,8,0,0,0,11.23,7.31L128,231l20.77,8.3A8,8,0,0,0,160,232v-8a8,8,0,0,0-4.66-7.27l-18.23-8.2,53.25-83.69,36.56,26.41a8,8,0,0,0,12.61-9l-9.52-25.29H230a8,8,0,0,0,4.48-1.37h0A8,8,0,0,0,247.33,161.76ZM136,192,89.5,119l90.3,65.23L167.6,192Zm-23.53,8L120,189.92l7.53,10.08Zm83.47-38.39-44.57-32.2A8,8,0,0,0,138.83,128l-87.12,35.09,16.63-44.17L128,95.05l59.66,24ZM227.1,154.21h0l-8.62,2.3L234.37,131l-7.27,23.21Z",
+    // Transport
+    "car": "M240,112H229.2L201.42,49.5A16,16,0,0,0,186.8,40H69.2a16,16,0,0,0-14.62,9.5L26.8,112H16a16,16,0,0,0-16,16v80a16,16,0,0,0,16,16H35.26a24,24,0,0,0,45.42,0h94.63a24,24,0,0,0,45.42,0H240a16,16,0,0,0,16-16V128A16,16,0,0,0,240,112ZM192,208a8,8,0,1,1,8-8A8,8,0,0,1,192,208ZM64,208a8,8,0,1,1,8-8A8,8,0,0,1,64,208ZM69.2,56H186.8l24.89,56H44.31Z",
+    "bank": "M232,56H223.51a24,24,0,0,0-19.16-9.6H51.65A24,24,0,0,0,32.49,56H24a8,8,0,0,0,0,16H36.93a24.11,24.11,0,0,0,.73,4.42,23.47,23.47,0,0,0,4.88,8.23l-7.37,125.1a16,16,0,0,0,16,16.94H204.83a16,16,0,0,0,16-16.94l-7.37-125.1A23.53,23.53,0,0,0,219,67.42a8,8,0,0,0,8-3.42H232a8,8,0,0,0,0-16ZM51.65,62.4H204.35a8,8,0,0,1,0,16H51.65a8,8,0,0,1,0-16ZM204.91,209.06H51.09l7.07-120a23.9,23.9,0,0,0,139.68,0Z",
+    // Tools
+    "funnel": "M231.39,34.14l-83.18,80L128,133.7V224a8,8,0,0,1-12.8,6.4L83.2,206.4A8,8,0,0,1,80,200V133.7L59.79,114.12,24.61,34.14A16,16,0,0,1,36.56,8H219.44a16,16,0,0,1,12,26.14ZM195.9,24H60.1l32,72.68L112,116.3V195.2l32-19.2V116.3l19.92-19.64Z",
+    "medal": "M208,32H168a8,8,0,0,0-6.15,2.9L128,78.25,94.15,34.9A8,8,0,0,0,88,32H48a8,8,0,0,0-6.25,12.89L98,116.27a8,8,0,0,0,.92.83A63.95,63.95,0,1,0,172.93,121l41.32-76.11A8,8,0,0,0,208,32ZM128,216a48,48,0,1,1,48-48A48.05,48.05,0,0,1,128,216Z"
+  };
+  var BACKGROUND_PRESETS = {
+    // Linear Gradients
+    "gradient-sunset": [
+      {
+        type: "GRADIENT_LINEAR",
+        gradientStops: [{ position: 0, color: "#FF512F" }, { position: 1, color: "#DD2476" }],
+        gradientTransform: [[0, 1, 0], [-1, 0, 1]]
+      }
+    ],
+    "gradient-ocean": [
+      {
+        type: "GRADIENT_LINEAR",
+        gradientStops: [{ position: 0, color: "#2193b0" }, { position: 1, color: "#6dd5ed" }],
+        gradientTransform: [[0, 1, 0], [-1, 0, 1]]
+      }
+    ],
+    "gradient-cotton-candy": [
+      {
+        type: "GRADIENT_LINEAR",
+        gradientStops: [{ position: 0, color: "#D9AFD9" }, { position: 1, color: "#97D9E1" }],
+        gradientTransform: [[0, 1, 0], [-1, 0, 1]]
+      }
+    ],
+    "gradient-midnight": [
+      {
+        type: "GRADIENT_LINEAR",
+        gradientStops: [{ position: 0, color: "#232526" }, { position: 1, color: "#414345" }],
+        gradientTransform: [[0, 1, 0], [-1, 0, 1]]
+      }
+    ],
+    // Mesh Gradients (approximated with multi-layer radial gradients)
+    "mesh-aurora": [
+      { type: "SOLID", color: "#1A1A2E" },
+      // Base
+      {
+        type: "GRADIENT_RADIAL",
+        gradientStops: [{ position: 0, color: "#00FF94", opacity: 0.6 }, { position: 1, color: "#00FF94", opacity: 0 }],
+        gradientTransform: [[0.8, 0, 0], [0, 0.8, 0]]
+        // Top Left
+      },
+      {
+        type: "GRADIENT_RADIAL",
+        gradientStops: [{ position: 0, color: "#FF00CC", opacity: 0.6 }, { position: 1, color: "#FF00CC", opacity: 0 }],
+        gradientTransform: [[0.6, 0, 0.4], [0, 0.6, 0.4]]
+        // Bottom Right
+      }
+    ],
+    "mesh-fire": [
+      { type: "SOLID", color: "#220901" },
+      {
+        type: "GRADIENT_RADIAL",
+        gradientStops: [{ position: 0, color: "#FF4500", opacity: 0.8 }, { position: 1, color: "#FF4500", opacity: 0 }],
+        gradientTransform: [[0.7, 0, 0.3], [0, 0.7, 0]]
+      },
+      {
+        type: "GRADIENT_RADIAL",
+        gradientStops: [{ position: 0, color: "#FFD700", opacity: 0.6 }, { position: 1, color: "#FFD700", opacity: 0 }],
+        gradientTransform: [[0.5, 0, 0], [0, 0.5, 0.5]]
+      }
+    ]
   };
   function hexToRgb(hex) {
     if (typeof hex === "object" && hex !== null && "r" in hex && "g" in hex && "b" in hex) {
@@ -576,16 +701,47 @@
       return null;
     }
   }
-  function applyCommonStyles(node, data) {
-    if (data.fills && data.fills.length > 0) {
+  function applyCommonStyles(node, data, context) {
+    var _a, _b;
+    let styleApplied = false;
+    if (data.fillStyleId && ((_b = (_a = context == null ? void 0 : context.styles) == null ? void 0 : _a.colors) == null ? void 0 : _b[data.fillStyleId])) {
+      if ("fillStyleId" in node) {
+        try {
+          node.fillStyleId = context.styles.colors[data.fillStyleId];
+          styleApplied = true;
+        } catch (e) {
+          console.warn(`Failed to apply fill style ${data.fillStyleId}:`, e);
+        }
+      }
+    }
+    if (!styleApplied && data.background && BACKGROUND_PRESETS[data.background]) {
+      node.fills = JSON.parse(JSON.stringify(BACKGROUND_PRESETS[data.background]));
+    } else if (!styleApplied && data.fills && data.fills.length > 0) {
       const paints = data.fills.map((fill) => {
-        var _a;
+        var _a2, _b2, _c;
         if (fill.type === "SOLID" && fill.color) {
+          if ((_b2 = (_a2 = context == null ? void 0 : context.styles) == null ? void 0 : _a2.colors) == null ? void 0 : _b2[fill.color]) {
+          }
           const rgb = hexToRgb(fill.color);
           return {
             type: "SOLID",
             color: rgb,
-            opacity: (_a = fill.opacity) != null ? _a : hexToAlpha(fill.color)
+            opacity: (_c = fill.opacity) != null ? _c : hexToAlpha(fill.color)
+          };
+        } else if ((fill.type === "GRADIENT_LINEAR" || fill.type === "GRADIENT_RADIAL") && fill.gradientStops) {
+          const stops = fill.gradientStops.map((stop) => {
+            var _a3;
+            const rgb = hexToRgb(stop.color);
+            const alpha = (_a3 = stop.opacity) != null ? _a3 : hexToAlpha(stop.color);
+            return {
+              color: __spreadProps(__spreadValues({}, rgb), { a: alpha }),
+              position: stop.position
+            };
+          });
+          return {
+            type: fill.type,
+            gradientStops: stops,
+            gradientTransform: fill.gradientTransform || [[0, 1, 0], [-1, 0, 1]]
           };
         }
         return { type: "SOLID", color: { r: 0.5, g: 0.5, b: 0.5 } };
@@ -596,9 +752,20 @@
       node.opacity = data.opacity;
     }
   }
-  function applyGeometryStyles(node, data) {
-    var _a, _b;
-    if (data.strokes && data.strokes.length > 0) {
+  function applyGeometryStyles(node, data, context) {
+    var _a, _b, _c, _d, _e;
+    let strokeStyleApplied = false;
+    if (data.strokeStyleId && ((_b = (_a = context == null ? void 0 : context.styles) == null ? void 0 : _a.colors) == null ? void 0 : _b[data.strokeStyleId])) {
+      if ("strokeStyleId" in node) {
+        try {
+          node.strokeStyleId = context.styles.colors[data.strokeStyleId];
+          strokeStyleApplied = true;
+        } catch (e) {
+          console.warn(`Failed to apply stroke style ${data.strokeStyleId}:`, e);
+        }
+      }
+    }
+    if (!strokeStyleApplied && data.strokes && data.strokes.length > 0) {
       const strokePaints = data.strokes.map((stroke) => {
         var _a2;
         const rgb = hexToRgb(stroke.color);
@@ -609,8 +776,10 @@
         };
       });
       node.strokes = strokePaints;
-      node.strokeWeight = (_a = data.strokeWeight) != null ? _a : 1;
-      node.strokeAlign = (_b = data.strokeAlign) != null ? _b : "INSIDE";
+    }
+    if (((_c = data.strokes) == null ? void 0 : _c.length) || strokeStyleApplied) {
+      node.strokeWeight = (_d = data.strokeWeight) != null ? _d : 1;
+      node.strokeAlign = (_e = data.strokeAlign) != null ? _e : "INSIDE";
     }
     if (data.cornerRadius !== void 0) {
       node.cornerRadius = data.cornerRadius;
@@ -625,7 +794,7 @@
       node.bottomRightRadius = data.bottomRightRadius;
     if (data.effects && data.effects.length > 0) {
       const figmaEffects = data.effects.map((effect) => {
-        var _a2, _b2, _c, _d;
+        var _a2, _b2, _c2, _d2;
         if (effect.type === "DROP_SHADOW" || effect.type === "INNER_SHADOW") {
           const shadowEffect = effect;
           const rgb = hexToRgb(shadowEffect.color);
@@ -636,7 +805,7 @@
             offset: (_a2 = shadowEffect.offset) != null ? _a2 : { x: 0, y: 4 },
             radius: shadowEffect.radius,
             spread: (_b2 = shadowEffect.spread) != null ? _b2 : 0,
-            visible: (_c = shadowEffect.visible) != null ? _c : true,
+            visible: (_c2 = shadowEffect.visible) != null ? _c2 : true,
             blendMode: "NORMAL"
           };
         } else {
@@ -644,7 +813,7 @@
           return {
             type: blurEffect.type,
             radius: blurEffect.radius,
-            visible: (_d = blurEffect.visible) != null ? _d : true
+            visible: (_d2 = blurEffect.visible) != null ? _d2 : true
           };
         }
       });
@@ -751,21 +920,129 @@
         return defaultValue;
     }
   }
-  async function createFrame(data, parent) {
+  async function createColorStyles(colors) {
+    const styleMap = {};
+    for (const [name, hex] of Object.entries(colors)) {
+      const styles = figma.getLocalPaintStyles();
+      let style = styles.find((s) => s.name === name);
+      if (!style) {
+        style = figma.createPaintStyle();
+        style.name = name;
+      }
+      const rgb = hexToRgb(hex);
+      const alpha = hexToAlpha(hex);
+      style.paints = [{ type: "SOLID", color: rgb, opacity: alpha }];
+      styleMap[name] = style.id;
+    }
+    return styleMap;
+  }
+  async function createTextStyles(typography) {
+    const styleMap = {};
+    for (const [name, props] of Object.entries(typography)) {
+      const styles = figma.getLocalTextStyles();
+      let style = styles.find((s) => s.name === name);
+      if (!style) {
+        style = figma.createTextStyle();
+        style.name = name;
+      }
+      const family = props.fontFamily || "Inter";
+      const weight = mapFontWeight(props.fontWeight);
+      try {
+        await figma.loadFontAsync({ family, style: weight });
+      } catch (e) {
+        await figma.loadFontAsync({ family: "Inter", style: "Regular" });
+      }
+      style.fontName = { family, style: weight };
+      style.fontSize = props.fontSize || 16;
+      if (props.lineHeight === "AUTO") {
+        style.lineHeight = { unit: "AUTO" };
+      } else if (typeof props.lineHeight === "number") {
+        style.lineHeight = { unit: "PIXELS", value: props.lineHeight };
+      }
+      if (props.letterSpacing !== void 0) {
+        style.letterSpacing = { unit: "PIXELS", value: props.letterSpacing };
+      }
+      styleMap[name] = style.id;
+    }
+    return styleMap;
+  }
+  async function createComponents(components, context) {
+    const componentMap = {};
+    for (const [name, data] of Object.entries(components)) {
+      const result = await createNodeWithData(data, void 0, context);
+      if (result && result.node) {
+        const comp = figma.createComponent();
+        comp.name = name;
+        const source = result.node;
+        comp.resize(source.width, source.height);
+        comp.fills = source.fills;
+        comp.strokes = source.strokes;
+        comp.strokeWeight = source.strokeWeight;
+        comp.strokeAlign = source.strokeAlign;
+        comp.effects = source.effects;
+        comp.cornerRadius = source.cornerRadius;
+        comp.topLeftRadius = source.topLeftRadius;
+        comp.topRightRadius = source.topRightRadius;
+        comp.bottomLeftRadius = source.bottomLeftRadius;
+        comp.bottomRightRadius = source.bottomRightRadius;
+        comp.opacity = source.opacity;
+        if ("fillStyleId" in source && source.fillStyleId)
+          comp.fillStyleId = source.fillStyleId;
+        if ("strokeStyleId" in source && source.strokeStyleId)
+          comp.strokeStyleId = source.strokeStyleId;
+        if ("layoutMode" in source && source.layoutMode !== "NONE") {
+          comp.layoutMode = source.layoutMode;
+          comp.primaryAxisAlignItems = source.primaryAxisAlignItems;
+          comp.counterAxisAlignItems = source.counterAxisAlignItems;
+          comp.itemSpacing = source.itemSpacing;
+          comp.paddingTop = source.paddingTop;
+          comp.paddingRight = source.paddingRight;
+          comp.paddingBottom = source.paddingBottom;
+          comp.paddingLeft = source.paddingLeft;
+          comp.primaryAxisSizingMode = source.primaryAxisSizingMode;
+          comp.counterAxisSizingMode = source.counterAxisSizingMode;
+          if ("layoutWrap" in source) {
+            comp.layoutWrap = source.layoutWrap;
+          }
+        }
+        if ("children" in source) {
+          const children = [...source.children];
+          for (const child of children) {
+            comp.appendChild(child);
+          }
+        }
+        source.remove();
+        componentMap[name] = comp;
+        context.components[name] = comp;
+      }
+    }
+    return componentMap;
+  }
+  async function createFrame(data, parent, context) {
     var _a, _b, _c, _d, _e;
     const frame = figma.createFrame();
     frame.name = data.name || "Frame";
     if (!data.absolute) {
       let validLayoutMode = data.layoutMode || "VERTICAL";
-      if (validLayoutMode !== "HORIZONTAL" && validLayoutMode !== "VERTICAL") {
-        console.warn(`Invalid layoutMode "${validLayoutMode}" - defaulting to VERTICAL. Use primaryAxisAlignItems/counterAxisAlignItems for centering.`);
-        if (validLayoutMode === "CENTER") {
-          data.counterAxisAlignItems = data.counterAxisAlignItems || "CENTER";
-          data.primaryAxisAlignItems = data.primaryAxisAlignItems || "CENTER";
+      if (validLayoutMode === "WRAP") {
+        frame.layoutMode = "HORIZONTAL";
+        frame.layoutWrap = "WRAP";
+      } else {
+        if (validLayoutMode !== "HORIZONTAL" && validLayoutMode !== "VERTICAL") {
+          console.warn(`Invalid layoutMode "${validLayoutMode}" - defaulting to VERTICAL.`);
+          if (validLayoutMode === "CENTER") {
+            data.counterAxisAlignItems = data.counterAxisAlignItems || "CENTER";
+            data.primaryAxisAlignItems = data.primaryAxisAlignItems || "CENTER";
+          }
+          validLayoutMode = "VERTICAL";
         }
-        validLayoutMode = "VERTICAL";
+        frame.layoutMode = validLayoutMode;
+        if (data.layoutWrap === "WRAP") {
+          frame.layoutWrap = "WRAP";
+        } else if (data.layoutWrap === "NO_WRAP") {
+          frame.layoutWrap = "NO_WRAP";
+        }
       }
-      frame.layoutMode = validLayoutMode;
       frame.primaryAxisAlignItems = normalizePrimaryAxisAlignment(data.primaryAxisAlignItems);
       frame.counterAxisAlignItems = normalizeAlignmentValue(data.counterAxisAlignItems);
       frame.itemSpacing = (_a = data.itemSpacing) != null ? _a : 0;
@@ -778,8 +1055,8 @@
       frame.primaryAxisSizingMode = data.primaryAxisSizingMode || "AUTO";
       frame.counterAxisSizingMode = data.counterAxisSizingMode || "AUTO";
     }
-    applyCommonStyles(frame, data);
-    applyGeometryStyles(frame, data);
+    applyCommonStyles(frame, data, context);
+    applyGeometryStyles(frame, data, context);
     if (typeof data.width === "number") {
       frame.resize(data.width, frame.height);
     }
@@ -788,7 +1065,7 @@
     }
     if (data.children && data.children.length > 0) {
       for (const childData of data.children) {
-        const result = await createNodeWithData(childData, frame);
+        const result = await createNodeWithData(childData, frame, context);
         if (result) {
           frame.appendChild(result.node);
           if (childData.layoutPositioning === "ABSOLUTE" && "layoutPositioning" in result.node) {
@@ -830,24 +1107,40 @@
     }
     return { node: frame, data };
   }
-  async function createText(data, parent) {
+  async function createText(data, parent, context) {
+    var _a, _b;
     const text = figma.createText();
     text.name = data.name || "Text";
-    const fontFamily = data.fontFamily || "Inter";
-    const fontStyle = mapFontWeight(data.fontWeight);
-    let loadedFont = { family: fontFamily, style: fontStyle };
-    try {
-      await figma.loadFontAsync({ family: fontFamily, style: fontStyle });
-    } catch (e) {
+    let fontLoaded = false;
+    if (data.textStyleId && ((_b = (_a = context == null ? void 0 : context.styles) == null ? void 0 : _a.typography) == null ? void 0 : _b[data.textStyleId])) {
       try {
-        await figma.loadFontAsync({ family: "Inter", style: "Regular" });
-        loadedFont = { family: "Inter", style: "Regular" };
-      } catch (e2) {
-        await figma.loadFontAsync({ family: "Roboto", style: "Regular" });
-        loadedFont = { family: "Roboto", style: "Regular" };
+        const styleId = context.styles.typography[data.textStyleId];
+        await figma.importStyleByKeyAsync(styleId).catch(() => {
+        });
+        text.textStyleId = styleId;
+        await figma.loadFontAsync(text.fontName);
+        fontLoaded = true;
+      } catch (e) {
+        console.warn(`Failed to apply text style ${data.textStyleId}`, e);
       }
     }
-    text.fontName = loadedFont;
+    const fontFamily = data.fontFamily || "Inter";
+    const fontStyle = mapFontWeight(data.fontWeight);
+    if (!fontLoaded) {
+      let loadedFont = { family: fontFamily, style: fontStyle };
+      try {
+        await figma.loadFontAsync({ family: fontFamily, style: fontStyle });
+      } catch (e) {
+        try {
+          await figma.loadFontAsync({ family: "Inter", style: "Regular" });
+          loadedFont = { family: "Inter", style: "Regular" };
+        } catch (e2) {
+          await figma.loadFontAsync({ family: "Roboto", style: "Regular" });
+          loadedFont = { family: "Roboto", style: "Regular" };
+        }
+      }
+      text.fontName = loadedFont;
+    }
     const rawText = data.characters || "Text";
     const processedText = processFakePlaceholders(rawText);
     text.characters = processedText;
@@ -906,14 +1199,14 @@
     }
     return { node: rect, data };
   }
-  function createRectangle(data, parent) {
+  function createRectangle(data, parent, context) {
     const rect = figma.createRectangle();
     rect.name = data.name || "Rectangle";
     const width = typeof data.width === "number" ? data.width : 100;
     const height = typeof data.height === "number" ? data.height : 100;
     rect.resize(width, height);
-    applyCommonStyles(rect, data);
-    applyGeometryStyles(rect, data);
+    applyCommonStyles(rect, data, context);
+    applyGeometryStyles(rect, data, context);
     return { node: rect, data };
   }
   function createIcon(data, parent) {
@@ -1012,7 +1305,7 @@
       y: cy + radius * Math.sin(angleInRadians)
     };
   }
-  function createChart(data, parent) {
+  function createChart(data, parent, context) {
     var _a;
     const chartType = data.chartType || "PIE";
     const chartData = data.chartData || [
@@ -1155,7 +1448,7 @@
     }
     return node;
   }
-  async function createSitemap(data, parent) {
+  async function createSitemap(data, parent, context) {
     const nodeWidth = data.nodeWidth || 180;
     const levelSpacing = data.levelSpacing || 60;
     const siblingSpacing = data.siblingSpacing || 20;
@@ -1266,29 +1559,68 @@
       }
     }
   }
-  async function createNodeWithData(data, parent) {
+  async function createNodeWithData(data, parent, context) {
+    var _a;
+    if (data.type === "INSTANCE" && data.componentName && ((_a = context == null ? void 0 : context.components) == null ? void 0 : _a[data.componentName])) {
+      try {
+        const component = context.components[data.componentName];
+        const instance = component.createInstance();
+        instance.name = data.name || data.componentName;
+        if (data.absolute && data.x !== void 0 && data.y !== void 0) {
+          instance.x = data.x;
+          instance.y = data.y;
+        }
+        if (data.width)
+          applySizing(instance, data, !!parent);
+        return { node: instance, data };
+      } catch (e) {
+        console.warn(`Failed to create instance of ${data.componentName}`, e);
+      }
+    }
     switch (data.type) {
       case "FRAME":
-        return await createFrame(data, parent);
+        return await createFrame(data, parent, context);
       case "TEXT":
-        return await createText(data, parent);
+        return await createText(data, parent, context);
       case "IMAGE":
         return await createImage(data, parent);
       case "RECTANGLE":
-        return createRectangle(data, parent);
+        return createRectangle(data, parent, context);
       case "ICON":
         return createIcon(data, parent);
       case "CHART":
-        return createChart(data, parent);
+        return createChart(data, parent, context);
       case "SITEMAP":
-        return await createSitemap(data, parent);
+        return await createSitemap(data, parent, context);
       default:
         console.warn(`Unknown node type: ${data.type}`);
         return null;
     }
   }
-  async function createRootNode(data) {
-    const result = await createNodeWithData(data);
+  async function createRootNode(input) {
+    let rootData;
+    let context = {
+      styles: { colors: {}, typography: {} },
+      components: {}
+    };
+    if ("root" in input) {
+      const pluginInput = input;
+      rootData = pluginInput.root;
+      if (pluginInput.styles) {
+        if (pluginInput.styles.colors) {
+          context.styles.colors = await createColorStyles(pluginInput.styles.colors);
+        }
+        if (pluginInput.styles.typography) {
+          context.styles.typography = await createTextStyles(pluginInput.styles.typography);
+        }
+      }
+      if (pluginInput.components) {
+        context.components = await createComponents(pluginInput.components, context);
+      }
+    } else {
+      rootData = input;
+    }
+    const result = await createNodeWithData(rootData, void 0, context);
     if (!result)
       return null;
     return result.node;
@@ -1420,11 +1752,23 @@
         };
       }
       const nodeData = {
-        type: "FRAME",
+        type: node.type === "INSTANCE" ? "INSTANCE" : "FRAME",
         name: frame.name
       };
+      if (node.type === "INSTANCE") {
+        const instance = node;
+        if (instance.mainComponent) {
+          nodeData.componentName = instance.mainComponent.name;
+        }
+      }
       if (frame.layoutMode && frame.layoutMode !== "NONE") {
         nodeData.layoutMode = frame.layoutMode;
+        if (frame.layoutMode === "HORIZONTAL" && frame.layoutWrap === "WRAP") {
+          nodeData.layoutMode = "WRAP";
+          nodeData.layoutWrap = "WRAP";
+        } else if (frame.layoutWrap === "WRAP") {
+          nodeData.layoutWrap = "WRAP";
+        }
         nodeData.primaryAxisAlignItems = frame.primaryAxisAlignItems;
         nodeData.counterAxisAlignItems = frame.counterAxisAlignItems;
         if (frame.itemSpacing > 0) {
@@ -1454,6 +1798,10 @@
       } else {
         nodeData.height = Math.round(frame.height);
       }
+      if (frame.fillStyleId && frame.fillStyleId !== figma.mixed)
+        nodeData.fillStyleId = frame.fillStyleId;
+      if (frame.strokeStyleId && frame.strokeStyleId !== figma.mixed)
+        nodeData.strokeStyleId = frame.strokeStyleId;
       const fills = serializeFills(frame.fills);
       if (fills)
         nodeData.fills = fills;
@@ -1716,9 +2064,15 @@
     }
   };
   function countNodes(data) {
+    let root;
+    if ("root" in data) {
+      root = data.root;
+    } else {
+      root = data;
+    }
     let count = 1;
-    if (data.children) {
-      for (const child of data.children) {
+    if (root.children) {
+      for (const child of root.children) {
         count += countNodes(child);
       }
     }
