@@ -2007,6 +2007,310 @@ async function createNodeWithData(data: NodeData, parent?: FrameNode, context?: 
         }
     }
 
+    async function createButton(data: NodeData, parent?: FrameNode, context?: BuildContext): Promise<{ node: FrameNode; data: NodeData }> {
+        const button = figma.createFrame();
+        button.layoutMode = 'HORIZONTAL';
+        button.primaryAxisAlignItems = 'CENTER';
+        button.counterAxisAlignItems = 'CENTER';
+        button.name = data.name || 'Button';
+
+        const height = data.height as number || 40;
+        button.resize(button.width || 120, height);
+
+        const variant = data.variant || 'primary';
+        const disabled = data.disabled || false;
+
+        let bgColor = '#6366F1';
+        let textColor = '#FFFFFF';
+        let borderColor: string | undefined;
+
+        if (variant === 'primary') {
+            bgColor = disabled ? '#9CA3AF' : '#6366F1';
+        } else if (variant === 'secondary') {
+            bgColor = disabled ? '#D1D5DB' : '#8B5CF6';
+        } else if (variant === 'outline') {
+            bgColor = 'transparent';
+            borderColor = disabled ? '#D1D5DB' : '#6366F1';
+            textColor = disabled ? '#9CA3AF' : '#6366F1';
+        } else if (variant === 'ghost') {
+            bgColor = 'transparent';
+            textColor = disabled ? '#9CA3AF' : '#6366F1';
+        } else if (variant === 'danger') {
+            bgColor = disabled ? '#FCA5A5' : '#EF4444';
+        }
+
+        button.fills = [{ type: 'SOLID', color: hexToRgb(bgColor), opacity: disabled ? 0.6 : 1 }];
+        button.cornerRadius = data.cornerRadius || 8;
+
+        if (borderColor) {
+            button.strokes = [{ type: 'SOLID', color: hexToRgb(borderColor) }];
+            button.strokeWeight = 1;
+        }
+
+        const padding = data.padding || { left: 16, right: 16 };
+        button.paddingLeft = padding.left || 16;
+        button.paddingRight = padding.right || 16;
+        button.paddingTop = 8;
+        button.paddingBottom = 8;
+
+        if (data.children && data.children.length > 0) {
+            for (const child of data.children) {
+                if (child.type === 'TEXT') {
+                    const textNode = await createText({ ...child, fontSize: child.fontSize || 14, fontWeight: child.fontWeight || 'Medium' }, button, context);
+                    if (textNode) button.appendChild(textNode.node);
+                } else if (child.type === 'ICON') {
+                    const iconNode = createIcon({ ...child, size: child.size || 16 }, button);
+                    button.appendChild(iconNode.node);
+                }
+            }
+        } else if (data.characters) {
+            const textNode = figma.createText();
+            textNode.characters = data.characters;
+            textNode.fontSize = data.fontSize || 14;
+            textNode.fontWeight = (data.fontWeight as any) || figmalib.fontWeight('Medium');
+            textNode.fills = [{ type: 'SOLID', color: hexToRgb(textColor) }];
+            button.appendChild(textNode);
+        }
+
+        applySizing(button, data, !!parent);
+
+        if (parent) parent.appendChild(button);
+        return { node: button, data };
+    }
+
+    async function createInput(data: NodeData, parent?: FrameNode, context?: BuildContext): Promise<{ node: FrameNode; data: NodeData }> {
+        const input = figma.createFrame();
+        input.layoutMode = 'HORIZONTAL';
+        input.primaryAxisAlignItems = 'MIN';
+        input.counterAxisAlignItems = 'CENTER';
+        input.name = data.name || 'Input';
+
+        const height = data.height as number || 40;
+        input.resize(input.width || 240, height);
+
+        input.fills = [{ type: 'SOLID', color: hexToRgb('#FFFFFF') }];
+        input.strokes = [{ type: 'SOLID', color: hexToRgb(data.disabled ? '#D1D5DB' : '#E2E8F0') }];
+        input.strokeWeight = 1;
+        input.cornerRadius = data.cornerRadius || 8;
+
+        const padding = data.padding || { left: 12, right: 12 };
+        input.paddingLeft = padding.left || 12;
+        input.paddingRight = padding.right || 12;
+        input.paddingTop = 8;
+        input.paddingBottom = 8;
+
+        if (data.prefix) {
+            const prefix = figma.createText();
+            prefix.characters = data.prefix;
+            prefix.fontSize = data.fontSize || 14;
+            prefix.fills = [{ type: 'SOLID', color: hexToRgb('#6B7280') }];
+            input.appendChild(prefix);
+        }
+
+        if (data.placeholder || data.characters) {
+            const textNode = figma.createText();
+            textNode.characters = data.placeholder || data.characters || '';
+            textNode.fontSize = data.fontSize || 14;
+            textNode.fills = [{ type: 'SOLID', color: hexToRgb(data.characters ? '#1F2937' : '#9CA3AF') }];
+            input.appendChild(textNode);
+        }
+
+        if (data.suffix) {
+            const suffix = figma.createText();
+            suffix.characters = data.suffix;
+            suffix.fontSize = data.fontSize || 14;
+            suffix.fills = [{ type: 'SOLID', color: hexToRgb('#6B7280') }];
+            input.appendChild(suffix);
+        }
+
+        applySizing(input, data, !!parent);
+
+        if (parent) parent.appendChild(input);
+        return { node: input, data };
+    }
+
+    function createAvatar(data: NodeData, parent?: FrameNode): { node: FrameNode; data: NodeData } {
+        const avatar = figma.createFrame();
+        avatar.layoutMode = 'NONE';
+        avatar.name = data.name || 'Avatar';
+
+        const size = data.size || 40;
+        avatar.resize(size, size);
+
+        const shape = data.avatarShape || 'circle';
+        avatar.cornerRadius = shape === 'circle' ? size / 2 : shape === 'rounded' ? 12 : 0;
+
+        if (data.src) {
+            figma.createImage(data.src).then((image) => {
+                avatar.fills = [{ type: 'IMAGE', scaleMode: 'FILL', imageHash: image.hash }];
+            }).catch(() => {
+                avatar.fills = [{ type: 'SOLID', color: hexToRgb('#E2E8F0') }];
+                if (data.fallback) {
+                    const text = figma.createText();
+                    text.characters = data.fallback.charAt(0).toUpperCase();
+                    text.fontSize = size * 0.4;
+                    text.fills = [{ type: 'SOLID', color: hexToRgb('#6B7280') }];
+                    avatar.appendChild(text);
+                }
+            });
+        } else {
+            avatar.fills = [{ type: 'SOLID', color: hexToRgb('#E2E8F0') }];
+            if (data.fallback) {
+                const text = figma.createText();
+                text.characters = data.fallback.charAt(0).toUpperCase();
+                text.fontSize = size * 0.4;
+                text.fills = [{ type: 'SOLID', color: hexToRgb('#6B7280') }];
+                avatar.appendChild(text);
+            }
+        }
+
+        applySizing(avatar, data, !!parent);
+
+        if (parent) parent.appendChild(avatar);
+        return { node: avatar, data };
+    }
+
+    function createBadge(data: NodeData, parent?: FrameNode, context?: BuildContext): { node: FrameNode; data: NodeData } {
+        const badge = figma.createFrame();
+        badge.layoutMode = 'HORIZONTAL';
+        badge.primaryAxisAlignItems = 'CENTER';
+        badge.counterAxisAlignItems = 'CENTER';
+        badge.name = data.name || 'Badge';
+
+        const label = data.badgeLabel || data.characters || 'Badge';
+        const variant = data.badgeVariant || 'default';
+
+        let bgColor = '#E2E8F0';
+        let textColor = '#1F2937';
+
+        switch (variant) {
+            case 'success':
+                bgColor = '#D1FAE5';
+                textColor = '#065F46';
+                break;
+            case 'warning':
+                bgColor = '#FEF3C7';
+                textColor = '#92400E';
+                break;
+            case 'error':
+                bgColor = '#FEE2E2';
+                textColor = '#991B1B';
+                break;
+            case 'info':
+                bgColor = '#DBEAFE';
+                textColor = '#1E40AF';
+                break;
+        }
+
+        badge.fills = [{ type: 'SOLID', color: hexToRgb(bgColor) }];
+        badge.cornerRadius = 9999;
+
+        const padding = data.padding || { left: 8, right: 8, top: 4, bottom: 4 };
+        badge.paddingLeft = padding.left || 8;
+        badge.paddingRight = padding.right || 8;
+        badge.paddingTop = padding.top || 4;
+        badge.paddingBottom = padding.bottom || 4;
+
+        const text = figma.createText();
+        text.characters = label;
+        text.fontSize = data.fontSize || 12;
+        text.fontWeight = (data.fontWeight as any) || figmalib.fontWeight('Medium');
+        text.fills = [{ type: 'SOLID', color: hexToRgb(textColor) }];
+        badge.appendChild(text);
+
+        badge.resize(Math.max(text.width + 16, 24), Math.max(text.height + 8, 20));
+
+        applySizing(badge, data, !!parent);
+
+        if (parent) parent.appendChild(badge);
+        return { node: badge, data };
+    }
+
+    function createDivider(data: NodeData, parent?: FrameNode, context?: BuildContext): { node: FrameNode; data: NodeData } {
+        const divider = figma.createRectangle();
+        divider.name = data.name || 'Divider';
+
+        const orientation = data.dividerOrientation || 'horizontal';
+        const thickness = data.dividerThickness || 1;
+
+        if (orientation === 'horizontal') {
+            divider.resize(divider.width || 240, thickness);
+        } else {
+            divider.resize(thickness, divider.height || 24);
+        }
+
+        divider.fills = [{ type: 'SOLID', color: hexToRgb(data.color || '#E2E8F0') }];
+        divider.strokes = undefined;
+
+        applySizing(divider, data, !!parent);
+
+        if (parent) parent.appendChild(divider);
+        return { node: divider, data };
+    }
+
+    function createProgress(data: NodeData, parent?: FrameNode, context?: BuildContext): { node: FrameNode; data: NodeData } {
+        const progress = figma.createFrame();
+        progress.layoutMode = 'NONE';
+        progress.name = data.name || 'Progress';
+
+        const variant = data.progressVariant || 'linear';
+        const value = Math.min(Math.max(data.progressValue || 50, 0), 100);
+        const progressColor = data.progressColor || '#6366F1';
+
+        if (variant === 'linear') {
+            const track = figma.createRectangle();
+            track.name = 'Track';
+            track.fills = [{ type: 'SOLID', color: hexToRgb('#E2E8F0') }];
+            track.cornerRadius = 4;
+
+            const fill = figma.createRectangle();
+            fill.name = 'Fill';
+            fill.fills = [{ type: 'SOLID', color: hexToRgb(progressColor) }];
+            fill.cornerRadius = 4;
+            fill.resize((value / 100) * (data.width as number || 200), data.height || 8);
+            fill.x = 0;
+
+            progress.layoutMode = 'HORIZONTAL';
+            progress.primaryAxisAlignItems = 'MIN';
+            progress.counterAxisAlignItems = 'CENTER';
+            progress.resize(data.width as number || 200, data.height || 8);
+            progress.fills = [];
+            progress.appendChild(track);
+            progress.appendChild(fill);
+        } else {
+            const circle = figma.createEllipse();
+            circle.name = 'Progress';
+            circle.fills = [{ type: 'SOLID', color: hexToRgb(progressColor), opacity: 0.3 }];
+            circle.strokes = [{ type: 'SOLID', color: hexToRgb(progressColor), opacity: value / 100 }];
+            circle.strokeWeight = (data.width as number || 48) / 4;
+
+            const size = data.size || data.width || 48;
+            progress.resize(size, size);
+            progress.fills = [];
+            progress.appendChild(circle);
+        }
+
+        applySizing(progress, data, !!parent);
+
+        if (parent) parent.appendChild(progress);
+        return { node: progress, data };
+    }
+
+    function createSpacer(data: NodeData, parent?: FrameNode): { node: FrameNode; data: NodeData } {
+        const spacer = figma.createFrame();
+        spacer.layoutMode = 'NONE';
+        spacer.name = data.name || 'Spacer';
+
+        const size = data.spacerSize || data.height || 16;
+        spacer.resize(size, size);
+        spacer.fills = [];
+
+        applySizing(spacer, data, !!parent);
+
+        if (parent) parent.appendChild(spacer);
+        return { node: spacer, data };
+    }
+
     switch (data.type) {
         case 'FRAME':
             return await createFrame(data, parent, context);
@@ -2022,6 +2326,20 @@ async function createNodeWithData(data: NodeData, parent?: FrameNode, context?: 
             return createChart(data, parent, context);
         case 'SITEMAP':
             return await createSitemap(data, parent, context);
+        case 'BUTTON':
+            return await createButton(data, parent, context);
+        case 'INPUT':
+            return await createInput(data, parent, context);
+        case 'AVATAR':
+            return createAvatar(data, parent);
+        case 'BADGE':
+            return createBadge(data, parent, context);
+        case 'DIVIDER':
+            return createDivider(data, parent, context);
+        case 'PROGRESS':
+            return createProgress(data, parent, context);
+        case 'SPACER':
+            return createSpacer(data, parent);
         default:
             console.warn(`Unknown node type: ${(data as any).type}`);
             return null;

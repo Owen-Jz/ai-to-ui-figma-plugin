@@ -5,21 +5,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI-to-UI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-primary: #1a1a2e;
-      --bg-secondary: #16213e;
-      --bg-tertiary: #0f3460;
-      --accent: #e94560;
-      --accent-hover: #ff6b6b;
+      --bg-app: #1e1e1e;
+      --bg-panel: #2c2c2c;
+      --bg-hover: #383838;
+      --bg-active: #444444;
+      --bg-input: #353535;
+      --bg-code: #2d2d2d;
+      
+      --accent: #000000;
+      --accent-hover: #333333;
+      --accent-muted: rgba(0, 0, 0, 0.2);
+      
       --text-primary: #ffffff;
       --text-secondary: #a0a0a0;
-      --border: #2a2a4a;
-      --success: #00d26a;
-      --warning: #ffc107;
-      --error: #ff4757;
+      --text-tertiary: #6b6b6b;
+      --text-disabled: #555555;
+      
+      --border: #444444;
+      --border-subtle: #3a3a3a;
+      --border-focus: #0d99ff;
+      
+      --success: #24b47e;
+      --success-bg: rgba(36, 180, 126, 0.15);
+      --warning: #f5a623;
+      --warning-bg: rgba(245, 166, 35, 0.15);
+      --error: #f54b4b;
+      --error-bg: rgba(245, 75, 75, 0.15);
       --purple: #8b5cf6;
-      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --purple-bg: rgba(139, 92, 246, 0.15);
+      
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+      
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+      
+      --transition-fast: 0.15s ease;
+      --transition-normal: 0.25s ease;
     }
 
     * {
@@ -28,164 +60,249 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+
     body {
       font-family: var(--font);
-      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      background: var(--bg-app);
       color: var(--text-primary);
-      min-height: 100vh;
-      padding: 20px;
+      font-size: 13px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 100%;
-      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      padding: 16px;
+      gap: 16px;
+      overflow: hidden;
     }
 
     .header {
-      text-align: center;
-      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+      flex-shrink: 0;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #000000 0%, #333333 100%);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
     }
 
     .header h1 {
-      font-size: 24px;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
     }
 
-    .header p {
-      font-size: 13px;
-      color: var(--text-secondary);
+    .header-badge {
+      font-size: 10px;
+      padding: 3px 8px;
+      background: var(--accent-muted);
+      color: var(--accent);
+      border-radius: 12px;
+      font-weight: 500;
     }
 
     .tabs {
       display: flex;
-      gap: 6px;
-      margin-bottom: 16px;
+      gap: 4px;
+      background: var(--bg-panel);
+      padding: 4px;
+      border-radius: var(--radius-md);
+      flex-shrink: 0;
     }
 
     .tab {
       flex: 1;
-      padding: 10px 12px;
-      background: var(--bg-tertiary);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      padding: 8px 12px;
+      background: transparent;
+      border: none;
+      border-radius: var(--radius-sm);
       color: var(--text-secondary);
       font-size: 12px;
       font-weight: 500;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
     }
 
     .tab:hover {
-      background: rgba(233, 69, 96, 0.1);
-      border-color: var(--accent);
+      color: var(--text-primary);
+      background: var(--bg-hover);
     }
 
     .tab.active {
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+      background: var(--accent);
       color: white;
-      border-color: transparent;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tab svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .panel-container {
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .panel {
       display: none;
+      flex-direction: column;
+      flex: 1;
+      overflow: hidden;
     }
 
     .panel.active {
-      display: block;
+      display: flex;
+    }
+
+    .panel-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 4px;
     }
 
     .input-group {
       margin-bottom: 16px;
     }
 
+    .input-group-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
     .input-group label {
-      display: block;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       color: var(--text-secondary);
-      margin-bottom: 8px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
+    .input-hint {
+      font-size: 10px;
+      color: var(--text-tertiary);
+    }
+
     .textarea-wrapper {
       position: relative;
-      border-radius: 12px;
+      border-radius: var(--radius-md);
       overflow: hidden;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      transition: border-color 0.2s ease;
+      background: var(--bg-input);
+      border: 1px solid var(--border-subtle);
+      transition: all var(--transition-fast);
     }
 
     .textarea-wrapper:focus-within {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.1);
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px var(--accent-muted);
     }
 
     textarea,
     input[type="text"] {
       width: 100%;
-      padding: 16px;
+      padding: 12px;
       background: transparent;
       border: none;
       color: var(--text-primary);
-      font-family: 'SF Mono', 'Fira Code', 'Monaco', monospace;
+      font-family: var(--font-mono);
       font-size: 12px;
-      outline: none;
-    }
-
-    textarea {
-      height: 280px;
       line-height: 1.6;
+      outline: none;
       resize: none;
     }
 
+    textarea {
+      height: 200px;
+    }
+
     textarea.prompt-input {
-      height: 120px;
+      height: 100px;
       font-family: var(--font);
-      font-size: 14px;
     }
 
     textarea::placeholder {
-      color: var(--text-secondary);
-      opacity: 0.6;
+      color: var(--text-tertiary);
+    }
+
+    .textarea-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      background: var(--bg-panel);
+      border-top: 1px solid var(--border-subtle);
+      font-size: 10px;
+      color: var(--text-tertiary);
     }
 
     .actions {
       display: flex;
-      gap: 12px;
+      gap: 8px;
       margin-bottom: 16px;
+      flex-shrink: 0;
     }
 
     .btn {
       flex: 1;
-      padding: 14px 20px;
+      padding: 10px 16px;
       border: none;
-      border-radius: 10px;
-      font-size: 14px;
+      border-radius: var(--radius-md);
+      font-size: 12px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all var(--transition-fast);
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
     }
 
+    .btn svg {
+      width: 14px;
+      height: 14px;
+    }
+
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+      background: var(--accent);
       color: white;
-      box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
     }
 
     .btn-primary:active {
@@ -193,25 +310,24 @@
     }
 
     .btn-secondary {
-      background: var(--bg-tertiary);
+      background: var(--bg-panel);
       color: var(--text-primary);
       border: 1px solid var(--border);
     }
 
     .btn-secondary:hover {
-      background: rgba(233, 69, 96, 0.1);
-      border-color: var(--accent);
+      background: var(--bg-hover);
+      border-color: var(--text-tertiary);
     }
 
     .btn-purple {
       background: linear-gradient(135deg, var(--purple) 0%, #a78bfa 100%);
       color: white;
-      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
     }
 
     .btn-purple:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
     }
 
     .btn:disabled {
@@ -220,26 +336,20 @@
       transform: none !important;
     }
 
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 11px;
+    }
+
     .status {
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      font-size: 12px;
       display: none;
       align-items: center;
       gap: 8px;
-      animation: slideIn 0.3s ease;
-    }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      margin-bottom: 16px;
+      flex-shrink: 0;
     }
 
     .status.show {
@@ -247,26 +357,32 @@
     }
 
     .status.success {
-      background: rgba(0, 210, 106, 0.15);
+      background: var(--success-bg);
       border: 1px solid var(--success);
       color: var(--success);
     }
 
     .status.error {
-      background: rgba(255, 71, 87, 0.15);
+      background: var(--error-bg);
       border: 1px solid var(--error);
       color: var(--error);
     }
 
     .status.loading {
-      background: rgba(255, 193, 7, 0.15);
+      background: var(--warning-bg);
       border: 1px solid var(--warning);
       color: var(--warning);
     }
 
+    .status.info {
+      background: var(--accent-muted);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+
     .spinner {
-      width: 16px;
-      height: 16px;
+      width: 14px;
+      height: 14px;
       border: 2px solid transparent;
       border-top-color: currentColor;
       border-radius: 50%;
@@ -274,20 +390,28 @@
     }
 
     @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.3s ease;
     }
 
     .examples {
-      margin-top: 16px;
+      margin-top: auto;
+      padding-top: 16px;
     }
 
     .examples-header {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       color: var(--text-secondary);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -295,86 +419,33 @@
     .example-chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
     }
 
     .chip {
-      padding: 8px 14px;
-      background: var(--bg-tertiary);
+      padding: 6px 12px;
+      background: var(--bg-panel);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      font-size: 12px;
+      border-radius: 16px;
+      font-size: 11px;
       color: var(--text-secondary);
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all var(--transition-fast);
     }
 
     .chip:hover {
-      background: rgba(233, 69, 96, 0.1);
+      background: var(--bg-hover);
       border-color: var(--accent);
       color: var(--accent);
     }
 
     .chip.selected {
-      background: rgba(139, 92, 246, 0.2);
-      border-color: var(--purple);
-      color: var(--purple);
-    }
-
-    .footer {
-      margin-top: 24px;
-      text-align: center;
-      font-size: 11px;
-      color: var(--text-secondary);
-      opacity: 0.6;
-    }
-
-    /* Schema Reference Panel */
-    .schema-ref {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-      max-height: 400px;
-      overflow-y: auto;
-    }
-
-    .schema-ref h3 {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 12px;
+      background: var(--accent-muted);
+      border-color: var(--accent);
       color: var(--accent);
     }
 
-    .prop-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 11px;
-    }
-
-    .prop-table th,
-    .prop-table td {
-      padding: 8px;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .prop-table th {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .prop-table td:first-child {
-      color: var(--success);
-      font-family: monospace;
-    }
-
-    /* Prompt Generator Panel */
-    .prompt-section {
-      margin-bottom: 20px;
-    }
-
-    .prompt-section-title {
+    .section-title {
       font-size: 13px;
       font-weight: 600;
       color: var(--text-primary);
@@ -384,11 +455,11 @@
       gap: 8px;
     }
 
-    .prompt-section-title span {
-      background: var(--purple);
-      color: white;
+    .section-title .number {
       width: 20px;
       height: 20px;
+      background: var(--purple);
+      color: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -398,166 +469,157 @@
     }
 
     .prompt-preview {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-      max-height: 200px;
+      background: var(--bg-code);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      max-height: 150px;
       overflow-y: auto;
-      font-family: 'SF Mono', 'Fira Code', 'Monaco', monospace;
+      font-family: var(--font-mono);
       font-size: 11px;
       line-height: 1.5;
       color: var(--text-secondary);
       white-space: pre-wrap;
-      word-break: break-word;
     }
 
     .prompt-preview .highlight {
       color: var(--purple);
-      font-weight: 600;
+      font-weight: 500;
     }
 
-    .copy-success {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--success);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      z-index: 1000;
-      animation: fadeInOut 2s ease forwards;
-    }
-
+    .style-options,
     .font-options {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .font-option {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 8px;
-      background: var(--bg-tertiary);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-size: 11px;
-      color: var(--text-secondary);
-      text-align: center;
-    }
-
-    .font-option:hover {
-      border-color: var(--accent);
-      background: rgba(233, 69, 96, 0.1);
-    }
-
-    .font-option.selected {
-      border-color: var(--accent);
-      background: rgba(233, 69, 96, 0.2);
-      color: var(--accent);
-    }
-
-    .font-option input {
-      display: none;
-    }
-
-    @keyframes fadeInOut {
-      0% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-10px);
-      }
-
-      15% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-      }
-
-      85% {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-      }
-
-      100% {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-10px);
-      }
-    }
-
-    .style-options {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 8px;
       margin-bottom: 16px;
     }
 
-    .style-option {
+    .font-options {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .option-card {
       display: flex;
       align-items: center;
       gap: 8px;
       padding: 10px 12px;
-      background: var(--bg-tertiary);
+      background: var(--bg-panel);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: var(--radius-md);
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all var(--transition-fast);
       font-size: 12px;
       color: var(--text-secondary);
     }
 
-    .style-option:hover {
-      border-color: var(--purple);
-      background: rgba(139, 92, 246, 0.1);
+    .option-card:hover {
+      background: var(--bg-hover);
+      border-color: var(--text-tertiary);
     }
 
-    .style-option.selected {
-      border-color: var(--purple);
-      background: rgba(139, 92, 246, 0.2);
-      color: var(--purple);
+    .option-card.selected {
+      background: var(--accent-muted);
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
-    .style-option input {
+    .option-card input {
       display: none;
     }
 
-    .style-option .radio {
-      width: 16px;
-      height: 16px;
+    .option-card .radio {
+      width: 14px;
+      height: 14px;
       border: 2px solid var(--border);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.2s ease;
+      flex-shrink: 0;
     }
 
-    .style-option.selected .radio {
-      border-color: var(--purple);
+    .option-card.selected .radio {
+      border-color: var(--accent);
     }
 
-    .style-option.selected .radio::after {
+    .option-card.selected .radio::after {
       content: '';
-      width: 8px;
-      height: 8px;
-      background: var(--purple);
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
       border-radius: 50%;
     }
 
-    /* Scrollbar styling */
+    .info-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .info-card h4 {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .info-card p {
+      font-size: 11px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .stat-item {
+      background: var(--bg-input);
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .copy-success {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--success);
+      color: white;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-size: 12px;
+      font-weight: 600;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
     ::-webkit-scrollbar {
       width: 6px;
-      height: 6px;
     }
 
     ::-webkit-scrollbar-track {
-      background: var(--bg-primary);
+      background: transparent;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -566,7 +628,59 @@
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: var(--accent);
+      background: var(--text-tertiary);
+    }
+
+    .keyboard-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      color: var(--text-tertiary);
+    }
+
+    .keyboard-hint kbd {
+      background: var(--bg-input);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: var(--font);
+      font-size: 10px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border-subtle);
+      margin: 16px 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    .badge-success {
+      background: var(--success-bg);
+      color: var(--success);
+    }
+
+    .badge-warning {
+      background: var(--warning-bg);
+      color: var(--warning);
+    }
+
+    .badge-error {
+      background: var(--error-bg);
+      color: var(--error);
+    }
+
+    .badge-info {
+      background: var(--accent-muted);
+      color: var(--accent);
     }
   </style>
 </head>
@@ -574,24 +688,44 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>✨ AI-to-UI</h1>
-      <p>Transform AI-generated JSON into native Figma designs</p>
+      <div class="header-left">
+        <div class="logo">AI</div>
+        <h1>AI-to-UI</h1>
+      </div>
+      <span class="header-badge">v2.0</span>
     </div>
 
     <div class="tabs">
-      <button class="tab" data-panel="prompt">🤖 Prompt</button>
-      <button class="tab active" data-panel="builder">⚡ Builder</button>
-      <button class="tab" data-panel="remote">📡 Remote</button>
-      <button class="tab" data-panel="export">📤 Export</button>
-      <button class="tab" data-panel="schema">📐 Schema</button>
+      <button class="tab" data-panel="prompt">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        Prompt
+      </button>
+      <button class="tab active" data-panel="builder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Builder
+      </button>
+      <button class="tab" data-panel="remote">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Remote
+      </button>
+      <button class="tab" data-panel="export">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        Export
+      </button>
+      <button class="tab" data-panel="schema">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Schema
+      </button>
     </div>
 
+    <div class="panel-container">
     <!-- PROMPT GENERATOR PANEL -->
     <div id="prompt" class="panel">
+      <div class="panel-scroll">
       <div class="prompt-section">
-        <div class="prompt-section-title">
-          <span>1</span>
-          Describe what you want to design
+        <div class="section-title">
+          <span class="number">1</span>
+          Describe your design
         </div>
         <div class="textarea-wrapper">
           <textarea id="designDescription" class="prompt-input"
@@ -600,61 +734,57 @@
       </div>
 
       <div class="prompt-section">
-        <div class="prompt-section-title">
+        <div class="section-title">
           <span>2</span>
           Choose a style preset
         </div>
-        <div class="style-options">
-          <label class="style-option selected" data-style="modern-dark">
+        <div class="chips">
+          <label class="chip selected" data-style="modern-dark">
             <input type="radio" name="style" value="modern-dark" checked>
-            <span class="radio"></span>
             🌙 Modern Dark
           </label>
-          <label class="style-option" data-style="clean-light">
+          <label class="chip" data-style="clean-light">
             <input type="radio" name="style" value="clean-light">
-            <span class="radio"></span>
             ☀️ Clean Light
           </label>
-          <label class="style-option" data-style="vibrant">
+          <label class="chip" data-style="vibrant">
             <input type="radio" name="style" value="vibrant">
-            <span class="radio"></span>
             🎨 Vibrant
           </label>
-          <label class="style-option" data-style="minimal">
+          <label class="chip" data-style="minimal">
             <input type="radio" name="style" value="minimal">
-            <span class="radio"></span>
             ✨ Minimal
           </label>
         </div>
       </div>
 
       <div class="prompt-section">
-        <div class="prompt-section-title">
+        <div class="section-title">
           <span>3</span>
           Choose a font family
         </div>
-        <div class="font-options" id="fontOptions">
-          <label class="font-option selected" data-font="Inter">
+        <div class="chips" id="fontOptions">
+          <label class="chip selected" data-font="Inter">
             <input type="radio" name="font" value="Inter" checked>
             Inter
           </label>
-          <label class="font-option" data-font="Poppins">
+          <label class="chip" data-font="Poppins">
             <input type="radio" name="font" value="Poppins">
             Poppins
           </label>
-          <label class="font-option" data-font="Roboto">
+          <label class="chip" data-font="Roboto">
             <input type="radio" name="font" value="Roboto">
             Roboto
           </label>
-          <label class="font-option" data-font="Open Sans">
+          <label class="chip" data-font="Open Sans">
             <input type="radio" name="font" value="Open Sans">
             Open Sans
           </label>
-          <label class="font-option" data-font="Montserrat">
+          <label class="chip" data-font="Montserrat">
             <input type="radio" name="font" value="Montserrat">
             Montserrat
           </label>
-          <label class="font-option" data-font="Lato">
+          <label class="chip" data-font="Lato">
             <input type="radio" name="font" value="Lato">
             Lato
           </label>
@@ -670,7 +800,7 @@
       </div>
 
       <div class="prompt-section">
-        <div class="prompt-section-title">
+        <div class="section-title">
           <span>4</span>
           Quick component hints (optional)
         </div>
@@ -687,7 +817,7 @@
       </div>
 
       <div class="actions">
-        <button class="btn btn-purple" id="copyPromptBtn">
+        <button class="btn btn-primary" id="copyPromptBtn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -843,7 +973,7 @@ The JSON output can be:
           </svg>
           Format
         </button>
-        <button class="btn btn-purple" id="copyExportBtn">
+        <button class="btn btn-primary" id="copyExportBtn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>

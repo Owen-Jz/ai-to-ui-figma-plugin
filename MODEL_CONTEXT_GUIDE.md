@@ -331,6 +331,274 @@ interface NodeData {
 
 ---
 
+## 🆕 ADVANCED NODE TYPES
+
+### BUTTON
+Interactive button with variants:
+```json
+{
+  "type": "BUTTON",
+  "name": "Submit Button",
+  "characters": "Submit",
+  "variant": "primary",
+  "disabled": false,
+  "iconPosition": "left",
+  "fullWidth": true,
+  "cornerRadius": 8,
+  "height": 48,
+  "padding": { "left": 24, "right": 24 },
+  "children": [
+    { "type": "ICON", "icon": "arrow-right", "size": 16 },
+    { "type": "TEXT", "characters": "Submit", "fontSize": 16, "fontWeight": "Medium" }
+  ]
+}
+```
+**Properties:**
+- `variant`: "primary" | "secondary" | "outline" | "ghost" | "danger"
+- `disabled`: boolean
+- `iconPosition`: "left" | "right"
+- `loading`: boolean
+- `fullWidth`: boolean
+- `cornerRadius`: number (default: 8)
+
+### INPUT
+Form input field:
+```json
+{
+  "type": "INPUT",
+  "name": "Email Input",
+  "placeholder": "Enter your email",
+  "inputType": "email",
+  "prefix": "📧",
+  "suffix": ".com",
+  "disabled": false,
+  "cornerRadius": 8,
+  "height": 44,
+  "width": 320
+}
+```
+**Properties:**
+- `placeholder`: string
+- `inputType`: "text" | "email" | "password" | "number" | "search" | "tel" | "url"
+- `prefix`: string (icon or text before input)
+- `suffix`: string (icon or text after input)
+- `multiline`: boolean
+
+### AVATAR
+User profile image with fallback:
+```json
+{
+  "type": "AVATAR",
+  "name": "User Avatar",
+  "src": "https://example.com/photo.jpg",
+  "fallback": "JD",
+  "avatarShape": "circle",
+  "size": 48
+}
+```
+**Properties:**
+- `src`: string (URL to image - supports JPG, PNG, WebP)
+- `fallback`: string (initials to show if image fails)
+- `avatarShape`: "circle" | "square" | "rounded"
+- `size`: number (default: 40)
+
+### BADGE
+Status indicator label:
+```json
+{
+  "type": "BADGE",
+  "name": "Status Badge",
+  "badgeLabel": "Active",
+  "badgeVariant": "success",
+  "fontSize": 12
+}
+```
+**Properties:**
+- `badgeLabel`: string
+- `badgeVariant`: "default" | "success" | "warning" | "error" | "info"
+
+### DIVIDER
+Horizontal or vertical line:
+```json
+{
+  "type": "DIVIDER",
+  "name": "Section Divider",
+  "dividerOrientation": "horizontal",
+  "dividerThickness": 1,
+  "color": "#E2E8F0",
+  "width": "fill"
+}
+```
+**Properties:**
+- `dividerOrientation`: "horizontal" | "vertical"
+- `dividerThickness`: number (default: 1)
+- `color`: hex color
+
+### PROGRESS
+Loading progress indicator:
+```json
+{
+  "type": "PROGRESS",
+  "name": "Loading Progress",
+  "progressVariant": "linear",
+  "progressValue": 65,
+  "progressColor": "#6366F1",
+  "width": 200,
+  "height": 8
+}
+```
+**Properties:**
+- `progressVariant`: "linear" | "circular"
+- `progressValue`: number (0-100)
+- `progressColor`: hex color
+
+### SPACER
+Invisible spacing element:
+```json
+{
+  "type": "SPACER",
+  "name": "Section Spacer",
+  "spacerSize": 24
+}
+```
+
+### IMAGE with URL
+External image import:
+```json
+{
+  "type": "IMAGE",
+  "name": "Hero Image",
+  "src": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200",
+  "width": "fill",
+  "height": 400,
+  "cornerRadius": 16
+}
+```
+**Supported image URL sources:**
+- Unsplash: `https://images.unsplash.com/photo-...`
+- Picsum: `https://picsum.photos/...`
+- Any direct image URL (JPG, PNG, WebP, GIF)
+
+---
+
+## 🎯 ADVANCED DESIGN PATTERNS
+
+### Responsive Card with Image
+```json
+{
+  "type": "FRAME",
+  "name": "Product Card",
+  "layoutMode": "VERTICAL",
+  "itemSpacing": 16,
+  "width": 320,
+  "cornerRadius": 16,
+  "fills": [{ "type": "SOLID", "color": "#FFFFFF" }],
+  "effects": [{ "type": "DROP_SHADOW", "color": "#00000014", "offset": { "x": 0, "y": 4 }, "radius": 12 }],
+  "children": [
+    {
+      "type": "IMAGE",
+      "src": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
+      "width": "fill",
+      "height": 200,
+      "cornerRadius": { "topLeftRadius": 16, "topRightRadius": 16, "bottomLeftRadius": 0, "bottomRightRadius": 0 }
+    },
+    {
+      "type": "FRAME",
+      "name": "Content",
+      "layoutMode": "VERTICAL",
+      "itemSpacing": 8,
+      "padding": { "top": 16, "right": 16, "bottom": 16, "left": 16 },
+      "children": [
+        { "type": "TEXT", "characters": "Premium Headphones", "fontSize": 18, "fontWeight": "SemiBold", "textColor": "#1F2937" },
+        { "type": "TEXT", "characters": "High-quality wireless headphones with noise cancellation", "fontSize": 14, "textColor": "#6B7280" },
+        {
+          "type": "FRAME",
+          "name": "Price Row",
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisAlignItems": "SPACE_BETWEEN",
+          "children": [
+            { "type": "TEXT", "characters": "$299", "fontSize": 20, "fontWeight": "Bold", "textColor": "#6366F1" },
+            { "type": "BUTTON", "characters": "Add to Cart", "variant": "primary", "height": 36 }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+### User Profile Component
+```json
+{
+  "type": "FRAME",
+  "name": "User Profile Card",
+  "layoutMode": "VERTICAL",
+  "primaryAxisAlignItems": "CENTER",
+  "itemSpacing": 16,
+  "padding": { "top": 32, "right": 24, "bottom": 32, "left": 24 },
+  "width": 280,
+  "cornerRadius": 24,
+  "fills": [{ "type": "SOLID", "color": "#FFFFFF" }],
+  "effects": [{ "type": "DROP_SHADOW", "color": "#0000001A", "offset": { "x": 0, "y": 8 }, "radius": 24 }],
+  "children": [
+    { "type": "AVATAR", "src": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200", "fallback": "TJ", "size": 80, "avatarShape": "circle" },
+    { "type": "TEXT", "characters": "Thomas Jensen", "fontSize": 20, "fontWeight": "SemiBold", "textColor": "#1F2937" },
+    { "type": "TEXT", "characters": "Senior Product Designer", "fontSize": 14, "textColor": "#6B7280" },
+    { "type": "BADGE", "badgeLabel": "Available", "badgeVariant": "success" },
+    {
+      "type": "FRAME",
+      "name": "Stats",
+      "layoutMode": "HORIZONTAL",
+      "itemSpacing": 24,
+      "children": [
+        { "type": "FRAME", "layoutMode": "VERTICAL", "primaryAxisAlignItems": "CENTER", "children: [{ "type": "TEXT", "characters": "142", "fontSize": 18, "fontWeight": "Bold" }, { "type": "TEXT", "characters": "Projects", "fontSize": 12, "textColor": "#6B7280" }]"},
+        { "type": "FRAME", "layoutMode": "VERTICAL", "primaryAxisAlignItems": "CENTER", "children: [{ "type": "TEXT", "characters": "4.9", "fontSize": 18, "fontWeight": "Bold" }, { "type": "TEXT", "characters": "Rating", "fontSize": 12, "textColor": "#6B7280" }]"}
+      ]
+    }
+  ]
+}
+```
+
+### Form Layout
+```json
+{
+  "type": "FRAME",
+  "name": "Login Form",
+  "layoutMode": "VERTICAL",
+  "itemSpacing": 16,
+  "padding": { "top": 32, "right": 32, "bottom": 32, "left": 32 },
+  "width": 400,
+  "cornerRadius": 16,
+  "fills": [{ "type": "SOLID", "color": "#FFFFFF" }],
+  "effects": [{ "type": "DROP_SHADOW", "color": "#0000001A", "offset": { "x": 0, "y": 4 }, "radius": 16 }],
+  "children": [
+    { "type": "TEXT", "characters": "Welcome Back", "fontSize": 24, "fontWeight": "Bold", "textColor": "#1F2937" },
+    { "type": "TEXT", "characters": "Sign in to continue", "fontSize": 14, "textColor": "#6B7280" },
+    { "type": "INPUT", "name": "Email", "placeholder": "Email address", "inputType": "email", "height": 48 },
+    { "type": "INPUT", "name": "Password", "placeholder": "Password", "inputType": "password", "height": 48 },
+    { "type": "BUTTON", "characters": "Sign In", "variant": "primary", "fullWidth": true, "height": 48 },
+    { "type": "DIVIDER", "dividerThickness": 1 },
+    { "type": "TEXT", "characters": "Don't have an account? Sign up", "fontSize": 14, "textColor": "#6366F1" }
+  ]
+}
+```
+
+---
+
+## 💡 COMPLEX DESIGN TIPS
+
+1. **Use consistent spacing**: Stick to 8px grid (8, 16, 24, 32, 48, 64)
+2. **Layer depth with shadows**: Subtle shadows create depth (radius: 8-16)
+3. **Round corners consistently**: Match cornerRadius across related elements
+4. **Use semantic colors**: primary for main actions, secondary for alternatives
+5. **Image URLs are powerful**: Use high-quality images from Unsplash for realistic mockups
+6. **Combine nodes**: Nest FRAMEs with TEXT, IMAGE, BUTTON, INPUT for complex layouts
+7. **Auto-layout everything**: Always use `layoutMode: "HORIZONTAL"` or `"VERTICAL"`
+8. **Use itemSpacing**: Control gaps between children with consistent values
+```
+
+---
+
 ## ⚡ QUICK TIPS
 
 1. **Always start with a root FRAME** that contains the entire design.
