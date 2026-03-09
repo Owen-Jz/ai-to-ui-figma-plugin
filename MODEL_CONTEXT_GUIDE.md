@@ -37,6 +37,12 @@ Your goal is to generate a nested JSON structure representing a beautiful, high-
 - Choose colors from a **cohesive palette** rather than pure primary colors.
 - Use **modern typography**: bold headings (24-56px), readable body text (14-18px).
 
+### 5. Image & Background Handling
+- **Image Node over Fill**: Never use `src` or remote URLs inside the fills array of a FRAME. Instead, create a dedicated child node of type `IMAGE`.
+- **Background Pattern**: When a background image is requested, the first child of the root FRAME must be an `IMAGE` type with `layoutPositioning: "ABSOLUTE"`, `x:` 0, `y:` 0, `width: "fill"` (or matching the parent px), `height: "fill"` (or matching the parent px), and `constraints: { "horizontal": "STRETCH", "vertical": "STRETCH" }`.
+- **Z-Index Simulation**: Ensure the background `IMAGE` node is the first item in the children array so other UI elements (Navbar, Content, etc.) render on top of it.
+- **Base64 Instruction**: If the user provides a raw image, prioritize generating a Base64 data string for the `src` field to avoid network request blocks.
+
 ---
 
 ## 📋 THE JSON SCHEMA
@@ -47,7 +53,7 @@ Your goal is to generate a nested JSON structure representing a beautiful, high-
 |------|-------------|
 | `FRAME` | Container with Auto Layout. Can contain children. |
 | `TEXT` | Text layer with typography properties. |
-| `IMAGE` | Rectangle with image fill. Supports URLs or keywords. |
+| `IMAGE` | Rectangle with image fill. Preferred for high-fidelity backgrounds and assets. Supports Base64, URLs, or keywords. |
 | `RECTANGLE` | Basic shape with fills, strokes, and effects. |
 
 ---
@@ -115,7 +121,7 @@ interface NodeData {
   letterSpacing?: number;
   
   // Image Properties (for IMAGE only)
-  src?: string;  // URL or keyword: "avatar", "hero", "nature", "product", "team"
+  src?: string;  // Base64 string OR keyword ("avatar", "hero", "nature", "product", "team") OR URL
   
   // Children (for FRAME only)
   children?: NodeData[];

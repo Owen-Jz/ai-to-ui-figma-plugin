@@ -7,7 +7,9 @@
   <title>AI-to-UI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg-app: #1e1e1e;
@@ -16,20 +18,20 @@
       --bg-active: #444444;
       --bg-input: #353535;
       --bg-code: #2d2d2d;
-      
+
       --accent: #000000;
       --accent-hover: #333333;
       --accent-muted: rgba(0, 0, 0, 0.2);
-      
+
       --text-primary: #ffffff;
       --text-secondary: #a0a0a0;
       --text-tertiary: #6b6b6b;
       --text-disabled: #555555;
-      
+
       --border: #444444;
       --border-subtle: #3a3a3a;
       --border-focus: #0d99ff;
-      
+
       --success: #24b47e;
       --success-bg: rgba(36, 180, 126, 0.15);
       --warning: #f5a623;
@@ -38,18 +40,18 @@
       --error-bg: rgba(245, 75, 75, 0.15);
       --purple: #8b5cf6;
       --purple-bg: rgba(139, 92, 246, 0.15);
-      
+
       --radius-sm: 6px;
       --radius-md: 8px;
       --radius-lg: 12px;
-      
+
       --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
       --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
       --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
-      
+
       --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
-      
+
       --transition-fast: 0.15s ease;
       --transition-normal: 0.25s ease;
     }
@@ -60,7 +62,8 @@
       box-sizing: border-box;
     }
 
-    html, body {
+    html,
+    body {
       height: 100%;
       overflow: hidden;
     }
@@ -390,12 +393,21 @@
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-8px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .fade-in {
@@ -697,153 +709,161 @@
 
     <div class="tabs">
       <button class="tab" data-panel="prompt">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
         Prompt
       </button>
       <button class="tab active" data-panel="builder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        </svg>
         Builder
       </button>
-      <button class="tab" data-panel="remote">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        Remote
-      </button>
       <button class="tab" data-panel="export">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="17 8 12 3 7 8" />
+          <line x1="12" y1="3" x2="12" y2="15" />
+        </svg>
         Export
       </button>
       <button class="tab" data-panel="schema">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="16 18 22 12 16 6" />
+          <polyline points="8 6 2 12 8 18" />
+        </svg>
         Schema
       </button>
     </div>
 
     <div class="panel-container">
-    <!-- PROMPT GENERATOR PANEL -->
-    <div id="prompt" class="panel">
-      <div class="panel-scroll">
-      <div class="prompt-section">
-        <div class="section-title">
-          <span class="number">1</span>
-          Describe your design
-        </div>
-        <div class="textarea-wrapper">
-          <textarea id="designDescription" class="prompt-input"
-            placeholder="E.g., A modern pricing card with three tiers (Basic, Pro, Enterprise), each showing price, features list, and a CTA button. Use a dark theme with purple accents."></textarea>
-        </div>
-      </div>
+      <!-- PROMPT GENERATOR PANEL -->
+      <div id="prompt" class="panel">
+        <div class="panel-scroll">
+          <div class="prompt-section">
+            <div class="section-title">
+              <span class="number">1</span>
+              Describe your design
+            </div>
+            <div class="textarea-wrapper">
+              <textarea id="designDescription" class="prompt-input"
+                placeholder="E.g., A modern pricing card with three tiers (Basic, Pro, Enterprise), each showing price, features list, and a CTA button. Use a dark theme with purple accents."></textarea>
+            </div>
+          </div>
 
-      <div class="prompt-section">
-        <div class="section-title">
-          <span>2</span>
-          Choose a style preset
-        </div>
-        <div class="chips">
-          <label class="chip selected" data-style="modern-dark">
-            <input type="radio" name="style" value="modern-dark" checked>
-            🌙 Modern Dark
-          </label>
-          <label class="chip" data-style="clean-light">
-            <input type="radio" name="style" value="clean-light">
-            ☀️ Clean Light
-          </label>
-          <label class="chip" data-style="vibrant">
-            <input type="radio" name="style" value="vibrant">
-            🎨 Vibrant
-          </label>
-          <label class="chip" data-style="minimal">
-            <input type="radio" name="style" value="minimal">
-            ✨ Minimal
-          </label>
-        </div>
-      </div>
+          <div class="prompt-section">
+            <div class="section-title">
+              <span>2</span>
+              Choose a style preset
+            </div>
+            <div class="chips">
+              <label class="chip selected" data-style="modern-dark">
+                <input type="radio" name="style" value="modern-dark" checked>
+                🌙 Modern Dark
+              </label>
+              <label class="chip" data-style="clean-light">
+                <input type="radio" name="style" value="clean-light">
+                ☀️ Clean Light
+              </label>
+              <label class="chip" data-style="vibrant">
+                <input type="radio" name="style" value="vibrant">
+                🎨 Vibrant
+              </label>
+              <label class="chip" data-style="minimal">
+                <input type="radio" name="style" value="minimal">
+                ✨ Minimal
+              </label>
+            </div>
+          </div>
 
-      <div class="prompt-section">
-        <div class="section-title">
-          <span>3</span>
-          Choose a font family
+          <div class="prompt-section">
+            <div class="section-title">
+              <span>3</span>
+              Choose a font family
+            </div>
+            <div class="chips" id="fontOptions">
+              <label class="chip selected" data-font="Inter">
+                <input type="radio" name="font" value="Inter" checked>
+                Inter
+              </label>
+              <label class="chip" data-font="Poppins">
+                <input type="radio" name="font" value="Poppins">
+                Poppins
+              </label>
+              <label class="chip" data-font="Roboto">
+                <input type="radio" name="font" value="Roboto">
+                Roboto
+              </label>
+              <label class="chip" data-font="Open Sans">
+                <input type="radio" name="font" value="Open Sans">
+                Open Sans
+              </label>
+              <label class="chip" data-font="Montserrat">
+                <input type="radio" name="font" value="Montserrat">
+                Montserrat
+              </label>
+              <label class="chip" data-font="Lato">
+                <input type="radio" name="font" value="Lato">
+                Lato
+              </label>
+              <label class="font-option" data-font="Nunito">
+                <input type="radio" name="font" value="Nunito">
+                Nunito
+              </label>
+              <label class="font-option" data-font="DM Sans">
+                <input type="radio" name="font" value="DM Sans">
+                DM Sans
+              </label>
+            </div>
+          </div>
+
+          <div class="prompt-section">
+            <div class="section-title">
+              <span>4</span>
+              Quick component hints (optional)
+            </div>
+            <div class="example-chips" id="componentChips">
+              <span class="chip" data-component="navigation">Navigation</span>
+              <span class="chip" data-component="hero">Hero Section</span>
+              <span class="chip" data-component="cards">Cards</span>
+              <span class="chip" data-component="form">Form</span>
+              <span class="chip" data-component="pricing">Pricing</span>
+              <span class="chip" data-component="footer">Footer</span>
+              <span class="chip" data-component="modal">Modal</span>
+              <span class="chip" data-component="dashboard">Dashboard</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-primary" id="copyPromptBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              Copy Prompt to Clipboard
+            </button>
+          </div>
+
+          <div id="promptStatus" class="status"></div>
+
+          <div class="prompt-section">
+            <div class="examples-header">Preview (what will be copied)</div>
+            <div class="prompt-preview" id="promptPreview">
+              <span class="highlight">Your prompt will appear here...</span>
+
+              Describe your design above and it will be combined with the full schema context for any AI to understand.
+            </div>
+          </div>
         </div>
-        <div class="chips" id="fontOptions">
-          <label class="chip selected" data-font="Inter">
-            <input type="radio" name="font" value="Inter" checked>
-            Inter
-          </label>
-          <label class="chip" data-font="Poppins">
-            <input type="radio" name="font" value="Poppins">
-            Poppins
-          </label>
-          <label class="chip" data-font="Roboto">
-            <input type="radio" name="font" value="Roboto">
-            Roboto
-          </label>
-          <label class="chip" data-font="Open Sans">
-            <input type="radio" name="font" value="Open Sans">
-            Open Sans
-          </label>
-          <label class="chip" data-font="Montserrat">
-            <input type="radio" name="font" value="Montserrat">
-            Montserrat
-          </label>
-          <label class="chip" data-font="Lato">
-            <input type="radio" name="font" value="Lato">
-            Lato
-          </label>
-          <label class="font-option" data-font="Nunito">
-            <input type="radio" name="font" value="Nunito">
-            Nunito
-          </label>
-          <label class="font-option" data-font="DM Sans">
-            <input type="radio" name="font" value="DM Sans">
-            DM Sans
-          </label>
-        </div>
-      </div>
 
-      <div class="prompt-section">
-        <div class="section-title">
-          <span>4</span>
-          Quick component hints (optional)
-        </div>
-        <div class="example-chips" id="componentChips">
-          <span class="chip" data-component="navigation">Navigation</span>
-          <span class="chip" data-component="hero">Hero Section</span>
-          <span class="chip" data-component="cards">Cards</span>
-          <span class="chip" data-component="form">Form</span>
-          <span class="chip" data-component="pricing">Pricing</span>
-          <span class="chip" data-component="footer">Footer</span>
-          <span class="chip" data-component="modal">Modal</span>
-          <span class="chip" data-component="dashboard">Dashboard</span>
-        </div>
-      </div>
-
-      <div class="actions">
-        <button class="btn btn-primary" id="copyPromptBtn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-          </svg>
-          Copy Prompt to Clipboard
-        </button>
-      </div>
-
-      <div id="promptStatus" class="status"></div>
-
-      <div class="prompt-section">
-        <div class="examples-header">Preview (what will be copied)</div>
-        <div class="prompt-preview" id="promptPreview">
-          <span class="highlight">Your prompt will appear here...</span>
-
-          Describe your design above and it will be combined with the full schema context for any AI to understand.
-        </div>
-      </div>
-    </div>
-
-    <!-- BUILDER PANEL -->
-    <div id="builder" class="panel active">
-      <div class="input-group">
-        <label>Paste Your Design JSON</label>
-        <div class="textarea-wrapper">
-          <textarea id="jsonInput" placeholder='Paste AI-generated JSON here...
+        <!-- BUILDER PANEL -->
+        <div id="builder" class="panel active">
+          <div class="input-group">
+            <label>Paste Your Design JSON</label>
+            <div class="textarea-wrapper">
+              <textarea id="jsonInput" placeholder='Paste AI-generated JSON here...
 
 Example:
 {
@@ -856,106 +876,70 @@ Example:
   "fills": [{ "type": "SOLID", "color": "#FFFFFF" }],
   "children": [...]
 }'></textarea>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-secondary" id="formatBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 7h16M4 12h10M4 17h16" />
+              </svg>
+              Format
+            </button>
+            <button class="btn btn-primary" id="buildBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+              </svg>
+              Build Design
+            </button>
+          </div>
+
+          <div id="status" class="status">
+            <span class="spinner"></span>
+            <span class="message"></span>
+          </div>
+
+          <div class="examples">
+            <div class="examples-header">Quick Examples</div>
+            <div class="example-chips">
+              <span class="chip" data-example="button">Button</span>
+              <span class="chip" data-example="card">Card</span>
+              <span class="chip" data-example="navbar">Navbar</span>
+              <span class="chip" data-example="hero">Hero Section</span>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="actions">
-        <button class="btn btn-secondary" id="formatBtn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 7h16M4 12h10M4 17h16" />
-          </svg>
-          Format
-        </button>
-        <button class="btn btn-primary" id="buildBtn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-          </svg>
-          Build Design
-        </button>
-      </div>
+        <!-- EXPORT PANEL -->
+        <div id="export" class="panel">
+          <div class="input-group">
+            <label>Export Figma Frame to JSON</label>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5;">
+              Select a Frame in Figma and click "Export" to convert it into the AI-to-UI JSON format.
+              You can then paste this JSON into an LLM to understand, modify, or extend your design.
+            </p>
+          </div>
 
-      <div id="status" class="status">
-        <span class="spinner"></span>
-        <span class="message"></span>
-      </div>
+          <div class="actions">
+            <button class="btn btn-primary" id="exportBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="17 8 12 3 7 8" />
+                <line x1="12" y1="3" x2="12" y2="15" />
+              </svg>
+              Export Selected Frame
+            </button>
+          </div>
 
-      <div class="examples">
-        <div class="examples-header">Quick Examples</div>
-        <div class="example-chips">
-          <span class="chip" data-example="button">Button</span>
-          <span class="chip" data-example="card">Card</span>
-          <span class="chip" data-example="navbar">Navbar</span>
-          <span class="chip" data-example="hero">Hero Section</span>
-        </div>
-      </div>
-    </div>
+          <div id="exportStatus" class="status">
+            <span class="spinner"></span>
+            <span class="message"></span>
+          </div>
 
-    <!-- REMOTE PANEL -->
-    <div id="remote" class="panel">
-      <div class="input-group">
-        <label>Remote Design Source (Derek)</label>
-        <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5;">
-          Connect to Derek's signal. The plugin will poll this URL for new designs.
-        </p>
-        <div class="textarea-wrapper" style="margin-bottom: 12px;">
-          <input type="text" id="remoteUrl"
-            value="https://raw.githubusercontent.com/Owen-Jz/ai-to-ui-figma-plugin/main/designs/current.json"
-            style="height: auto;">
-        </div>
-      </div>
-
-      <div class="actions">
-        <button class="btn btn-primary" id="toggleRemoteBtn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="2" />
-            <path
-              d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14" />
-          </svg>
-          Start Listening
-        </button>
-      </div>
-
-      <div id="remoteStatus" class="status">
-        <span class="spinner"></span>
-        <span class="message">Waiting to connect...</span>
-      </div>
-
-      <div style="margin-top: 20px; font-size: 11px; color: var(--text-secondary);">
-        <p><strong>Status:</strong> <span id="connectionState">Disconnected</span></p>
-        <p><strong>Last Update:</strong> <span id="lastUpdate">Never</span></p>
-      </div>
-    </div>
-
-    <!-- EXPORT PANEL -->
-    <div id="export" class="panel">
-      <div class="input-group">
-        <label>Export Figma Frame to JSON</label>
-        <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5;">
-          Select a Frame in Figma and click "Export" to convert it into the AI-to-UI JSON format.
-          You can then paste this JSON into an LLM to understand, modify, or extend your design.
-        </p>
-      </div>
-
-      <div class="actions">
-        <button class="btn btn-primary" id="exportBtn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="17 8 12 3 7 8" />
-            <line x1="12" y1="3" x2="12" y2="15" />
-          </svg>
-          Export Selected Frame
-        </button>
-      </div>
-
-      <div id="exportStatus" class="status">
-        <span class="spinner"></span>
-        <span class="message"></span>
-      </div>
-
-      <div class="input-group" style="margin-top: 16px;">
-        <label>Exported JSON</label>
-        <div class="textarea-wrapper">
-          <textarea id="exportOutput" placeholder="Exported JSON will appear here...
+          <div class="input-group" style="margin-top: 16px;">
+            <label>Exported JSON</label>
+            <div class="textarea-wrapper">
+              <textarea id="exportOutput" placeholder="Exported JSON will appear here...
 
 Select a Frame in Figma and click 'Export Selected Frame' to generate the JSON representation of your design.
 
@@ -963,447 +947,460 @@ The JSON output can be:
 • Pasted into ChatGPT, Claude, or other LLMs
 • Modified and re-imported using the Builder tab
 • Saved for version control or sharing"></textarea>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-secondary" id="formatExportBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 7h16M4 12h10M4 17h16" />
+              </svg>
+              Format
+            </button>
+            <button class="btn btn-primary" id="copyExportBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              Copy to Clipboard
+            </button>
+          </div>
+
+          <div class="examples" style="margin-top: 20px;">
+            <div class="examples-header">💡 Tips for LLM Usage</div>
+            <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.6;">
+              <p style="margin-bottom: 8px;">• <strong>Ask for modifications:</strong> "Change the primary color to blue
+                and
+                increase padding"</p>
+              <p style="margin-bottom: 8px;">• <strong>Request additions:</strong> "Add a footer section with social
+                media
+                links"</p>
+              <p style="margin-bottom: 8px;">• <strong>Get explanations:</strong> "Explain the layout structure of this
+                design"</p>
+              <p>• <strong>Create variations:</strong> "Generate a dark mode version of this component"</p>
+            </div>
+          </div>
+        </div>
+        <!-- SCHEMA REFERENCE PANEL -->
+        <div id="schema" class="panel">
+          <div class="schema-ref">
+            <h3>📐 Node Types</h3>
+            <table class="prop-table">
+              <tr>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>FRAME</td>
+                <td>Container with Auto Layout support</td>
+              </tr>
+              <tr>
+                <td>TEXT</td>
+                <td>Text layer with font properties</td>
+              </tr>
+              <tr>
+                <td>IMAGE</td>
+                <td>Image fill (supports keywords or URLs)</td>
+              </tr>
+              <tr>
+                <td>RECTANGLE</td>
+                <td>Shape with fills, strokes, effects</td>
+              </tr>
+              <tr>
+                <td>ICON</td>
+                <td>Vector icon from Phosphor library</td>
+              </tr>
+              <tr>
+                <td>CHART</td>
+                <td>Data visualization (pie, donut, bar, line)</td>
+              </tr>
+            </table>
+
+            <h3 style="margin-top: 20px;">⚙️ Layout Properties</h3>
+            <table class="prop-table">
+              <tr>
+                <th>Property</th>
+                <th>Values</th>
+              </tr>
+              <tr>
+                <td>layoutMode</td>
+                <td>"HORIZONTAL" | "VERTICAL"</td>
+              </tr>
+              <tr>
+                <td>primaryAxisAlignItems</td>
+                <td>"MIN" | "MAX" | "CENTER" | "SPACE_BETWEEN"</td>
+              </tr>
+              <tr>
+                <td>counterAxisAlignItems</td>
+                <td>"MIN" | "MAX" | "CENTER"</td>
+              </tr>
+              <tr>
+                <td>itemSpacing</td>
+                <td>number (px)</td>
+              </tr>
+              <tr>
+                <td>padding</td>
+                <td>{ top, right, bottom, left }</td>
+              </tr>
+              <tr>
+                <td>width</td>
+                <td>"fill" | "hug" | number</td>
+              </tr>
+              <tr>
+                <td>height</td>
+                <td>"fill" | "hug" | number</td>
+              </tr>
+              <tr>
+                <td>layoutPositioning</td>
+                <td>"AUTO" | "ABSOLUTE" (for overlays)</td>
+              </tr>
+              <tr>
+                <td>constraints</td>
+                <td>{ horizontal, vertical }: "MIN" | "MAX" | "CENTER"</td>
+              </tr>
+            </table>
+
+            <h3 style="margin-top: 20px;">🎨 Styling Properties</h3>
+            <table class="prop-table">
+              <tr>
+                <th>Property</th>
+                <th>Values</th>
+              </tr>
+              <tr>
+                <td>fills</td>
+                <td>SOLID, GRADIENT_LINEAR, GRADIENT_RADIAL</td>
+              </tr>
+              <tr>
+                <td>strokes</td>
+                <td>[{ type: "SOLID", color: "#HEX" }]</td>
+              </tr>
+              <tr>
+                <td>strokeWeight</td>
+                <td>number</td>
+              </tr>
+              <tr>
+                <td>cornerRadius</td>
+                <td>number</td>
+              </tr>
+              <tr>
+                <td>effects</td>
+                <td>DROP_SHADOW, INNER_SHADOW, LAYER_BLUR, BG_BLUR</td>
+              </tr>
+              <tr>
+                <td>opacity</td>
+                <td>number (0-1)</td>
+              </tr>
+              <tr>
+                <td>background</td>
+                <td>"gradient-sunset" | "mesh-aurora" | ...</td>
+              </tr>
+            </table>
+
+            <h3 style="margin-top: 20px;">🎨 Background Presets</h3>
+            <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Gradients: gradient-sunset,
+              gradient-ocean, gradient-cotton-candy, gradient-midnight</p>
+            <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Meshes: mesh-aurora, mesh-fire
+            </p>
+
+            <h3 style="margin-top: 20px;">✏️ Text Properties</h3>
+            <table class="prop-table">
+              <tr>
+                <th>Property</th>
+                <th>Values</th>
+              </tr>
+              <tr>
+                <td>characters</td>
+                <td>string (text content)</td>
+              </tr>
+              <tr>
+                <td>fontSize</td>
+                <td>number</td>
+              </tr>
+              <tr>
+                <td>fontFamily</td>
+                <td>"Inter" | "Poppins" | "Roboto" | ...</td>
+              </tr>
+              <tr>
+                <td>fontWeight</td>
+                <td>"Light" | "Regular" | "Medium" | "SemiBold" | "Bold"</td>
+              </tr>
+              <tr>
+                <td>textColor</td>
+                <td>"#HEX"</td>
+              </tr>
+            </table>
+
+            <h3 style="margin-top: 20px;">🖼️ Image Keywords</h3>
+            <table class="prop-table">
+              <tr>
+                <th>Keyword</th>
+                <th>Result</th>
+              </tr>
+              <tr>
+                <td>avatar</td>
+                <td>Portrait/face images</td>
+              </tr>
+              <tr>
+                <td>hero</td>
+                <td>Landscape/nature scenes</td>
+              </tr>
+              <tr>
+                <td>product</td>
+                <td>Product photography</td>
+              </tr>
+              <tr>
+                <td>team</td>
+                <td>Team/people photos</td>
+              </tr>
+              <tr>
+                <td>tech</td>
+                <td>Technology themed</td>
+              </tr>
+            </table>
+
+            <h3 style="margin-top: 20px;">🎯 Icon Properties</h3>
+            <table class="prop-table">
+              <tr>
+                <th>Property</th>
+                <th>Values</th>
+              </tr>
+              <tr>
+                <td>icon</td>
+                <td>Phosphor icon name OR raw SVG path string</td>
+              </tr>
+              <tr>
+                <td>size</td>
+                <td>number (px, default 24)</td>
+              </tr>
+              <tr>
+                <td>color</td>
+                <td>"#HEX"</td>
+              </tr>
+            </table>
+
+            <h3 style="margin-top: 20px;">📊 Chart Properties</h3>
+            <table class="prop-table">
+              <tr>
+                <th>Property</th>
+                <th>Values</th>
+              </tr>
+              <tr>
+                <td>chartType</td>
+                <td>"PIE" | "DONUT" | "BAR" | "LINE"</td>
+              </tr>
+              <tr>
+                <td>chartData</td>
+                <td>[{ value: number, label?: string, color?: "#HEX" }]</td>
+              </tr>
+              <tr>
+                <td>donutHoleSize</td>
+                <td>0-1 (for DONUT charts, default 0.5)</td>
+              </tr>
+            </table>
+            <p style="font-size: 10px; color: var(--text-secondary); margin-top: 8px; font-style: italic;">Example: {
+              "type": "CHART", "chartType": "PIE", "chartData": [{ "value": 30, "label": "Sales" }, { "value": 70,
+              "label":
+              "Costs" }], "width": 200, "height": 200 }</p>
+
+            <h3 style="margin-top: 20px;">🗺️ Sitemap Properties</h3>
+            <table class="prop-table">
+              <tr>
+                <th>Property</th>
+                <th>Values</th>
+              </tr>
+              <tr>
+                <td>sitemapData</td>
+                <td>Root node object (see example)</td>
+              </tr>
+              <tr>
+                <td>nodeWidth</td>
+                <td>number (width of cards, default 180)</td>
+              </tr>
+              <tr>
+                <td>levelSpacing</td>
+                <td>number (vertical gap, default 60)</td>
+              </tr>
+              <tr>
+                <td>siblingSpacing</td>
+                <td>number (horizontal gap, default 20)</td>
+              </tr>
+            </table>
+            <p style="font-size: 10px; color: var(--text-secondary); margin-top: 8px; font-style: italic;">Example: {
+              "type": "SITEMAP", "sitemapData": { "label": "Home", "children": [...] } }</p>
+
+            <h3 style="margin-top: 20px;">⭐ Phosphor Icons</h3>
+            <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Navigation: house,
+              magnifying-glass, gear, bell, user, users, arrow-left, arrow-right, arrow-up, arrow-down, x, list,
+              caret-down,
+              caret-right</p>
+            <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Actions: plus, minus, pencil,
+              trash, download, upload, share, copy, check, check-circle, x-circle, warning, info, question, prohibit</p>
+            <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Media: image, camera, video,
+              play,
+              pause, stop, music-note, microphone, speaker-high</p>
+            <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Communication: envelope, chat,
+              phone, paper-plane-tilt, paper-plane-right, at, link, globe, wifi, cloud</p>
+            <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Devices & Tech: desktop,
+              laptop,
+              tablet, device-mobile, keyboard, mouse</p>
+            <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Weather: sun, moon,
+              cloud-rain,
+              snowflake, umbrella, wind</p>
+            <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Commerce: shopping-cart,
+              credit-card, wallet, receipt, tag, storefront, package, truck, star, heart, bank, medal, funnel</p>
+            <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Brands: twitter, github,
+              facebook,
+              instagram, linkedin, youtube, google, apple, figma</p>
+            <p style="font-size: 11px; color: var(--success); margin-bottom: 8px;">✨ <strong>New:</strong> You can also
+              pass
+              a raw SVG path string (e.g., "M10 10 L50 50...") or a full &lt;svg&gt; string in the "icon" field for
+              custom
+              icons!</p>
+
+            <h3 style="margin-top: 20px;">🎲 Fake Data Placeholders</h3>
+            <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 12px;">Use <code
+                style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">{{placeholder}}</code> in
+              TEXT
+              characters to auto-generate realistic data:</p>
+            <table class="prop-table">
+              <tr>
+                <th>Category</th>
+                <th>Placeholders</th>
+              </tr>
+              <tr>
+                <td>Names</td>
+                <td>{{name}}, {{firstname}}, {{lastname}}, {{username}}</td>
+              </tr>
+              <tr>
+                <td>Contact</td>
+                <td>{{email}}, {{phone}}, {{url}}, {{avatar}}</td>
+              </tr>
+              <tr>
+                <td>Professional</td>
+                <td>{{company}}, {{jobtitle}}, {{title}}</td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td>{{address}}, {{city}}, {{country}}, {{zip}}</td>
+              </tr>
+              <tr>
+                <td>Numbers</td>
+                <td>{{number}}, {{price}}, {{percentage}}, {{rating}}</td>
+              </tr>
+              <tr>
+                <td>Date/Time</td>
+                <td>{{date}}, {{time}}, {{datetime}}</td>
+              </tr>
+              <tr>
+                <td>Lorem</td>
+                <td>{{word}}, {{words}}, {{sentence}}, {{paragraph}}</td>
+              </tr>
+              <tr>
+                <td>Other</td>
+                <td>{{uuid}}, {{heading}}, {{short}}</td>
+              </tr>
+            </table>
+            <p style="font-size: 10px; color: var(--text-secondary); margin-top: 8px; font-style: italic;">Example:
+              "Hello,
+              {{name}}!" → "Hello, Sarah Johnson!"</p>
+          </div>
+        </div>
+
+        <div class="footer">
+          Made for AI-powered design workflows
         </div>
       </div>
 
-      <div class="actions">
-        <button class="btn btn-secondary" id="formatExportBtn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 7h16M4 12h10M4 17h16" />
-          </svg>
-          Format
-        </button>
-        <button class="btn btn-primary" id="copyExportBtn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-          </svg>
-          Copy to Clipboard
-        </button>
-      </div>
+      <script>
+        // =========================================================================
+        // REMOTE LISTENER LOGIC
+        // =========================================================================
+        let pollingInterval = null;
+        let lastJsonString = "";
 
-      <div class="examples" style="margin-top: 20px;">
-        <div class="examples-header">💡 Tips for LLM Usage</div>
-        <div style="font-size: 11px; color: var(--text-secondary); line-height: 1.6;">
-          <p style="margin-bottom: 8px;">• <strong>Ask for modifications:</strong> "Change the primary color to blue and
-            increase padding"</p>
-          <p style="margin-bottom: 8px;">• <strong>Request additions:</strong> "Add a footer section with social media
-            links"</p>
-          <p style="margin-bottom: 8px;">• <strong>Get explanations:</strong> "Explain the layout structure of this
-            design"</p>
-          <p>• <strong>Create variations:</strong> "Generate a dark mode version of this component"</p>
-        </div>
-      </div>
-    </div>
-    <!-- SCHEMA REFERENCE PANEL -->
-    <div id="schema" class="panel">
-      <div class="schema-ref">
-        <h3>📐 Node Types</h3>
-        <table class="prop-table">
-          <tr>
-            <th>Type</th>
-            <th>Description</th>
-          </tr>
-          <tr>
-            <td>FRAME</td>
-            <td>Container with Auto Layout support</td>
-          </tr>
-          <tr>
-            <td>TEXT</td>
-            <td>Text layer with font properties</td>
-          </tr>
-          <tr>
-            <td>IMAGE</td>
-            <td>Image fill (supports keywords or URLs)</td>
-          </tr>
-          <tr>
-            <td>RECTANGLE</td>
-            <td>Shape with fills, strokes, effects</td>
-          </tr>
-          <tr>
-            <td>ICON</td>
-            <td>Vector icon from Phosphor library</td>
-          </tr>
-          <tr>
-            <td>CHART</td>
-            <td>Data visualization (pie, donut, bar, line)</td>
-          </tr>
-        </table>
+        const remoteStatus = document.getElementById('remoteStatus');
+        const connectionState = document.getElementById('connectionState');
+        const lastUpdate = document.getElementById('lastUpdate');
+        const toggleRemoteBtn = document.getElementById('toggleRemoteBtn');
+        const remoteUrlInput = document.getElementById('remoteUrl');
 
-        <h3 style="margin-top: 20px;">⚙️ Layout Properties</h3>
-        <table class="prop-table">
-          <tr>
-            <th>Property</th>
-            <th>Values</th>
-          </tr>
-          <tr>
-            <td>layoutMode</td>
-            <td>"HORIZONTAL" | "VERTICAL"</td>
-          </tr>
-          <tr>
-            <td>primaryAxisAlignItems</td>
-            <td>"MIN" | "MAX" | "CENTER" | "SPACE_BETWEEN"</td>
-          </tr>
-          <tr>
-            <td>counterAxisAlignItems</td>
-            <td>"MIN" | "MAX" | "CENTER"</td>
-          </tr>
-          <tr>
-            <td>itemSpacing</td>
-            <td>number (px)</td>
-          </tr>
-          <tr>
-            <td>padding</td>
-            <td>{ top, right, bottom, left }</td>
-          </tr>
-          <tr>
-            <td>width</td>
-            <td>"fill" | "hug" | number</td>
-          </tr>
-          <tr>
-            <td>height</td>
-            <td>"fill" | "hug" | number</td>
-          </tr>
-          <tr>
-            <td>layoutPositioning</td>
-            <td>"AUTO" | "ABSOLUTE" (for overlays)</td>
-          </tr>
-          <tr>
-            <td>constraints</td>
-            <td>{ horizontal, vertical }: "MIN" | "MAX" | "CENTER"</td>
-          </tr>
-        </table>
-
-        <h3 style="margin-top: 20px;">🎨 Styling Properties</h3>
-        <table class="prop-table">
-          <tr>
-            <th>Property</th>
-            <th>Values</th>
-          </tr>
-          <tr>
-            <td>fills</td>
-            <td>SOLID, GRADIENT_LINEAR, GRADIENT_RADIAL</td>
-          </tr>
-          <tr>
-            <td>strokes</td>
-            <td>[{ type: "SOLID", color: "#HEX" }]</td>
-          </tr>
-          <tr>
-            <td>strokeWeight</td>
-            <td>number</td>
-          </tr>
-          <tr>
-            <td>cornerRadius</td>
-            <td>number</td>
-          </tr>
-          <tr>
-            <td>effects</td>
-            <td>DROP_SHADOW, INNER_SHADOW, LAYER_BLUR, BG_BLUR</td>
-          </tr>
-          <tr>
-            <td>opacity</td>
-            <td>number (0-1)</td>
-          </tr>
-          <tr>
-            <td>background</td>
-            <td>"gradient-sunset" | "mesh-aurora" | ...</td>
-          </tr>
-        </table>
-
-        <h3 style="margin-top: 20px;">🎨 Background Presets</h3>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Gradients: gradient-sunset,
-          gradient-ocean, gradient-cotton-candy, gradient-midnight</p>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Meshes: mesh-aurora, mesh-fire</p>
-
-        <h3 style="margin-top: 20px;">✏️ Text Properties</h3>
-        <table class="prop-table">
-          <tr>
-            <th>Property</th>
-            <th>Values</th>
-          </tr>
-          <tr>
-            <td>characters</td>
-            <td>string (text content)</td>
-          </tr>
-          <tr>
-            <td>fontSize</td>
-            <td>number</td>
-          </tr>
-          <tr>
-            <td>fontFamily</td>
-            <td>"Inter" | "Poppins" | "Roboto" | ...</td>
-          </tr>
-          <tr>
-            <td>fontWeight</td>
-            <td>"Light" | "Regular" | "Medium" | "SemiBold" | "Bold"</td>
-          </tr>
-          <tr>
-            <td>textColor</td>
-            <td>"#HEX"</td>
-          </tr>
-        </table>
-
-        <h3 style="margin-top: 20px;">🖼️ Image Keywords</h3>
-        <table class="prop-table">
-          <tr>
-            <th>Keyword</th>
-            <th>Result</th>
-          </tr>
-          <tr>
-            <td>avatar</td>
-            <td>Portrait/face images</td>
-          </tr>
-          <tr>
-            <td>hero</td>
-            <td>Landscape/nature scenes</td>
-          </tr>
-          <tr>
-            <td>product</td>
-            <td>Product photography</td>
-          </tr>
-          <tr>
-            <td>team</td>
-            <td>Team/people photos</td>
-          </tr>
-          <tr>
-            <td>tech</td>
-            <td>Technology themed</td>
-          </tr>
-        </table>
-
-        <h3 style="margin-top: 20px;">🎯 Icon Properties</h3>
-        <table class="prop-table">
-          <tr>
-            <th>Property</th>
-            <th>Values</th>
-          </tr>
-          <tr>
-            <td>icon</td>
-            <td>Phosphor icon name OR raw SVG path string</td>
-          </tr>
-          <tr>
-            <td>size</td>
-            <td>number (px, default 24)</td>
-          </tr>
-          <tr>
-            <td>color</td>
-            <td>"#HEX"</td>
-          </tr>
-        </table>
-
-        <h3 style="margin-top: 20px;">📊 Chart Properties</h3>
-        <table class="prop-table">
-          <tr>
-            <th>Property</th>
-            <th>Values</th>
-          </tr>
-          <tr>
-            <td>chartType</td>
-            <td>"PIE" | "DONUT" | "BAR" | "LINE"</td>
-          </tr>
-          <tr>
-            <td>chartData</td>
-            <td>[{ value: number, label?: string, color?: "#HEX" }]</td>
-          </tr>
-          <tr>
-            <td>donutHoleSize</td>
-            <td>0-1 (for DONUT charts, default 0.5)</td>
-          </tr>
-        </table>
-        <p style="font-size: 10px; color: var(--text-secondary); margin-top: 8px; font-style: italic;">Example: {
-          "type": "CHART", "chartType": "PIE", "chartData": [{ "value": 30, "label": "Sales" }, { "value": 70, "label":
-          "Costs" }], "width": 200, "height": 200 }</p>
-
-        <h3 style="margin-top: 20px;">🗺️ Sitemap Properties</h3>
-        <table class="prop-table">
-          <tr>
-            <th>Property</th>
-            <th>Values</th>
-          </tr>
-          <tr>
-            <td>sitemapData</td>
-            <td>Root node object (see example)</td>
-          </tr>
-          <tr>
-            <td>nodeWidth</td>
-            <td>number (width of cards, default 180)</td>
-          </tr>
-          <tr>
-            <td>levelSpacing</td>
-            <td>number (vertical gap, default 60)</td>
-          </tr>
-          <tr>
-            <td>siblingSpacing</td>
-            <td>number (horizontal gap, default 20)</td>
-          </tr>
-        </table>
-        <p style="font-size: 10px; color: var(--text-secondary); margin-top: 8px; font-style: italic;">Example: {
-          "type": "SITEMAP", "sitemapData": { "label": "Home", "children": [...] } }</p>
-
-        <h3 style="margin-top: 20px;">⭐ Phosphor Icons</h3>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Navigation: house,
-          magnifying-glass, gear, bell, user, users, arrow-left, arrow-right, arrow-up, arrow-down, x, list, caret-down,
-          caret-right</p>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Actions: plus, minus, pencil,
-          trash, download, upload, share, copy, check, check-circle, x-circle, warning, info, question, prohibit</p>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Media: image, camera, video, play,
-          pause, stop, music-note, microphone, speaker-high</p>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Communication: envelope, chat,
-          phone, paper-plane-tilt, paper-plane-right, at, link, globe, wifi, cloud</p>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Devices & Tech: desktop, laptop,
-          tablet, device-mobile, keyboard, mouse</p>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Weather: sun, moon, cloud-rain,
-          snowflake, umbrella, wind</p>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Commerce: shopping-cart,
-          credit-card, wallet, receipt, tag, storefront, package, truck, star, heart, bank, medal, funnel</p>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 8px;">Brands: twitter, github, facebook,
-          instagram, linkedin, youtube, google, apple, figma</p>
-        <p style="font-size: 11px; color: var(--success); margin-bottom: 8px;">✨ <strong>New:</strong> You can also pass
-          a raw SVG path string (e.g., "M10 10 L50 50...") or a full &lt;svg&gt; string in the "icon" field for custom
-          icons!</p>
-
-        <h3 style="margin-top: 20px;">🎲 Fake Data Placeholders</h3>
-        <p style="font-size: 11px; color: var(--text-secondary); margin-bottom: 12px;">Use <code
-            style="background: var(--bg-tertiary); padding: 2px 6px; border-radius: 4px;">{{placeholder}}</code> in TEXT
-          characters to auto-generate realistic data:</p>
-        <table class="prop-table">
-          <tr>
-            <th>Category</th>
-            <th>Placeholders</th>
-          </tr>
-          <tr>
-            <td>Names</td>
-            <td>{{name}}, {{firstname}}, {{lastname}}, {{username}}</td>
-          </tr>
-          <tr>
-            <td>Contact</td>
-            <td>{{email}}, {{phone}}, {{url}}, {{avatar}}</td>
-          </tr>
-          <tr>
-            <td>Professional</td>
-            <td>{{company}}, {{jobtitle}}, {{title}}</td>
-          </tr>
-          <tr>
-            <td>Address</td>
-            <td>{{address}}, {{city}}, {{country}}, {{zip}}</td>
-          </tr>
-          <tr>
-            <td>Numbers</td>
-            <td>{{number}}, {{price}}, {{percentage}}, {{rating}}</td>
-          </tr>
-          <tr>
-            <td>Date/Time</td>
-            <td>{{date}}, {{time}}, {{datetime}}</td>
-          </tr>
-          <tr>
-            <td>Lorem</td>
-            <td>{{word}}, {{words}}, {{sentence}}, {{paragraph}}</td>
-          </tr>
-          <tr>
-            <td>Other</td>
-            <td>{{uuid}}, {{heading}}, {{short}}</td>
-          </tr>
-        </table>
-        <p style="font-size: 10px; color: var(--text-secondary); margin-top: 8px; font-style: italic;">Example: "Hello,
-          {{name}}!" → "Hello, Sarah Johnson!"</p>
-      </div>
-    </div>
-
-    <div class="footer">
-      Made for AI-powered design workflows
-    </div>
-  </div>
-
-  <script>
-    // =========================================================================
-    // REMOTE LISTENER LOGIC
-    // =========================================================================
-    let pollingInterval = null;
-    let lastJsonString = "";
-
-    const remoteStatus = document.getElementById('remoteStatus');
-    const connectionState = document.getElementById('connectionState');
-    const lastUpdate = document.getElementById('lastUpdate');
-    const toggleRemoteBtn = document.getElementById('toggleRemoteBtn');
-    const remoteUrlInput = document.getElementById('remoteUrl');
-
-    function updateRemoteStatus(message, type) {
-      remoteStatus.className = 'status show ' + type;
-      remoteStatus.querySelector('.message').textContent = message;
-      remoteStatus.querySelector('.spinner').style.display = type === 'loading' ? 'block' : 'none';
-    }
-
-    async function pollDesign() {
-      const url = remoteUrlInput.value;
-      try {
-        const response = await fetch(url + '?t=' + new Date().getTime()); // Prevent caching
-        if (!response.ok) throw new Error('Fetch failed');
-
-        const json = await response.json();
-        const jsonString = JSON.stringify(json);
-
-        if (jsonString !== lastJsonString) {
-          lastJsonString = jsonString;
-          // New design found!
-          updateRemoteStatus('New design received! Building...', 'success');
-          lastUpdate.textContent = new Date().toLocaleTimeString();
-
-          // Send to plugin
-          parent.postMessage({ pluginMessage: { type: 'build', data: json } }, '*');
-        } else {
-          // No change, just heartbeat
-          // updateRemoteStatus('Listening... (No changes)', 'loading');
+        function updateRemoteStatus(message, type) {
+          remoteStatus.className = 'status show ' + type;
+          remoteStatus.querySelector('.message').textContent = message;
+          remoteStatus.querySelector('.spinner').style.display = type === 'loading' ? 'block' : 'none';
         }
 
-        connectionState.textContent = 'Connected & Listening';
-        connectionState.style.color = 'var(--success)';
+        async function pollDesign() {
+          const url = remoteUrlInput.value;
+          try {
+            const response = await fetch(url + '?t=' + new Date().getTime()); // Prevent caching
+            if (!response.ok) throw new Error('Fetch failed');
 
-      } catch (error) {
-        console.error('Polling error:', error);
-        updateRemoteStatus('Error fetching design: ' + error.message, 'error');
-        connectionState.textContent = 'Connection Error';
-        connectionState.style.color = 'var(--error)';
-      }
-    }
+            const json = await response.json();
+            const jsonString = JSON.stringify(json);
 
-    toggleRemoteBtn.addEventListener('click', () => {
-      if (pollingInterval) {
-        // Stop
-        clearInterval(pollingInterval);
-        pollingInterval = null;
-        toggleRemoteBtn.innerHTML = `
+            if (jsonString !== lastJsonString) {
+              lastJsonString = jsonString;
+              // New design found!
+              updateRemoteStatus('New design received! Building...', 'success');
+              lastUpdate.textContent = new Date().toLocaleTimeString();
+
+              // Send to plugin
+              parent.postMessage({ pluginMessage: { type: 'build', data: json } }, '*');
+            } else {
+              // No change, just heartbeat
+              // updateRemoteStatus('Listening... (No changes)', 'loading');
+            }
+
+            connectionState.textContent = 'Connected & Listening';
+            connectionState.style.color = 'var(--success)';
+
+          } catch (error) {
+            console.error('Polling error:', error);
+            updateRemoteStatus('Error fetching design: ' + error.message, 'error');
+            connectionState.textContent = 'Connection Error';
+            connectionState.style.color = 'var(--error)';
+          }
+        }
+
+        toggleRemoteBtn.addEventListener('click', () => {
+          if (pollingInterval) {
+            // Stop
+            clearInterval(pollingInterval);
+            pollingInterval = null;
+            toggleRemoteBtn.innerHTML = `
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="2" />
             <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14" />
           </svg>
           Start Listening
         `;
-        toggleRemoteBtn.classList.remove('btn-secondary');
-        toggleRemoteBtn.classList.add('btn-primary');
-        updateRemoteStatus('Disconnected', 'error');
-        connectionState.textContent = 'Disconnected';
-        connectionState.style.color = 'var(--text-secondary)';
-      } else {
-        // Start
-        updateRemoteStatus('Connecting...', 'loading');
-        pollingInterval = setInterval(pollDesign, 2000); // Poll every 2s
-        pollDesign(); // Immediate check
+            toggleRemoteBtn.classList.remove('btn-secondary');
+            toggleRemoteBtn.classList.add('btn-primary');
+            updateRemoteStatus('Disconnected', 'error');
+            connectionState.textContent = 'Disconnected';
+            connectionState.style.color = 'var(--text-secondary)';
+          } else {
+            // Start
+            updateRemoteStatus('Connecting...', 'loading');
+            pollingInterval = setInterval(pollDesign, 2000); // Poll every 2s
+            pollDesign(); // Immediate check
 
-        toggleRemoteBtn.innerHTML = `
+            toggleRemoteBtn.innerHTML = `
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="6" y="6" width="12" height="12" rx="2" ry="2"></rect>
           </svg>
           Stop Listening
         `;
-        toggleRemoteBtn.classList.remove('btn-primary');
-        toggleRemoteBtn.classList.add('btn-secondary');
-      }
-    });
+            toggleRemoteBtn.classList.remove('btn-primary');
+            toggleRemoteBtn.classList.add('btn-secondary');
+          }
+        });
 
-    // =========================================================================
-    // PROMPT GENERATOR - THE FULL CONTEXT PROMPT
-    // =========================================================================
-    const SCHEMA_CONTEXT = `You are an Expert UI/UX Designer and Figma Engineer specializing in high-fidelity UI reconstruction. You write Figma-Native JSON that will be parsed by a Figma plugin to generate pixel-perfect designs.
+        // =========================================================================
+        // PROMPT GENERATOR - THE FULL CONTEXT PROMPT
+        // =========================================================================
+        const SCHEMA_CONTEXT = `You are an Expert UI/UX Designer and Figma Engineer specializing in high-fidelity UI reconstruction. You write Figma-Native JSON that will be parsed by a Figma plugin to generate pixel-perfect designs.
 
 === CRITICAL RULES ===
 1. Respond ONLY with valid JSON. No explanations, no markdown code blocks, no comments.
@@ -1414,6 +1411,9 @@ The JSON output can be:
 6. ALWAYS use hex colors (#RRGGBB format). Never use named colors or rgb().
 7. Use ICON type for vector icons — Phosphor names OR raw SVG path strings.
 8. Every FRAME must have layoutMode. No exceptions.
+9. IMAGE HANDLING: Never use src or remote URLs inside the fills array of a FRAME. Instead, create a dedicated child node of type IMAGE.
+10. BACKGROUND IMAGES: When a background image is requested, the first child of the root FRAME must be an IMAGE type with layoutPositioning: "ABSOLUTE", x: 0, y: 0, width: "fill" (or matching parent px), height: "fill" (or matching parent px), and constraints: {"horizontal": "STRETCH", "vertical": "STRETCH"}. Ensure it is the first item in the children array so other elements render on top of it.
+11. BASE64 IMAGES: If you use raw images, prioritize generating a Base64 data string for the src field to avoid network blocks.
 
 COMMON MISTAKE:
 - WRONG: "layoutMode": "CENTER" ❌
@@ -1483,8 +1483,8 @@ COMMON MISTAKE:
   "size": number (px, default 24),
   "color": "#RRGGBB",
 
-  // IMAGE (IMAGE type only)
-  "src": "keyword (avatar, hero, product, team, nature, tech, food, travel, abstract, office) OR URL",
+  // IMAGE (IMAGE type only) - Preferred way to handle high-fidelity backgrounds and assets
+  "src": "Base64 data string OR keyword (avatar, hero, product, team, nature, tech, food, travel, abstract, office) OR URL",
 
   // CHART (CHART type only)
   "chartType": "PIE"|"DONUT"|"BAR"|"LINE",
@@ -1583,8 +1583,10 @@ When asked to clone/recreate a website, follow this approach:
    - For known brand icons (Google, Facebook, etc.), use the Phosphor icon
    - For custom logos, describe with a RECTANGLE placeholder with brand color
 
-7. IMAGES: Use descriptive keywords (avatar, hero, product, team, tech, nature, food, travel)
-   The plugin auto-fetches real stock photos from Unsplash based on these keywords.
+7. IMAGES: Use IMAGE nodes for all backgrounds and pictures. Never use src URLs in frame fills.
+   - For background images, simulate Z-index by making the IMAGE the FIRST child of the root FRAME with layoutPositioning: "ABSOLUTE" and stretched dimensions.
+   - For plain images, use keywords (avatar, hero, product, team, tech, nature, food, travel) which auto-fetch stock photos.
+   - If you have raw image data, use a Base64 string for the src to bypass CORS/network blocks.
 
 8. ICONS: Use Phosphor icon names for common UI icons. For brand/custom icons, you can provide raw SVG path data:
    "icon": "M10 10 L50 50 Z"
@@ -1653,8 +1655,8 @@ Lorem: {{word}}, {{words}}, {{sentence}}, {{paragraph}}
 Other: {{uuid}}, {{heading}}, {{short}}
 Example: "characters": "Welcome, {{name}}!" → "Welcome, Sarah Johnson!"`;
 
-    const STYLE_PRESETS = {
-      'modern-dark': `
+        const STYLE_PRESETS = {
+          'modern-dark': `
 COLOR PALETTE (Modern Dark):
 - Background: #0F172A
 - Surface: #1E293B
@@ -1662,7 +1664,7 @@ COLOR PALETTE (Modern Dark):
 - Text: #FFFFFF
 - Text Secondary: #94A3B8
 - Border: #334155`,
-      'clean-light': `
+          'clean-light': `
 COLOR PALETTE (Clean Light):
 - Background: #FFFFFF
 - Surface: #F8FAFC
@@ -1670,7 +1672,7 @@ COLOR PALETTE (Clean Light):
 - Text: #1F2937
 - Text Secondary: #6B7280
 - Border: #E5E7EB`,
-      'vibrant': `
+          'vibrant': `
 COLOR PALETTE (Vibrant):
 - Background: #18181B
 - Surface: #27272A
@@ -1678,7 +1680,7 @@ COLOR PALETTE (Vibrant):
 - Secondary: #8B5CF6
 - Tertiary: #06B6D4
 - Text: #FAFAFA`,
-      'minimal': `
+          'minimal': `
 COLOR PALETTE (Minimal):
 - Background: #FAFAFA
 - Surface: #FFFFFF
@@ -1686,451 +1688,451 @@ COLOR PALETTE (Minimal):
 - Text: #171717
 - Text Secondary: #737373
 - Border: #E5E5E5`
-    };
+        };
 
-    // Track selected components and options
-    let selectedComponents = [];
-    let selectedStyle = 'modern-dark';
-    let selectedFont = 'Inter';
+        // Track selected components and options
+        let selectedComponents = [];
+        let selectedStyle = 'modern-dark';
+        let selectedFont = 'Inter';
 
-    // Generate the full prompt
-    function generateFullPrompt() {
-      const description = document.getElementById('designDescription').value.trim();
-      const styleContext = STYLE_PRESETS[selectedStyle];
-      const componentsHint = selectedComponents.length > 0
-        ? `\nInclude these components: ${selectedComponents.join(', ')}`
-        : '';
-      const fontInstruction = `\n\nFONT: Use "${selectedFont}" as the fontFamily for all TEXT nodes.`;
+        // Generate the full prompt
+        function generateFullPrompt() {
+          const description = document.getElementById('designDescription').value.trim();
+          const styleContext = STYLE_PRESETS[selectedStyle];
+          const componentsHint = selectedComponents.length > 0
+            ? `\nInclude these components: ${selectedComponents.join(', ')}`
+            : '';
+          const fontInstruction = `\n\nFONT: Use "${selectedFont}" as the fontFamily for all TEXT nodes.`;
 
-      if (!description) {
-        return `${SCHEMA_CONTEXT}
+          if (!description) {
+            return `${SCHEMA_CONTEXT}
 ${styleContext}${fontInstruction}
 
 TASK: [Describe what you want to design here]${componentsHint}
 
 Remember: Output ONLY valid JSON, starting with { and ending with }`;
-      }
+          }
 
-      return `${SCHEMA_CONTEXT}
+          return `${SCHEMA_CONTEXT}
 ${styleContext}${fontInstruction}
 
 TASK: ${description}${componentsHint}
 
 Remember: Output ONLY valid JSON, starting with { and ending with }`;
-    }
+        }
 
-    // Update preview
-    function updatePromptPreview() {
-      const preview = document.getElementById('promptPreview');
-      const fullPrompt = generateFullPrompt();
+        // Update preview
+        function updatePromptPreview() {
+          const preview = document.getElementById('promptPreview');
+          const fullPrompt = generateFullPrompt();
 
-      // Truncate for preview
-      const maxLength = 800;
-      let displayText = fullPrompt;
-      if (fullPrompt.length > maxLength) {
-        displayText = fullPrompt.substring(0, maxLength) + '\n\n... (truncated for preview, full prompt will be copied)';
-      }
-
-      preview.textContent = displayText;
-    }
-
-    // Copy prompt to clipboard
-    async function copyPromptToClipboard() {
-      const fullPrompt = generateFullPrompt();
-
-      try {
-        await navigator.clipboard.writeText(fullPrompt);
-
-        // Show success notification
-        const notification = document.createElement('div');
-        notification.className = 'copy-success';
-        notification.textContent = '✓ Prompt copied! Paste it into your AI';
-        document.body.appendChild(notification);
-
-        setTimeout(() => {
-          notification.remove();
-        }, 2000);
-      } catch (err) {
-        // Fallback for older browsers
-        const textarea = document.createElement('textarea');
-        textarea.value = fullPrompt;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-
-        showPromptStatus('Prompt copied to clipboard!', 'success');
-      }
-    }
-
-    // Show status in prompt panel
-    function showPromptStatus(message, type) {
-      const status = document.getElementById('promptStatus');
-      status.className = 'status show ' + type;
-      status.innerHTML = `<span class="message">${message}</span>`;
-
-      setTimeout(() => {
-        status.classList.remove('show');
-      }, 3000);
-    }
-
-    // =========================================================================
-    // EXAMPLE TEMPLATES FOR BUILDER
-    // =========================================================================
-    const examples = {
-      button: {
-        type: "FRAME",
-        name: "Primary Button",
-        layoutMode: "HORIZONTAL",
-        primaryAxisAlignItems: "CENTER",
-        counterAxisAlignItems: "CENTER",
-        padding: { top: 12, right: 24, bottom: 12, left: 24 },
-        cornerRadius: 8,
-        fills: [{ type: "SOLID", color: "#6366F1" }],
-        effects: [{ type: "DROP_SHADOW", color: "#6366F140", offset: { x: 0, y: 4 }, radius: 12, visible: true }],
-        children: [
-          {
-            type: "TEXT",
-            name: "Button Label",
-            characters: "Get Started",
-            fontSize: 16,
-            fontWeight: "Medium",
-            textColor: "#FFFFFF"
+          // Truncate for preview
+          const maxLength = 800;
+          let displayText = fullPrompt;
+          if (fullPrompt.length > maxLength) {
+            displayText = fullPrompt.substring(0, maxLength) + '\n\n... (truncated for preview, full prompt will be copied)';
           }
-        ]
-      },
-      card: {
-        type: "FRAME",
-        name: "Card",
-        layoutMode: "VERTICAL",
-        padding: { top: 24, right: 24, bottom: 24, left: 24 },
-        itemSpacing: 16,
-        width: 320,
-        cornerRadius: 16,
-        fills: [{ type: "SOLID", color: "#FFFFFF" }],
-        effects: [{ type: "DROP_SHADOW", color: "#00000015", offset: { x: 0, y: 8 }, radius: 24, visible: true }],
-        children: [
-          {
-            type: "IMAGE",
-            name: "Card Image",
-            src: "nature",
-            width: "fill",
-            height: 180,
-            cornerRadius: 12
-          },
-          {
-            type: "TEXT",
-            name: "Card Title",
-            characters: "Beautiful Landscape",
-            fontSize: 20,
-            fontWeight: "Bold",
-            textColor: "#1F2937"
-          },
-          {
-            type: "TEXT",
-            name: "Card Description",
-            characters: "Explore the wonders of nature with stunning photography and immersive experiences.",
-            fontSize: 14,
-            fontWeight: "Regular",
-            textColor: "#6B7280"
+
+          preview.textContent = displayText;
+        }
+
+        // Copy prompt to clipboard
+        async function copyPromptToClipboard() {
+          const fullPrompt = generateFullPrompt();
+
+          try {
+            await navigator.clipboard.writeText(fullPrompt);
+
+            // Show success notification
+            const notification = document.createElement('div');
+            notification.className = 'copy-success';
+            notification.textContent = '✓ Prompt copied! Paste it into your AI';
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+              notification.remove();
+            }, 2000);
+          } catch (err) {
+            // Fallback for older browsers
+            const textarea = document.createElement('textarea');
+            textarea.value = fullPrompt;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            showPromptStatus('Prompt copied to clipboard!', 'success');
           }
-        ]
-      },
-      navbar: {
-        type: "FRAME",
-        name: "Navbar",
-        layoutMode: "HORIZONTAL",
-        primaryAxisAlignItems: "SPACE_BETWEEN",
-        counterAxisAlignItems: "CENTER",
-        padding: { top: 16, right: 32, bottom: 16, left: 32 },
-        width: "fill",
-        fills: [{ type: "SOLID", color: "#FFFFFF" }],
-        effects: [{ type: "DROP_SHADOW", color: "#00000010", offset: { x: 0, y: 2 }, radius: 8, visible: true }],
-        children: [
-          {
-            type: "TEXT",
-            name: "Logo",
-            characters: "Acme Inc.",
-            fontSize: 20,
-            fontWeight: "Bold",
-            textColor: "#1F2937"
-          },
-          {
+        }
+
+        // Show status in prompt panel
+        function showPromptStatus(message, type) {
+          const status = document.getElementById('promptStatus');
+          status.className = 'status show ' + type;
+          status.innerHTML = `<span class="message">${message}</span>`;
+
+          setTimeout(() => {
+            status.classList.remove('show');
+          }, 3000);
+        }
+
+        // =========================================================================
+        // EXAMPLE TEMPLATES FOR BUILDER
+        // =========================================================================
+        const examples = {
+          button: {
             type: "FRAME",
-            name: "Nav Links",
+            name: "Primary Button",
             layoutMode: "HORIZONTAL",
-            itemSpacing: 32,
-            children: [
-              { type: "TEXT", name: "Link", characters: "Products", fontSize: 14, fontWeight: "Medium", textColor: "#6B7280" },
-              { type: "TEXT", name: "Link", characters: "Features", fontSize: 14, fontWeight: "Medium", textColor: "#6B7280" },
-              { type: "TEXT", name: "Link", characters: "Pricing", fontSize: 14, fontWeight: "Medium", textColor: "#6B7280" }
-            ]
-          },
-          {
-            type: "FRAME",
-            name: "CTA Button",
-            layoutMode: "HORIZONTAL",
-            padding: { top: 10, right: 20, bottom: 10, left: 20 },
+            primaryAxisAlignItems: "CENTER",
+            counterAxisAlignItems: "CENTER",
+            padding: { top: 12, right: 24, bottom: 12, left: 24 },
             cornerRadius: 8,
-            fills: [{ type: "SOLID", color: "#1F2937" }],
-            children: [
-              { type: "TEXT", name: "Button Text", characters: "Sign Up", fontSize: 14, fontWeight: "Medium", textColor: "#FFFFFF" }
-            ]
-          }
-        ]
-      },
-      hero: {
-        type: "FRAME",
-        name: "Hero Section",
-        layoutMode: "VERTICAL",
-        primaryAxisAlignItems: "CENTER",
-        counterAxisAlignItems: "CENTER",
-        padding: { top: 80, right: 64, bottom: 80, left: 64 },
-        itemSpacing: 32,
-        width: "fill",
-        fills: [{ type: "SOLID", color: "#0F172A" }],
-        children: [
-          {
-            type: "TEXT",
-            name: "Headline",
-            characters: "Build products faster",
-            fontSize: 56,
-            fontWeight: "Bold",
-            textColor: "#FFFFFF"
-          },
-          {
-            type: "TEXT",
-            name: "Subheadline",
-            characters: "The modern toolset for teams who want to ship great products without the complexity.",
-            fontSize: 20,
-            fontWeight: "Regular",
-            textColor: "#94A3B8"
-          },
-          {
-            type: "FRAME",
-            name: "CTA Group",
-            layoutMode: "HORIZONTAL",
-            itemSpacing: 16,
+            fills: [{ type: "SOLID", color: "#6366F1" }],
+            effects: [{ type: "DROP_SHADOW", color: "#6366F140", offset: { x: 0, y: 4 }, radius: 12, visible: true }],
             children: [
               {
+                type: "TEXT",
+                name: "Button Label",
+                characters: "Get Started",
+                fontSize: 16,
+                fontWeight: "Medium",
+                textColor: "#FFFFFF"
+              }
+            ]
+          },
+          card: {
+            type: "FRAME",
+            name: "Card",
+            layoutMode: "VERTICAL",
+            padding: { top: 24, right: 24, bottom: 24, left: 24 },
+            itemSpacing: 16,
+            width: 320,
+            cornerRadius: 16,
+            fills: [{ type: "SOLID", color: "#FFFFFF" }],
+            effects: [{ type: "DROP_SHADOW", color: "#00000015", offset: { x: 0, y: 8 }, radius: 24, visible: true }],
+            children: [
+              {
+                type: "IMAGE",
+                name: "Card Image",
+                src: "nature",
+                width: "fill",
+                height: 180,
+                cornerRadius: 12
+              },
+              {
+                type: "TEXT",
+                name: "Card Title",
+                characters: "Beautiful Landscape",
+                fontSize: 20,
+                fontWeight: "Bold",
+                textColor: "#1F2937"
+              },
+              {
+                type: "TEXT",
+                name: "Card Description",
+                characters: "Explore the wonders of nature with stunning photography and immersive experiences.",
+                fontSize: 14,
+                fontWeight: "Regular",
+                textColor: "#6B7280"
+              }
+            ]
+          },
+          navbar: {
+            type: "FRAME",
+            name: "Navbar",
+            layoutMode: "HORIZONTAL",
+            primaryAxisAlignItems: "SPACE_BETWEEN",
+            counterAxisAlignItems: "CENTER",
+            padding: { top: 16, right: 32, bottom: 16, left: 32 },
+            width: "fill",
+            fills: [{ type: "SOLID", color: "#FFFFFF" }],
+            effects: [{ type: "DROP_SHADOW", color: "#00000010", offset: { x: 0, y: 2 }, radius: 8, visible: true }],
+            children: [
+              {
+                type: "TEXT",
+                name: "Logo",
+                characters: "Acme Inc.",
+                fontSize: 20,
+                fontWeight: "Bold",
+                textColor: "#1F2937"
+              },
+              {
                 type: "FRAME",
-                name: "Primary CTA",
+                name: "Nav Links",
                 layoutMode: "HORIZONTAL",
-                padding: { top: 16, right: 32, bottom: 16, left: 32 },
-                cornerRadius: 12,
-                fills: [{ type: "SOLID", color: "#6366F1" }],
+                itemSpacing: 32,
                 children: [
-                  { type: "TEXT", name: "CTA Text", characters: "Start Free Trial", fontSize: 16, fontWeight: "Medium", textColor: "#FFFFFF" }
+                  { type: "TEXT", name: "Link", characters: "Products", fontSize: 14, fontWeight: "Medium", textColor: "#6B7280" },
+                  { type: "TEXT", name: "Link", characters: "Features", fontSize: 14, fontWeight: "Medium", textColor: "#6B7280" },
+                  { type: "TEXT", name: "Link", characters: "Pricing", fontSize: 14, fontWeight: "Medium", textColor: "#6B7280" }
                 ]
               },
               {
                 type: "FRAME",
-                name: "Secondary CTA",
+                name: "CTA Button",
                 layoutMode: "HORIZONTAL",
-                padding: { top: 16, right: 32, bottom: 16, left: 32 },
-                cornerRadius: 12,
-                strokes: [{ type: "SOLID", color: "#6366F1" }],
-                strokeWeight: 2,
+                padding: { top: 10, right: 20, bottom: 10, left: 20 },
+                cornerRadius: 8,
+                fills: [{ type: "SOLID", color: "#1F2937" }],
                 children: [
-                  { type: "TEXT", name: "CTA Text", characters: "Watch Demo", fontSize: 16, fontWeight: "Medium", textColor: "#6366F1" }
+                  { type: "TEXT", name: "Button Text", characters: "Sign Up", fontSize: 14, fontWeight: "Medium", textColor: "#FFFFFF" }
+                ]
+              }
+            ]
+          },
+          hero: {
+            type: "FRAME",
+            name: "Hero Section",
+            layoutMode: "VERTICAL",
+            primaryAxisAlignItems: "CENTER",
+            counterAxisAlignItems: "CENTER",
+            padding: { top: 80, right: 64, bottom: 80, left: 64 },
+            itemSpacing: 32,
+            width: "fill",
+            fills: [{ type: "SOLID", color: "#0F172A" }],
+            children: [
+              {
+                type: "TEXT",
+                name: "Headline",
+                characters: "Build products faster",
+                fontSize: 56,
+                fontWeight: "Bold",
+                textColor: "#FFFFFF"
+              },
+              {
+                type: "TEXT",
+                name: "Subheadline",
+                characters: "The modern toolset for teams who want to ship great products without the complexity.",
+                fontSize: 20,
+                fontWeight: "Regular",
+                textColor: "#94A3B8"
+              },
+              {
+                type: "FRAME",
+                name: "CTA Group",
+                layoutMode: "HORIZONTAL",
+                itemSpacing: 16,
+                children: [
+                  {
+                    type: "FRAME",
+                    name: "Primary CTA",
+                    layoutMode: "HORIZONTAL",
+                    padding: { top: 16, right: 32, bottom: 16, left: 32 },
+                    cornerRadius: 12,
+                    fills: [{ type: "SOLID", color: "#6366F1" }],
+                    children: [
+                      { type: "TEXT", name: "CTA Text", characters: "Start Free Trial", fontSize: 16, fontWeight: "Medium", textColor: "#FFFFFF" }
+                    ]
+                  },
+                  {
+                    type: "FRAME",
+                    name: "Secondary CTA",
+                    layoutMode: "HORIZONTAL",
+                    padding: { top: 16, right: 32, bottom: 16, left: 32 },
+                    cornerRadius: 12,
+                    strokes: [{ type: "SOLID", color: "#6366F1" }],
+                    strokeWeight: 2,
+                    children: [
+                      { type: "TEXT", name: "CTA Text", characters: "Watch Demo", fontSize: 16, fontWeight: "Medium", textColor: "#6366F1" }
+                    ]
+                  }
                 ]
               }
             ]
           }
-        ]
-      }
-    };
+        };
 
-    // =========================================================================
-    // EVENT LISTENERS
-    // =========================================================================
+        // =========================================================================
+        // EVENT LISTENERS
+        // =========================================================================
 
-    // Tab switching
-    document.querySelectorAll('.tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.panel).classList.add('active');
-      });
-    });
+        // Tab switching
+        document.querySelectorAll('.tab').forEach(tab => {
+          tab.addEventListener('click', () => {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.panel).classList.add('active');
+          });
+        });
 
-    // Style preset selection
-    document.querySelectorAll('.style-option').forEach(option => {
-      option.addEventListener('click', () => {
-        document.querySelectorAll('.style-option').forEach(o => o.classList.remove('selected'));
-        option.classList.add('selected');
-        selectedStyle = option.dataset.style;
-        updatePromptPreview();
-      });
-    });
+        // Style preset selection
+        document.querySelectorAll('.style-option').forEach(option => {
+          option.addEventListener('click', () => {
+            document.querySelectorAll('.style-option').forEach(o => o.classList.remove('selected'));
+            option.classList.add('selected');
+            selectedStyle = option.dataset.style;
+            updatePromptPreview();
+          });
+        });
 
-    // Font family selection
-    document.querySelectorAll('.font-option').forEach(option => {
-      option.addEventListener('click', () => {
-        document.querySelectorAll('.font-option').forEach(o => o.classList.remove('selected'));
-        option.classList.add('selected');
-        selectedFont = option.dataset.font;
-        updatePromptPreview();
-      });
-    });
+        // Font family selection
+        document.querySelectorAll('.font-option').forEach(option => {
+          option.addEventListener('click', () => {
+            document.querySelectorAll('.font-option').forEach(o => o.classList.remove('selected'));
+            option.classList.add('selected');
+            selectedFont = option.dataset.font;
+            updatePromptPreview();
+          });
+        });
 
-    // Component chips (for prompt generator)
-    document.querySelectorAll('#componentChips .chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        chip.classList.toggle('selected');
-        const component = chip.dataset.component;
-        if (chip.classList.contains('selected')) {
-          if (!selectedComponents.includes(component)) {
-            selectedComponents.push(component);
+        // Component chips (for prompt generator)
+        document.querySelectorAll('#componentChips .chip').forEach(chip => {
+          chip.addEventListener('click', () => {
+            chip.classList.toggle('selected');
+            const component = chip.dataset.component;
+            if (chip.classList.contains('selected')) {
+              if (!selectedComponents.includes(component)) {
+                selectedComponents.push(component);
+              }
+            } else {
+              selectedComponents = selectedComponents.filter(c => c !== component);
+            }
+            updatePromptPreview();
+          });
+        });
+
+        // Description input
+        document.getElementById('designDescription').addEventListener('input', updatePromptPreview);
+
+        // Copy prompt button
+        document.getElementById('copyPromptBtn').addEventListener('click', copyPromptToClipboard);
+
+        // Example chips (for builder)
+        document.querySelectorAll('.examples .chip').forEach(chip => {
+          chip.addEventListener('click', () => {
+            const example = examples[chip.dataset.example];
+            if (example) {
+              document.getElementById('jsonInput').value = JSON.stringify(example, null, 2);
+            }
+          });
+        });
+
+        // Format button
+        document.getElementById('formatBtn').addEventListener('click', () => {
+          const input = document.getElementById('jsonInput');
+          try {
+            const parsed = JSON.parse(input.value);
+            input.value = JSON.stringify(parsed, null, 2);
+            showStatus('Formatted successfully!', 'success');
+          } catch (e) {
+            showStatus('Invalid JSON: ' + e.message, 'error');
           }
-        } else {
-          selectedComponents = selectedComponents.filter(c => c !== component);
+        });
+
+        // Build button
+        document.getElementById('buildBtn').addEventListener('click', () => {
+          const input = document.getElementById('jsonInput').value.trim();
+
+          if (!input) {
+            showStatus('Please paste your design JSON first.', 'error');
+            return;
+          }
+
+          try {
+            const json = JSON.parse(input);
+            showStatus('Building design...', 'loading');
+            parent.postMessage({ pluginMessage: { type: 'build', data: json } }, '*');
+          } catch (e) {
+            showStatus('Invalid JSON: ' + e.message, 'error');
+          }
+        });
+
+        // Status display for builder
+        function showStatus(message, type) {
+          const status = document.getElementById('status');
+          status.className = 'status show ' + type;
+          status.querySelector('.message').textContent = message;
+          status.querySelector('.spinner').style.display = type === 'loading' ? 'block' : 'none';
+
+          if (type !== 'loading') {
+            setTimeout(() => {
+              status.classList.remove('show');
+            }, 4000);
+          }
         }
+
+        // Status display for export panel
+        function showExportStatus(message, type) {
+          const status = document.getElementById('exportStatus');
+          status.className = 'status show ' + type;
+          status.querySelector('.message').textContent = message;
+          status.querySelector('.spinner').style.display = type === 'loading' ? 'block' : 'none';
+
+          if (type !== 'loading') {
+            setTimeout(() => {
+              status.classList.remove('show');
+            }, 4000);
+          }
+        }
+
+        // Export button handler
+        document.getElementById('exportBtn').addEventListener('click', () => {
+          showExportStatus('Exporting selected frame...', 'loading');
+          parent.postMessage({ pluginMessage: { type: 'export' } }, '*');
+        });
+
+        // Format export JSON button
+        document.getElementById('formatExportBtn').addEventListener('click', () => {
+          const output = document.getElementById('exportOutput');
+          try {
+            const parsed = JSON.parse(output.value);
+            output.value = JSON.stringify(parsed, null, 2);
+            showExportStatus('Formatted successfully!', 'success');
+          } catch (e) {
+            showExportStatus('Invalid JSON: ' + e.message, 'error');
+          }
+        });
+
+        // Copy export JSON to clipboard
+        document.getElementById('copyExportBtn').addEventListener('click', async () => {
+          const output = document.getElementById('exportOutput');
+          const text = output.value.trim();
+
+          if (!text) {
+            showExportStatus('No JSON to copy. Export a frame first.', 'error');
+            return;
+          }
+
+          try {
+            await navigator.clipboard.writeText(text);
+
+            // Show success notification
+            const notification = document.createElement('div');
+            notification.className = 'copy-success';
+            notification.textContent = '✓ JSON copied to clipboard!';
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+              notification.remove();
+            }, 2000);
+          } catch (err) {
+            // Fallback for older browsers
+            output.select();
+            document.execCommand('copy');
+            showExportStatus('Copied to clipboard!', 'success');
+          }
+        });
+
+        // Listen for messages from plugin
+        window.onmessage = (event) => {
+          const msg = event.data.pluginMessage;
+          if (msg.type === 'success') {
+            showStatus(msg.message, 'success');
+          } else if (msg.type === 'error') {
+            showStatus(msg.message, 'error');
+          } else if (msg.type === 'export-success') {
+            document.getElementById('exportOutput').value = msg.json;
+            showExportStatus(msg.message, 'success');
+          } else if (msg.type === 'export-error') {
+            showExportStatus(msg.message, 'error');
+          }
+        };
+
+        // Initialize preview
         updatePromptPreview();
-      });
-    });
-
-    // Description input
-    document.getElementById('designDescription').addEventListener('input', updatePromptPreview);
-
-    // Copy prompt button
-    document.getElementById('copyPromptBtn').addEventListener('click', copyPromptToClipboard);
-
-    // Example chips (for builder)
-    document.querySelectorAll('.examples .chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        const example = examples[chip.dataset.example];
-        if (example) {
-          document.getElementById('jsonInput').value = JSON.stringify(example, null, 2);
-        }
-      });
-    });
-
-    // Format button
-    document.getElementById('formatBtn').addEventListener('click', () => {
-      const input = document.getElementById('jsonInput');
-      try {
-        const parsed = JSON.parse(input.value);
-        input.value = JSON.stringify(parsed, null, 2);
-        showStatus('Formatted successfully!', 'success');
-      } catch (e) {
-        showStatus('Invalid JSON: ' + e.message, 'error');
-      }
-    });
-
-    // Build button
-    document.getElementById('buildBtn').addEventListener('click', () => {
-      const input = document.getElementById('jsonInput').value.trim();
-
-      if (!input) {
-        showStatus('Please paste your design JSON first.', 'error');
-        return;
-      }
-
-      try {
-        const json = JSON.parse(input);
-        showStatus('Building design...', 'loading');
-        parent.postMessage({ pluginMessage: { type: 'build', data: json } }, '*');
-      } catch (e) {
-        showStatus('Invalid JSON: ' + e.message, 'error');
-      }
-    });
-
-    // Status display for builder
-    function showStatus(message, type) {
-      const status = document.getElementById('status');
-      status.className = 'status show ' + type;
-      status.querySelector('.message').textContent = message;
-      status.querySelector('.spinner').style.display = type === 'loading' ? 'block' : 'none';
-
-      if (type !== 'loading') {
-        setTimeout(() => {
-          status.classList.remove('show');
-        }, 4000);
-      }
-    }
-
-    // Status display for export panel
-    function showExportStatus(message, type) {
-      const status = document.getElementById('exportStatus');
-      status.className = 'status show ' + type;
-      status.querySelector('.message').textContent = message;
-      status.querySelector('.spinner').style.display = type === 'loading' ? 'block' : 'none';
-
-      if (type !== 'loading') {
-        setTimeout(() => {
-          status.classList.remove('show');
-        }, 4000);
-      }
-    }
-
-    // Export button handler
-    document.getElementById('exportBtn').addEventListener('click', () => {
-      showExportStatus('Exporting selected frame...', 'loading');
-      parent.postMessage({ pluginMessage: { type: 'export' } }, '*');
-    });
-
-    // Format export JSON button
-    document.getElementById('formatExportBtn').addEventListener('click', () => {
-      const output = document.getElementById('exportOutput');
-      try {
-        const parsed = JSON.parse(output.value);
-        output.value = JSON.stringify(parsed, null, 2);
-        showExportStatus('Formatted successfully!', 'success');
-      } catch (e) {
-        showExportStatus('Invalid JSON: ' + e.message, 'error');
-      }
-    });
-
-    // Copy export JSON to clipboard
-    document.getElementById('copyExportBtn').addEventListener('click', async () => {
-      const output = document.getElementById('exportOutput');
-      const text = output.value.trim();
-
-      if (!text) {
-        showExportStatus('No JSON to copy. Export a frame first.', 'error');
-        return;
-      }
-
-      try {
-        await navigator.clipboard.writeText(text);
-
-        // Show success notification
-        const notification = document.createElement('div');
-        notification.className = 'copy-success';
-        notification.textContent = '✓ JSON copied to clipboard!';
-        document.body.appendChild(notification);
-
-        setTimeout(() => {
-          notification.remove();
-        }, 2000);
-      } catch (err) {
-        // Fallback for older browsers
-        output.select();
-        document.execCommand('copy');
-        showExportStatus('Copied to clipboard!', 'success');
-      }
-    });
-
-    // Listen for messages from plugin
-    window.onmessage = (event) => {
-      const msg = event.data.pluginMessage;
-      if (msg.type === 'success') {
-        showStatus(msg.message, 'success');
-      } else if (msg.type === 'error') {
-        showStatus(msg.message, 'error');
-      } else if (msg.type === 'export-success') {
-        document.getElementById('exportOutput').value = msg.json;
-        showExportStatus(msg.message, 'success');
-      } else if (msg.type === 'export-error') {
-        showExportStatus(msg.message, 'error');
-      }
-    };
-
-    // Initialize preview
-    updatePromptPreview();
-  </script>
+      </script>
 </body>
 
 </html>

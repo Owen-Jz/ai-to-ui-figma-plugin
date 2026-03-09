@@ -1284,6 +1284,9 @@ The JSON output can be:
 6. ALWAYS use hex colors (#RRGGBB format). Never use named colors or rgb().
 7. Use ICON type for vector icons — Phosphor names OR raw SVG path strings.
 8. Every FRAME must have layoutMode. No exceptions.
+9. IMAGE HANDLING: Never use src or remote URLs inside the fills array of a FRAME. Instead, create a dedicated child node of type IMAGE.
+10. BACKGROUND IMAGES: When a background image is requested, the first child of the root FRAME must be an IMAGE type with layoutPositioning: "ABSOLUTE", x: 0, y: 0, width: "fill" (or matching parent px), height: "fill" (or matching parent px), and constraints: {"horizontal": "STRETCH", "vertical": "STRETCH"}. Ensure it is the first item in the children array so other elements render on top of it.
+11. BASE64 IMAGES: If you use raw images, prioritize generating a Base64 data string for the src field to avoid network blocks.
 
 COMMON MISTAKE:
 - WRONG: "layoutMode": "CENTER" ❌
@@ -1353,8 +1356,8 @@ COMMON MISTAKE:
   "size": number (px, default 24),
   "color": "#RRGGBB",
 
-  // IMAGE (IMAGE type only)
-  "src": "keyword (avatar, hero, product, team, nature, tech, food, travel, abstract, office) OR URL",
+  // IMAGE (IMAGE type only) - Preferred way to handle high-fidelity backgrounds and assets
+  "src": "Base64 data string OR keyword (avatar, hero, product, team, nature, tech, food, travel, abstract, office) OR URL",
 
   // CHART (CHART type only)
   "chartType": "PIE"|"DONUT"|"BAR"|"LINE",
@@ -1453,8 +1456,10 @@ When asked to clone/recreate a website, follow this approach:
    - For known brand icons (Google, Facebook, etc.), use the Phosphor icon
    - For custom logos, describe with a RECTANGLE placeholder with brand color
 
-7. IMAGES: Use descriptive keywords (avatar, hero, product, team, tech, nature, food, travel)
-   The plugin auto-fetches real stock photos from Unsplash based on these keywords.
+7. IMAGES: Use IMAGE nodes for all backgrounds and pictures. Never use src URLs in frame fills.
+   - For background images, simulate Z-index by making the IMAGE the FIRST child of the root FRAME with layoutPositioning: "ABSOLUTE" and stretched dimensions.
+   - For plain images, use keywords (avatar, hero, product, team, tech, nature, food, travel) which auto-fetch stock photos.
+   - If you have raw image data, use a Base64 string for the src to bypass CORS/network blocks.
 
 8. ICONS: Use Phosphor icon names for common UI icons. For brand/custom icons, you can provide raw SVG path data:
    "icon": "M10 10 L50 50 Z"
